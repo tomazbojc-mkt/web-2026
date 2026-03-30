@@ -43,6 +43,58 @@ gsap.utils.toArray('.fade-up').forEach(el => {
   });
 });
 
+// ==================== HERO SCRAMBLE FLIP ====================
+// After the h1 fade-up lands (~1s), each letter in "revenue growing."
+// individually slides up like a departure-board flip, in random order.
+document.fonts.ready.then(() => {
+  const mutedSpan = document.querySelector('.hero h1 .muted');
+  if (!mutedSpan) return;
+
+  const scrambleSplit = new SplitText(mutedSpan, { type: 'chars' });
+  const chars = scrambleSplit.chars;
+
+  // Wrap each char in an overflow-hidden mask and add a duplicate below
+  chars.forEach(char => {
+    const mask = document.createElement('span');
+    mask.className = 'hero-char-mask';
+
+    const dup = document.createElement('span');
+    dup.className = 'hero-char-dup';
+    dup.textContent = char.textContent;
+
+    char.parentNode.insertBefore(mask, char);
+    mask.appendChild(char);
+    mask.appendChild(dup);
+
+    // Position: original at 0, duplicate starts below
+    gsap.set(char, { position: 'relative' });
+    gsap.set(dup, { y: '120%' });
+  });
+
+  // Build a randomised order of indices
+  const indices = gsap.utils.shuffle([...Array(chars.length).keys()]);
+
+  // Animate after fade-up completes (~1.2s)
+  const tl = gsap.timeline({ delay: 1.2 });
+
+  indices.forEach((i, order) => {
+    const char = chars[i];
+    const dup = char.parentNode.querySelector('.hero-char-dup');
+
+    tl.to(char, {
+      y: '-120%',
+      autoAlpha: 0,
+      duration: 0.45,
+      ease: 'power2.inOut'
+    }, order * 0.04)
+    .to(dup, {
+      y: '0%',
+      duration: 0.45,
+      ease: 'power2.inOut'
+    }, order * 0.04);
+  });
+});
+
 // ==================== VIDEO SCALE ====================
 const videoEl = document.getElementById('videoPlaceholder');
 if (videoEl) {

@@ -220,6 +220,21 @@
     color: var(--accent);
   }
 
+  /* Scramble flip effect — per-character mask containers */
+  .hero-char-mask {
+    display: inline-flex;
+    vertical-align: baseline;
+    position: relative;
+    clip-path: inset(-8% 0 -8% 0);
+  }
+
+  .hero-char-mask .hero-char-dup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: inherit;
+  }
+
   .hero h2 {
     font-size: 1.2rem;
     margin-bottom: 40px;
