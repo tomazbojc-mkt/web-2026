@@ -43,10 +43,34 @@ gsap.utils.toArray('.fade-up').forEach(el => {
   });
 });
 
-// ==================== HERO SCRAMBLE FLIP ====================
+// ==================== PROVIDER LOGOS STAGGER ====================
+const providerLogos = gsap.utils.toArray('.provider-logo');
+if (providerLogos.length) {
+  gsap.set(providerLogos, { opacity: 0, scale: 0.8, y: 20 });
+
+  ScrollTrigger.create({
+    trigger: '.providers-grid',
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      gsap.to(providerLogos, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'back.out(1.4)',
+        stagger: { each: 0.06, from: 'start' }
+      });
+    }
+  });
+}
+
+// ==================== HERO SCRAMBLE FLIP (index page only) ====================
 // After the h1 fade-up lands (~1s), each letter in "revenue growing."
 // individually slides up like a departure-board flip, in random order.
 document.fonts.ready.then(() => {
+  // Skip on content-hero page — it has its own animation
+  if (document.querySelector('.content-hero')) return;
   const mutedSpan = document.querySelector('.hero h1 .muted');
   if (!mutedSpan) return;
 
@@ -406,4 +430,181 @@ document.fonts.ready.then(() => {
   const initial = urlParam >= 1 && urlParam <= VARIANTS.length ? urlParam : 1;
   createToggle();
   applyVariant(initial, false);
+});
+
+// ==================== CONTENT-HERO: COLOR REVEAL + FLIP-I ====================
+document.fonts.ready.then(() => {
+  const contentMuted = document.querySelector('.content-hero h1 .muted');
+  if (!contentMuted) return;
+
+  const flipI = contentMuted.querySelector('.flip-i');
+
+  // SplitText on the muted span — but preserve the .flip-i nested span
+  const split = new SplitText(contentMuted, { type: 'chars' });
+  const chars = split.chars;
+
+  // Find which char element contains/is the flip-i
+  const flipChar = flipI || chars.find(c => c.querySelector('.flip-i'));
+  const flipTarget = flipI || (flipChar ? flipChar.querySelector('.flip-i') : null);
+
+  // Start all chars with black color (same as surrounding text)
+  gsap.set(chars, { color: 'var(--black)' });
+
+  // Timeline: after h1 fade-up (~1.2s), reveal each letter to accent color linearly
+  const tl = gsap.timeline({ delay: 1.4 });
+
+  tl.to(chars, {
+    color: 'var(--accent)',
+    duration: 0.08,
+    stagger: { each: 0.05, from: 'start' },
+    ease: 'none'
+  });
+
+  // After color reveal, spin the "i" twice and land upside-down (540° = 1.5 turns → 180° final)
+  if (flipTarget) {
+    // Measure the letter height to calculate baseline offset when flipped
+    const h = flipTarget.offsetHeight;
+    const lineHeight = parseFloat(getComputedStyle(flipTarget.parentElement).lineHeight) || h;
+    // When rotateX(180), the letter pivots around its center but we need to
+    // shift it down so the flipped glyph sits on the same baseline
+    const baselineShift = h * 0.15; // fine-tune: descender compensation
+
+    tl.to(flipTarget, {
+      rotateX: 540,          // 1.5 turns → lands at 180° (upside-down)
+      duration: 1,
+      ease: 'power2.inOut',
+    }, '>0.2')
+    .to(flipTarget, {
+      y: baselineShift,
+      duration: 0.3,
+      ease: 'power2.out'
+    }, '<0.7')
+    // Hold upside-down briefly, then spin back
+    .to(flipTarget, {
+      rotateX: 1080,         // 1.5 more turns → lands back at 0°
+      y: 0,
+      duration: 1,
+      ease: 'power2.inOut',
+    }, '>1.5');
+  }
+});
+
+// ==================== HUB BANNER CHARACTER ANIMATIONS ====================
+const hubBanner = document.querySelector('.hub-banner');
+if (hubBanner) {
+  const king  = hubBanner.querySelector('.hub-king');
+  const orbs  = hubBanner.querySelector('.hub-orbs');
+  const chick = hubBanner.querySelector('.hub-chick');
+  const cat   = hubBanner.querySelector('.hub-cat');
+
+  // Slide characters in from the sides on scroll
+  gsap.set([king, orbs], { x: -120, opacity: 0 });
+  gsap.set([cat, chick], { x: 120, opacity: 0 });
+
+  ScrollTrigger.create({
+    trigger: hubBanner,
+    start: 'top 75%',
+    once: true,
+    onEnter: () => {
+      gsap.to(king, { x: 0, opacity: 1, duration: 1, ease: 'power3.out' });
+      gsap.to(orbs, { x: 0, opacity: 1, duration: 1, delay: 0.15, ease: 'power3.out' });
+      gsap.to(chick, { x: 0, opacity: 1, duration: 1, delay: 0.1, ease: 'power3.out' });
+      gsap.to(cat, { x: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out' });
+    }
+  });
+
+}
+
+// ==================== TRUST STATS COUNT-UP ====================
+document.querySelectorAll('.trust-number[data-count]').forEach(el => {
+  const target = parseInt(el.dataset.count);
+  const obj = { val: 0 };
+
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      gsap.to(obj, {
+        val: target,
+        duration: 1.8,
+        ease: 'power2.out',
+        onUpdate() {
+          el.textContent = Math.round(obj.val).toLocaleString();
+        }
+      });
+    }
+  });
+});
+
+// ==================== GAME RELEASES SCROLL ANIMATION ====================
+const gameThumbs = gsap.utils.toArray('.game-thumb');
+if (gameThumbs.length) {
+  // Initial state — hidden, scaled down, offset
+  gsap.set(gameThumbs, { opacity: 0, scale: 0.8, y: 60, rotation: gsap.utils.wrap([-4, 3, -2, 5, 2, -3, 4, -5]) });
+
+  ScrollTrigger.batch(gameThumbs, {
+    start: 'top 90%',
+    onEnter: batch => {
+      gsap.to(batch, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        rotation: 0,
+        duration: 0.7,
+        ease: 'back.out(1.4)',
+        stagger: 0.08,
+        overwrite: true
+      });
+    },
+    once: true
+  });
+}
+
+// ==================== BUTTON FLAIR HOVER ====================
+document.querySelectorAll('.btn-primary').forEach(btn => {
+  // Wrap existing contents in a label span
+  const label = document.createElement('span');
+  label.className = 'btn-label';
+  while (btn.firstChild) label.appendChild(btn.firstChild);
+  btn.appendChild(label);
+
+  // Add flair element
+  const flair = document.createElement('span');
+  flair.className = 'btn-flair';
+  btn.appendChild(flair);
+
+  const xSet = gsap.quickSetter(flair, 'xPercent');
+  const ySet = gsap.quickSetter(flair, 'yPercent');
+
+  function getXY(e) {
+    const { left, top, width, height } = btn.getBoundingClientRect();
+    const x = gsap.utils.clamp(0, 100, ((e.clientX - left) / width) * 100);
+    const y = gsap.utils.clamp(0, 100, ((e.clientY - top) / height) * 100);
+    return { x, y };
+  }
+
+  btn.addEventListener('mouseenter', e => {
+    const { x, y } = getXY(e);
+    xSet(x);
+    ySet(y);
+    gsap.to(flair, { scale: 1, duration: 0.4, ease: 'power2.out' });
+  });
+
+  btn.addEventListener('mouseleave', e => {
+    const { x, y } = getXY(e);
+    gsap.killTweensOf(flair);
+    gsap.to(flair, {
+      xPercent: x > 90 ? x + 20 : x < 10 ? x - 20 : x,
+      yPercent: y > 90 ? y + 20 : y < 10 ? y - 20 : y,
+      scale: 0,
+      duration: 0.3,
+      ease: 'power2.out'
+    });
+  });
+
+  btn.addEventListener('mousemove', e => {
+    const { x, y } = getXY(e);
+    gsap.to(flair, { xPercent: x, yPercent: y, duration: 0.4, ease: 'power2' });
+  });
 });
