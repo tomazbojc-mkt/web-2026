@@ -549,7 +549,7 @@ if (hubBanner) {
     scrollTrigger: {
       trigger: hubBanner,
       start: 'top bottom',
-      end: 'top bottom-=200',  // fully grown when top of banner is 200px into viewport
+      end: 'top bottom-=300',  // fully grown when top of banner is 200px into viewport
       scrub: 0.4
     }
   });
