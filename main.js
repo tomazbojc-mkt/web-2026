@@ -473,61 +473,21 @@ document.fonts.ready.then(() => {
   applyVariant(initial, false);
 });
 
-// ==================== CONTENT-HERO: COLOR REVEAL + FLIP-I ====================
+// ==================== CONTENT-HERO: COLOR REVEAL ====================
 document.fonts.ready.then(() => {
   const contentMuted = document.querySelector('.content-hero h1 .muted');
   if (!contentMuted) return;
 
-  const flipI = contentMuted.querySelector('.flip-i');
-
-  // SplitText on the muted span — but preserve the .flip-i nested span
   const split = new SplitText(contentMuted, { type: 'chars' });
-  const chars = split.chars;
+  gsap.set(split.chars, { color: 'var(--black)' });
 
-  // Find which char element contains/is the flip-i
-  const flipChar = flipI || chars.find(c => c.querySelector('.flip-i'));
-  const flipTarget = flipI || (flipChar ? flipChar.querySelector('.flip-i') : null);
-
-  // Start all chars with black color (same as surrounding text)
-  gsap.set(chars, { color: 'var(--black)' });
-
-  // Timeline: after h1 fade-up (~1.2s), reveal each letter to accent color linearly
   const tl = gsap.timeline({ delay: 1.4 });
-
-  tl.to(chars, {
+  tl.to(split.chars, {
     color: 'var(--accent)',
     duration: 0.08,
-    stagger: { each: 0.05, from: 'start' },
+    stagger: { each: 0.04, from: 'start' },
     ease: 'none'
   });
-
-  // After color reveal, spin the "i" twice and land upside-down (540° = 1.5 turns → 180° final)
-  if (flipTarget) {
-    // Measure the letter height to calculate baseline offset when flipped
-    const h = flipTarget.offsetHeight;
-    const lineHeight = parseFloat(getComputedStyle(flipTarget.parentElement).lineHeight) || h;
-    // When rotateX(180), the letter pivots around its center but we need to
-    // shift it down so the flipped glyph sits on the same baseline
-    const baselineShift = h * 0.15; // fine-tune: descender compensation
-
-    tl.to(flipTarget, {
-      rotateX: 540,          // 1.5 turns → lands at 180° (upside-down)
-      duration: 1,
-      ease: 'power2.inOut',
-    }, '>0.2')
-    .to(flipTarget, {
-      y: baselineShift,
-      duration: 0.3,
-      ease: 'power2.out'
-    }, '<0.7')
-    // Hold upside-down briefly, then spin back
-    .to(flipTarget, {
-      rotateX: 1080,         // 1.5 more turns → lands back at 0°
-      y: 0,
-      duration: 1,
-      ease: 'power2.inOut',
-    }, '>1.5');
-  }
 });
 
 // ==================== HUB BANNER SCROLL EFFECTS ====================
@@ -772,4 +732,15 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     const { x, y } = getXY(e);
     gsap.to(flair, { xPercent: x, yPercent: y, duration: 0.4, ease: 'power2' });
   });
+});
+
+// ==================== GAME THUMB HOVER OVERLAY ====================
+document.querySelectorAll('.game-thumb, .roadmap-thumb').forEach(thumb => {
+  const overlay = document.createElement('div');
+  overlay.className = 'thumb-overlay';
+  overlay.innerHTML = `
+    <a href="#" class="thumb-overlay-btn">play game</a>
+    <a href="#" class="thumb-overlay-btn thumb-overlay-btn--ghost">more info</a>
+  `;
+  thumb.appendChild(overlay);
 });
