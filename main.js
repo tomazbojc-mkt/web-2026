@@ -16,17 +16,20 @@ const bigIdeaText = document.querySelector('.big-idea .large-text');
 // ==================== GLOBAL FADE-UPS ====================
 // Hide all .fade-up elements immediately to prevent flash before scroll triggers fire
 // (bigIdeaText is excluded — variant system handles it)
+// Headings that get clip-mask wipe instead of standard fade-up
+const clipWipeSelectors = 'h2.fade-up, .content-hero h1.fade-up';
+const clipWipeEls = new Set(gsap.utils.toArray(clipWipeSelectors));
+
 gsap.utils.toArray('.fade-up').forEach(el => {
   if (el === bigIdeaText) return;
-  // h2 headings use clip-mask wipe — don't set opacity/y here
-  if (el.tagName === 'H2') return;
+  if (clipWipeEls.has(el)) return;
   gsap.set(el, { opacity: 0, y: 40 });
 });
 
 // ==================== HEADING CLIP-MASK WIPE ====================
-// h2.fade-up elements get SplitText line wipe instead of simple fade
+// Selected headings get SplitText line wipe instead of simple fade
 document.fonts.ready.then(() => {
-  gsap.utils.toArray('h2.fade-up').forEach(el => {
+  clipWipeEls.forEach(el => {
     if (el === bigIdeaText) return;
 
     const split = new SplitText(el, { type: 'lines' });
@@ -63,7 +66,7 @@ document.fonts.ready.then(() => {
 // Standard fade-ups for non-heading elements
 gsap.utils.toArray('.fade-up').forEach(el => {
   if (el === bigIdeaText) return;
-  if (el.tagName === 'H2') return;  // handled by clip-mask wipe above
+  if (clipWipeEls.has(el)) return;
 
   const delay = el.classList.contains('stagger-4') ? 0.4
     : el.classList.contains('stagger-3') ? 0.3
