@@ -122,7 +122,48 @@
   }
 
   /* ==================== SHARED ==================== */
-  section { position: relative; }
+  section {
+    position: relative;
+  }
+
+  .section {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(3 px);
+  }
+
+  .clip-wrap {
+    overflow: hidden;
+    padding-bottom: 0.15em;
+    margin-bottom: -0.15em;
+  }
+
+  /* Stacked overlap — sections layer over each other */
+  .content-hero,
+  .providers,
+  .game-releases,
+  .trust-section,
+  .hub-banner,
+  .why-bragg,
+  .ai-section,
+  .launch,
+  .trust,
+  .closer {
+    z-index: 2;
+  }
+
+  .content-hero { z-index: 1; }
+  .providers      { z-index: 3; }
+  .game-releases  { z-index: 4; }
+  .showcase-section { z-index: 5; }
+  .trust-section  { z-index: 6; }
+  .hub-banner     { z-index: 7; }
+  .why-bragg      { z-index: 8; }
+  .ai-section     { z-index: 9; }
+  .launch         { z-index: 10; }
+  .trust          { z-index: 11; }
+  .closer         { z-index: 12; }
+
 
   .container {
     max-width: 1440px;
@@ -258,8 +299,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 120px;
-    background: var(--white);
+    padding-top: 60px;
     overflow: hidden;
   }
 
@@ -436,7 +476,6 @@
 
   /* ==================== CONTENT HERO VARIANT ==================== */
   .content-hero {
-    position: relative;
     overflow-x: clip;
     overflow-y: visible;
   }
@@ -522,7 +561,6 @@
   /* ==================== PROVIDERS GRID ==================== */
   .providers {
     padding: 120px 0;
-    background: var(--white);
     text-align: center;
   }
 
@@ -585,7 +623,6 @@
   /* ==================== GAME RELEASES ==================== */
   .game-releases {
     padding: 120px 0;
-    background: var(--white);
     min-height:80vh;
     display: flex;
     align-items: center;
@@ -594,8 +631,8 @@
 
   .releases-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
     align-items: center;
   }
 
@@ -646,9 +683,62 @@
     transform: scale(1.08);
   }
 
+  /* ==================== GAME SHOWCASE (scroll scatter → grid) ==================== */
+  .showcase-section {
+    height: 300vh;
+    position: relative;
+    background: var(--bg);
+  }
+
+  .showcase-pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .showcase-title {
+    position: absolute;
+    z-index: 2;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--black);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .showcase_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 40px;
+    z-index: 1;
+  }
+
+  .showcase-thumb {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 160 / 224;
+    will-change: transform;
+  }
+
+  .showcase-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   /* ==================== TRUST / WHY OPERATORS ==================== */
   .trust-section {
-    background: var(--white);
     color: var(--black);
     padding: 160px 0;
   }
@@ -755,6 +845,10 @@
     justify-content: center;
     overflow: hidden;
     padding: 80px 0;
+    border-radius: 24px;
+    margin: 0 64px;
+    will-change: transform, border-radius;
+    transform-origin: center center;
   }
 
   .hub-banner-bg {
@@ -767,8 +861,8 @@
   .hub-center {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    transform: translate(-50%, -30%);
     z-index: 2;
     text-align: center;
     width: 100%;
@@ -778,7 +872,7 @@
 
   .hub-heading {
     font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--white);
@@ -795,12 +889,14 @@
 
   .hub-cta {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     background: var(--brand-green);
     color: var(--black);
     padding: 16px 36px;
     border-radius: 100px;
+    min-width:240px;
     font-weight: 700;
     font-size: 1rem;
     text-decoration: none;
@@ -870,7 +966,6 @@
   /* ==================== SECTION 2: BIG IDEA ==================== */
   .big-idea {
     padding: 160px 0;
-    background: var(--white);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

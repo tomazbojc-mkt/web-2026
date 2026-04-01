@@ -18,11 +18,52 @@ const bigIdeaText = document.querySelector('.big-idea .large-text');
 // (bigIdeaText is excluded — variant system handles it)
 gsap.utils.toArray('.fade-up').forEach(el => {
   if (el === bigIdeaText) return;
+  // h2 headings use clip-mask wipe — don't set opacity/y here
+  if (el.tagName === 'H2') return;
   gsap.set(el, { opacity: 0, y: 40 });
 });
 
+// ==================== HEADING CLIP-MASK WIPE ====================
+// h2.fade-up elements get SplitText line wipe instead of simple fade
+document.fonts.ready.then(() => {
+  gsap.utils.toArray('h2.fade-up').forEach(el => {
+    if (el === bigIdeaText) return;
+
+    const split = new SplitText(el, { type: 'lines' });
+    split.lines.forEach(line => {
+      const wrap = document.createElement('div');
+      wrap.className = 'clip-wrap';
+      line.parentNode.insertBefore(wrap, line);
+      wrap.appendChild(line);
+    });
+    gsap.set(split.lines, { y: '105%' });
+
+    const delay = el.classList.contains('stagger-4') ? 0.4
+      : el.classList.contains('stagger-3') ? 0.3
+      : el.classList.contains('stagger-2') ? 0.2
+      : el.classList.contains('stagger-1') ? 0.1 : 0;
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        gsap.to(split.lines, {
+          y: 0,
+          delay,
+          stagger: 0.1,
+          duration: 0.85,
+          ease: 'power3.out'
+        });
+      }
+    });
+  });
+});
+
+// Standard fade-ups for non-heading elements
 gsap.utils.toArray('.fade-up').forEach(el => {
   if (el === bigIdeaText) return;
+  if (el.tagName === 'H2') return;  // handled by clip-mask wipe above
 
   const delay = el.classList.contains('stagger-4') ? 0.4
     : el.classList.contains('stagger-3') ? 0.3
@@ -489,15 +530,31 @@ document.fonts.ready.then(() => {
   }
 });
 
-// ==================== HUB BANNER CHARACTER ANIMATIONS ====================
+// ==================== HUB BANNER SCROLL EFFECTS ====================
 const hubBanner = document.querySelector('.hub-banner');
 if (hubBanner) {
   const king  = hubBanner.querySelector('.hub-king');
   const orbs  = hubBanner.querySelector('.hub-orbs');
   const chick = hubBanner.querySelector('.hub-chick');
   const cat   = hubBanner.querySelector('.hub-cat');
+  const hubCenter = hubBanner.querySelector('.hub-center');
 
-  // Slide characters in from the sides on scroll
+  // 1) GROW EFFECT: banner starts smaller, scales up as it enters viewport
+  gsap.set(hubBanner, { scale: 0.88, borderRadius: '40px' });
+
+  gsap.to(hubBanner, {
+    scale: 1,
+    borderRadius: '24px',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: hubBanner,
+      start: 'top bottom',
+      end: 'top bottom-=200',  // fully grown when top of banner is 200px into viewport
+      scrub: 0.4
+    }
+  });
+
+  // 2) CHARACTER SLIDE-IN (from sides, triggered once)
   gsap.set([king, orbs], { x: -120, opacity: 0 });
   gsap.set([cat, chick], { x: 120, opacity: 0 });
 
@@ -513,6 +570,36 @@ if (hubBanner) {
     }
   });
 
+  // 3) PARALLAX: characters anchored at bottom:0, drift upward on scroll
+  gsap.to(king, {
+    yPercent: 15,
+    ease: 'none',
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  gsap.to(cat, {
+    yPercent: 20,
+    ease: 'none',
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  gsap.to(orbs, {
+    yPercent: 30,
+    ease: 'none',
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  gsap.to(chick, {
+    yPercent: 25,
+    ease: 'none',
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  gsap.to(hubCenter, {
+    yPercent: 10,
+    ease: 'none',
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
 }
 
 // ==================== TRUST STATS COUNT-UP ====================
@@ -560,6 +647,84 @@ if (gameThumbs.length) {
     once: true
   });
 }
+
+// ==================== SECTION OVERLAP PARALLAX (DISABLED) ====================
+// Uncomment to re-enable: each section scrolls slightly slower when leaving,
+// so the next one overlaps it with a parallax effect.
+// document.querySelectorAll('.content-hero, .providers, .game-releases, .trust-section, .hub-banner, .why-bragg, .ai-section, .launch, .trust').forEach(section => {
+//   if (section.classList.contains('showcase-section')) return;
+//   gsap.to(section, {
+//     yPercent: 15,
+//     ease: 'none',
+//     scrollTrigger: {
+//       trigger: section,
+//       start: 'bottom bottom',
+//       end: 'bottom top',
+//       scrub: true
+//     }
+//   });
+// });
+
+// ==================== SHOWCASE: SCATTERED → GRID ====================
+(() => {
+  const section = document.querySelector('.showcase-section');
+  if (!section) return;
+
+  const title = section.querySelector('.showcase-title');
+  const thumbs = gsap.utils.toArray('.showcase-thumb');
+  if (!thumbs.length) return;
+
+  // Read scattered positions from data attributes (percentages of viewport)
+  thumbs.forEach(thumb => {
+    const sx = parseFloat(thumb.dataset.scatterX) || 0;
+    const sy = parseFloat(thumb.dataset.scatterY) || 0;
+    const sr = parseFloat(thumb.dataset.scatterR) || 0;
+    const ss = parseFloat(thumb.dataset.scatterS) || 0.6;
+
+    // Start scattered: translate in vw/vh, rotated, scaled
+    gsap.set(thumb, {
+      xPercent: sx * 3,
+      yPercent: sy * 3,
+      rotation: sr,
+      scale: ss
+    });
+  });
+
+  // Master timeline scrubbed by scroll
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.8,
+      pin: false // we use sticky instead
+    }
+  });
+
+  // Phase 1 (0 → 0.4): Title visible, thumbs scattered with subtle float
+  // Phase 2 (0.4 → 0.7): Title fades out
+  // Phase 3 (0.4 → 1.0): Thumbs move to grid positions
+
+  // Fade out title
+  tl.to(title, {
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.3,
+    ease: 'power2.in'
+  }, 0.3);
+
+  // Animate each thumb to its grid position
+  thumbs.forEach((thumb, i) => {
+    tl.to(thumb, {
+      xPercent: 0,
+      yPercent: 0,
+      rotation: 0,
+      scale: 1,
+      duration: 0.6,
+      ease: 'power2.inOut'
+    }, 0.35 + i * 0.02);
+  });
+})();
 
 // ==================== BUTTON FLAIR HOVER ====================
 document.querySelectorAll('.btn-primary').forEach(btn => {
