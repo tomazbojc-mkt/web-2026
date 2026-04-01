@@ -844,7 +844,7 @@
     overflow: hidden;
     padding: 80px 0;
     border-radius: 24px;
-    margin: 0 64px;
+    margin: 0 64px 64px;
     will-change: transform, border-radius;
     transform-origin: center center;
   }
