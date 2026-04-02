@@ -1,0 +1,358 @@
+
+  .hero-fuze {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width:1440px;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .big-idea__phone {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  .big-idea__label {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px 18px 25px;
+    min-width: 270px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4.6px);
+    -webkit-backdrop-filter: blur(4.6px);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.07);
+  }
+  
+  .big-idea__label:nth-child(1) {
+      left: 140px;
+      top: -10%;
+      transform: rotate(-12.198deg);
+    }
+    .big-idea__label:nth-child(2) {
+      top:5%;
+      right: 10%;
+      transform: rotate(-5.716deg);
+
+    }
+      .big-idea__label:nth-child(3) {
+        transform: rotate(3.854deg);
+        left: 100px;
+        bottom: 15%;
+      }
+        .big-idea__label:nth-child(4) {
+          top: 80%;
+          right: 12%;
+          transform: rotate(7.269deg);
+        }
+
+  .big-idea__label-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .big-idea__label-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 2px;
+  }
+
+  .big-idea__label-title {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--black);
+    text-transform: lowercase;
+  }
+
+  .big-idea__label-value {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--brand-blue);
+  }
+
+  /* ==================== BIG IDEA ==================== */
+  .big-idea {
+    padding: 0 0;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .big-idea__heading {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 64px;
+  }
+
+  .big-idea__phone {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  .big-idea__phone-img {
+    max-width: 680px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .big-idea__text {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--gray-600);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .big-idea {
+      padding: 80px 0;
+    }
+
+    .big-idea__heading {
+      margin-bottom: 40px;
+    }
+
+    .big-idea__phone {
+      margin-bottom: 40px;
+    }
+
+    .big-idea__label {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0 auto 20px;
+      min-width: 0;
+      width: min(100%, 320px);
+      padding: 16px 18px;
+    }
+
+    .big-idea__label-icon {
+      width: 36px;
+      font-size: 34px;
+    }
+
+    .big-idea__label-title,
+    .big-idea__label-value {
+      font-size: 16px;
+    }
+
+    .big-idea__phone-img {
+      max-width: 100%;
+    }
+  }
+
+  /* ==================== FUZE PRESENTATION ==================== */
+  .fuze-presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* ── Left: scrolling articles ── */
+  .fuze-presentation__articles {
+    /* natural scroll flow */
+  }
+
+  .fuze-presentation__article {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 60px 80px 0;
+  }
+
+  .fuze-presentation__article .content {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* ── Right: sticky phone ── */
+  .phone-track {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* ── Phone shell ── */
+  .phone {
+    position: relative;
+    width: 300px;
+    height: 648px;
+    background: #111;
+    border: 2px solid #2a2a2a;
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08) inset,
+      0 40px 100px rgba(0,0,0,0.28);
+  }
+
+  /* Dynamic island notch */
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 24px;
+    background: #111;
+    border-radius: 20px;
+    z-index: 10;
+  }
+
+  /* ── Phone screens ── */
+  .phone-screens {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .phone-screen {
+    position: absolute;
+    inset: 0;
+    background: #1c1c1e;
+    transform: translateX(100%);
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity  0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .phone-screen.is-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* ── Article text styles (scoped) ── */
+  .fuze-presentation__article .label {
+    color: var(--accent);
+    margin-bottom: 14px;
+    text-transform: lowercase;
+  }
+
+  .fp-heading {
+    font-size: clamp(22px, 2.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+  }
+
+  .fuze-presentation__article .description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #444;
+    margin-bottom: 28px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 3px;
+  }
+
+  .card-tags {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  .card-metric {
+    font-size: 28px;
+    font-weight: 800;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .card-metric sup {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .card-icon {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #555;
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .card-full { margin-bottom: 24px; }
+
+  /* ── Responsive: stack on mobile ── */
+  @media (max-width: 900px) {
+    .fuze-presentation {
+      grid-template-columns: 1fr;
+      padding: 0 24px;
+    }
+
+    /* Move phone above articles on mobile */
+    .phone-track {
+      position: relative;
+      height: auto;
+      padding: 60px 0 40px;
+      top: auto;
+    }
+
+    .fuze-presentation__article {
+      min-height: auto;
+      padding: 60px 0;
+    }
+  }

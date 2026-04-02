@@ -1,5 +1,7 @@
 // ==================== GSAP SETUP ====================
 gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.config({ force3D: true });
+gsap.defaults({ force3D: true });
 document.body.classList.add('js-ready');
 
 // ==================== CSS VARIABLES ====================
@@ -537,31 +539,31 @@ if (hubBanner) {
   gsap.to(king, {
     yPercent: 15,
     ease: 'none',
-    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
   });
 
   gsap.to(cat, {
     yPercent: 20,
     ease: 'none',
-    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
   });
 
   gsap.to(orbs, {
     yPercent: 30,
     ease: 'none',
-    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
   });
 
   gsap.to(chick, {
     yPercent: 25,
     ease: 'none',
-    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
   });
 
   gsap.to(hubCenter, {
     yPercent: 10,
     ease: 'none',
-    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: true }
+    scrollTrigger: { trigger: hubBanner, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
   });
 }
 
