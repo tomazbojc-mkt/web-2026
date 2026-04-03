@@ -187,12 +187,11 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 80px 60px 80px 0;
+    padding: 80px 0 80px 0;
   }
 
   .fuze-presentation__article .content {
     width: 100%;
-    max-width: 520px;
   }
 
   /* ── Right: sticky phone ── */
@@ -294,8 +293,10 @@
   .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
+    grid-auto-rows: 215px;
+    gap: 24px;
+    margin-bottom: 32px;
+
   }
 
   .card {
@@ -303,31 +304,34 @@
     border: 1px solid #e2e2e2;
     border-radius: 12px;
     padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .card-title {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
-    color: #111;
     margin-bottom: 3px;
   }
 
   .card-tags {
-    font-size: 11px;
-    color: #999;
+    font-size: 12px;
     margin-bottom: 12px;
   }
 
   .card-metric {
     font-size: 28px;
     font-weight: 800;
-    color: #333;
     line-height: 1;
     margin-bottom: 4px;
+    color: var(--brand-green);
+    color: #2FBF1A;
+    color: var(--accent);
   }
 
   .card-metric sup {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
   }
 
