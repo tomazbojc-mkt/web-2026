@@ -420,9 +420,10 @@
   }
 
   .card-icon {
-    font-size: 20px;
+    display: block;
+    width: 24px;
+    height: auto;
     margin-bottom: 6px;
-    color: #555;
   }
 
   .card-desc {
