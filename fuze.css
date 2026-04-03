@@ -1,4 +1,16 @@
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.hero.fuze-hero,
+.big-idea,
+.fuze-presentation__article,
+.closer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
   .hero-fuze {
     position: absolute;
     top: 0;
