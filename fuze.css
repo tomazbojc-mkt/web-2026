@@ -247,7 +247,8 @@
     opacity: 1;
   }
 
-  .phone-screen .phone-video {
+  .phone-screen .phone-video,
+  .phone-screen img {
     position: absolute;
     inset: 0;
     width: 100%;
