@@ -4,6 +4,58 @@ gsap.config({ force3D: true });
 gsap.defaults({ force3D: true });
 document.body.classList.add('js-ready');
 
+// ==================== HIDE-ON-SCROLL NAV ====================
+(() => {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+
+  const HIDE_AFTER    = 80;  // px from top before hide logic activates
+  const INTENT_THRESH = 70;  // px of accumulated scroll needed to trigger toggle
+
+  let lastY       = window.scrollY;
+  let accumulated = 0;       // running total in current direction
+  let ticking     = false;
+
+  function update() {
+    const y     = window.scrollY;
+    const delta = y - lastY;
+    lastY = y;
+
+    // Always show near the top
+    if (y < HIDE_AFTER) {
+      nav.classList.remove('nav--hidden');
+      accumulated = 0;
+      ticking = false;
+      return;
+    }
+
+    // Accumulate scroll in the current direction; reset when direction flips
+    if ((delta > 0 && accumulated < 0) || (delta < 0 && accumulated > 0)) {
+      accumulated = 0;
+    }
+    accumulated += delta;
+
+    if (accumulated > INTENT_THRESH) {
+      // Enough intentional downward scroll — hide
+      nav.classList.add('nav--hidden');
+      accumulated = 0;
+    } else if (accumulated < -INTENT_THRESH) {
+      // Enough intentional upward scroll — show
+      nav.classList.remove('nav--hidden');
+      accumulated = 0;
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
 // ==================== CSS VARIABLES ====================
 const ACCENT_COLORS = [
   { name: 'blue', var: '--brand-blue' },
