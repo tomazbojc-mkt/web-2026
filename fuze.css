@@ -300,16 +300,92 @@
   }
 
   .card {
-    background: #fff;
-    border: 1px solid #e2e2e2;
+    background: transparent;
+    border-radius: 12px;
+    perspective: 800px;
+  }
+
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 12px;
     padding: 16px 18px;
+    border: 1px solid #e2e2e2;
+  }
+
+  .card-front {
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
+  .card-back {
+    cursor: pointer;
+    background-color: var(--black);
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    border-color: #0a1628;
+  }
+
+  .card-back-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .card-back:hover .card-back-close {
+    color: #fff;
+  }
+
+  .card-front header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .card-front header svg {
+    flex-shrink: 0;
+    color: #c0c0c0;
+    transition: color 0.2s;
+    cursor: pointer;
+    margin-top: 1px;
+  }
+
+  .card-front header svg:hover {
+    color: var(--black);
+  }
+
   .card-title {
+    flex: 1;
+    min-width: 0;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 3px;
