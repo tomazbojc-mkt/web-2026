@@ -303,6 +303,11 @@
     background: transparent;
     border-radius: 12px;
     perspective: 800px;
+    transition: box-shadow 200ms ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   }
 
 
@@ -328,6 +333,8 @@
     padding: 16px 18px;
     border: 1px solid #e2e2e2;
   }
+
+
 
   .card-front {
     background: #fff;
