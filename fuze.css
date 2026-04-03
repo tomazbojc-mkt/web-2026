@@ -1,12 +1,12 @@
 
-html {
+html:has(.page-fuze) {
   scroll-snap-type: y mandatory;
 }
 
-.hero.fuze-hero,
-.big-idea,
-.fuze-presentation__article,
-.closer {
+.page-fuze .hero.fuze-hero,
+.page-fuze .big-idea,
+.page-fuze .fuze-presentation__article,
+.page-fuze .closer {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
