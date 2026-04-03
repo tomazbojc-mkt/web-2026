@@ -20,6 +20,7 @@
     --green: #22c55e;
     --font: 'Plus Jakarta Sans', -apple-system, sans-serif;
     --ease-out: cubic-bezier(0.16, 1,  0.3, 1);
+    --supporting-text: var(--gray-500);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -480,7 +481,7 @@
     padding: 20px 48px;
     border-top: 1px solid var(--gray-100);
     font-size: 0.85rem;
-    color: var(--gray-400);
+    color: var(--supporting-text);
     font-weight: 500;
   }
 
@@ -593,7 +594,7 @@
 
   .providers-sub {
     font-size: 1.1rem;
-    color: var(--gray-400);
+    color: var(--supporting-text);
     margin-bottom: 64px;
   }
 
@@ -611,8 +612,7 @@
     border-bottom: 1px solid var(--gray-100);
     border-right: 1px solid var(--gray-100);
     will-change: transform, opacity;
-    background: var(--white);
-    transition: background 0.2s;
+    transition: all 0.2s;
   }
 
   .provider-logo:nth-child(5n) {
@@ -665,7 +665,7 @@
   .releases-sub {
     margin-top: 20px;
     font-size: 1rem;
-    color: var(--gray-500);
+    color: var(--supporting-text);
     line-height: 1.6;
   }
 
@@ -913,7 +913,8 @@
   /* ==================== ROADMAP ==================== */
   .roadmap {
     padding: 120px 0;
-    background: var(--white);
+    background: #F5F6FB;
+    margin-bottom: 6rem;
   }
 
   .roadmap-heading {
@@ -927,7 +928,7 @@
   .roadmap-sub {
     margin-top: 16px;
     font-size: 1.1rem;
-    color: var(--gray-500);
+    color: var(--supporting-text);
   }
 
   .roadmap-toolbar {
@@ -949,7 +950,7 @@
   }
 
   .roadmap-filter label {
-    color: var(--gray-500);
+    color: var(--supporting-text);
     font-weight: 500;
   }
 
@@ -1066,36 +1067,24 @@
     margin: 0 auto 64px;
     will-change: transform, border-radius;
     transform-origin: center center;
-  }
-
-  .hub-banner-bg {
-    position: absolute;
-    inset: 0;
     background: radial-gradient(ellipse at 50% 40%, #0f1a3d 0%, #060b1e 60%, #020510 100%);
-    z-index: 0;
-  }
-
-  .hub-center {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -30%);
-    z-index: 2;
-    text-align: center;
-    width: 100%;
-    will-change: transform;
-    max-width: 800px;
-    padding: 0 24px;
-  }
+  } 
 
   .hub-heading {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(3rem, 6vw, 4rem);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--white);
     margin-bottom: 24px;
     text-transform: lowercase;
+  }
+  .hub-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .hub-sub {
@@ -1777,7 +1766,7 @@
   }
 
   .rl-sub {
-    color: var(--gray-400);
+    color: var(--supporting-text);
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0 auto 64px;

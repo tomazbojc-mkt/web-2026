@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bragg Gaming — the player-first igaming platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="components/styles/index.css">
+</head>
+<body>
+
+<site-nav></site-nav>
+
+<main>
+  <hero-section variant="default"></hero-section>
+
+  <page-subbar></page-subbar>
+
+  <statement-section id="solutions" variant="default"></statement-section>
+
+  <video-section></video-section>
+
+  <pillars-section id="why"></pillars-section>
+
+  <capability-list></capability-list>
+
+  <delivery-section id="launch"></delivery-section>
+
+  <trust-section id="trust" variant="default"></trust-section>
+</main>
+
+<page-closer id="contact"></page-closer>
+
+<site-footer></site-footer>
+
+<!--
+  Script loading order (important):
+  1. GSAP — synchronous, runs during parse, makes gsap global available
+  2. components/index.js — module (deferred), defines + upgrades all custom elements
+  3. main.js — defer, runs after components have rendered light DOM
+-->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+<script type="module" src="components/index.js"></script>
+<script src="main.js" defer></script>
+
+</body>
+</html>

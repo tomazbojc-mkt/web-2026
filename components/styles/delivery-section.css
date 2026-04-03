@@ -1,0 +1,89 @@
+/* <delivery-section> ────────────────────────────────────── */
+
+.launch {
+  padding: 140px 0;
+  background: var(--white);
+}
+
+.launch .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.launch-left .large-text {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  margin-bottom: 20px;
+}
+
+.launch-left .supporting {
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.launch-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.launch-card {
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.launch-card:hover { transform: translateY(-2px); }
+
+.launch-card.turnkey {
+  background: var(--gray-900);
+  color: var(--white);
+}
+
+.launch-card.modular {
+  background: var(--white);
+  color: var(--black);
+  border: 1.5px solid var(--gray-100);
+}
+
+.launch-card .card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.launch-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.launch-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+.launch-card .card-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+  text-decoration: none;
+  color: inherit;
+  transition: gap 0.2s;
+}
+
+.launch-card:hover .card-arrow { gap: 10px; }

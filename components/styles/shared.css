@@ -1,0 +1,177 @@
+/**
+ * Shared utilities used by three or more components.
+ * Load after reset.css. These classes are referenced inside component templates.
+ *
+ * Includes: layout primitives, typography scale, button system,
+ *           animation hooks, stacking context, and color utilities.
+ */
+
+/* ── Color utilities ──────────────────────────────────────── */
+.accent { color: var(--accent); }
+.muted  { color: var(--accent); }
+
+/* ── Layout ───────────────────────────────────────────────── */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+section { position: relative; }
+
+/* Frosted glass surface applied to stacked page sections */
+.section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Stacking context — content sections layer over each other on scroll */
+.content-hero        { z-index: 1; }
+.providers           { z-index: 3; }
+.game-releases       { z-index: 4; }
+.showcase-section    { z-index: 5; }
+.trust-section       { z-index: 6; }
+.hub-banner          { z-index: 7; }
+.global-presence     { z-index: 8; }
+.regional-licensing  { z-index: 9; }
+.why-bragg           { z-index: 10; }
+.ai-section          { z-index: 11; }
+.launch              { z-index: 12; }
+.trust               { z-index: 13; }
+.closer              { z-index: 14; }
+
+/* ── Typography scale ─────────────────────────────────────── */
+h1,
+.large-text {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+h2 {
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: none;
+}
+
+.supporting {
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+/* ── Button system ────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  min-width: 240px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--black);
+  color: var(--white);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Flair ripple element injected by main.js on hover */
+.btn-flair {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.btn-flair::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 170%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--accent);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--black);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--black);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--accent);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* ── Animation hooks ──────────────────────────────────────── */
+.fade-up { will-change: opacity, transform; }
+
+.clip-wrap {
+  overflow: hidden;
+  padding: 0.15em 0;
+  margin: -0.15em 0;
+}
+
+/* Stagger delay classes — used alongside .fade-up for sequenced entrance */
+/* Actual values are applied by GSAP via JS, these just mark elements */
+.stagger-1,
+.stagger-2,
+.stagger-3,
+.stagger-4 { will-change: opacity, transform; }

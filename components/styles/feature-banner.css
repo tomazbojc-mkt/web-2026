@@ -1,0 +1,101 @@
+/* <feature-banner> ──────────────────────────────────────── */
+
+.hub-banner {
+  position: relative;
+  min-height: 400px;
+  max-height: 800px;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 0;
+  border-radius: 24px;
+  max-width: 1440px;
+  margin: 0 auto 64px;
+  will-change: transform, border-radius;
+  transform-origin: center center;
+}
+
+.hub-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, #0f1a3d 0%, #060b1e 60%, #020510 100%);
+  z-index: 0;
+}
+
+.hub-center {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  will-change: transform;
+  max-width: 800px;
+  padding: 0 24px;
+}
+
+.hub-heading {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 24px;
+  text-transform: lowercase;
+}
+
+.hub-sub {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hub-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--brand-green);
+  color: var(--black);
+  padding: 16px 36px;
+  border-radius: 100px;
+  min-width: 240px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
+}
+
+.hub-cta:hover { box-shadow: 0 8px 40px rgba(95, 232, 61, 0.3); }
+
+/* Character images */
+.hub-characters {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.hub-characters-left  { left: 0;  justify-content: flex-start; }
+.hub-characters-right { right: 0; justify-content: flex-end; }
+
+.hub-char {
+  position: absolute;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  bottom: 0;
+}
+
+.hub-king  { left: 0;    height: clamp(200px, 28vw, 480px); z-index: 2; will-change: transform; }
+.hub-orbs  { left: 14vw; height: clamp(100px, 13vw, 240px); z-index: 1; will-change: transform; }
+.hub-chick { right: 12vw; height: clamp(120px, 15vw, 280px); z-index: 1; will-change: transform; }
+.hub-cat   { right: 0;   height: clamp(200px, 26vw, 460px); z-index: 2; will-change: transform; }

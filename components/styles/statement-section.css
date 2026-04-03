@@ -1,0 +1,101 @@
+/* <statement-section> ────────────────────────────────────── */
+
+.big-idea {
+  padding: 160px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.big-idea .large-text {
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--black);
+}
+
+.big-idea .supporting {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gray-500);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* ── Visual (fuze) variant ──────────────────────────────── */
+.big-idea__heading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 48px;
+}
+
+.big-idea__phone {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.big-idea__phone-img {
+  width: 100%;
+  display: block;
+}
+
+.big-idea__label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 10px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
+  animation: tagFloat 4s ease-in-out infinite;
+}
+
+.big-idea__label:nth-child(1) { top: 40px;   left: -120px; animation-delay: 0s; }
+.big-idea__label:nth-child(2) { top: 160px;  right: -120px; animation-delay: -1s; }
+.big-idea__label:nth-child(3) { bottom: 160px; left: -120px; animation-delay: -2s; }
+.big-idea__label:nth-child(4) { bottom: 40px; right: -120px; animation-delay: -3s; }
+
+.big-idea__label-icon { font-size: 1rem; line-height: 1; }
+
+.big-idea__label-text { display: flex; flex-direction: column; gap: 1px; }
+
+.big-idea__label-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.big-idea__label-value {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.big-idea__text {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}

@@ -1,0 +1,79 @@
+/* <pillars-section> ─────────────────────────────────────── */
+
+.why-bragg {
+  padding: 140px 0 100px;
+  background: var(--gray-50);
+}
+
+.why-bragg .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.why-left {
+  position: sticky;
+  top: 120px;
+}
+
+.why-left h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.why-left .answer {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}
+
+.pillar-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 120px;
+}
+
+.pillar-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px 40px;
+  border: 1px solid var(--gray-100);
+  cursor: default;
+  position: sticky;
+  transition: box-shadow 0.3s var(--ease-out);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 20px;
+}
+
+/* Cards stack: each subsequent card slides over the previous */
+.pillar-card:nth-child(1) { top: 120px; z-index: 1; }
+.pillar-card:nth-child(2) { top: 144px; z-index: 2; }
+.pillar-card:nth-child(3) { top: 168px; z-index: 3; }
+.pillar-card:nth-child(4) { top: 192px; z-index: 4; }
+
+.pillar-card:hover {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06), 0 8px 40px rgba(0, 0, 0, 0.06);
+}
+
+.pillar-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.pillar-card p {
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 480px;
+}

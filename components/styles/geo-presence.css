@@ -1,0 +1,111 @@
+/* <geo-presence> ────────────────────────────────────────── */
+
+.global-presence {
+  background: #0F0F0F;
+  padding: 100px 0 120px;
+  color: var(--white);
+  border-radius: 24px;
+  max-width: 1440px;
+  margin: 0 auto 64px;
+}
+
+.global-presence-heading {
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.global-presence-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+/* Tab filter pills */
+.gp-filters {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  padding: 6px;
+  width: fit-content;
+  margin: 0 auto 64px;
+}
+
+.gp-filter {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.gp-filter:hover { color: var(--white); background: rgba(255, 255, 255, 0.08); }
+.gp-filter.active { background: var(--brand-blue); color: var(--white); }
+
+/* Regions definition list */
+.gp-regions { max-width: 960px; margin: 0 auto; }
+
+.gp-region-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 40px 0 20px;
+}
+
+.gp-region-name:first-of-type { margin-top: 0; }
+
+.gp-countries { margin: 0; }
+
+.gp-country-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 16px;
+}
+
+.gp-country {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+.gp-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.gp-country-name { white-space: nowrap; }
+
+@media (max-width: 1024px) { .gp-country-list { grid-template-columns: repeat(3, 1fr); } }
+
+@media (max-width: 640px) {
+  .gp-filters { flex-wrap: wrap; border-radius: 16px; }
+  .gp-country-list { grid-template-columns: repeat(2, 1fr); }
+  .global-presence { padding: 72px 0 80px; }
+}

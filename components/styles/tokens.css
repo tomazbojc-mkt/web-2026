@@ -1,0 +1,41 @@
+/**
+ * Design tokens — CSS custom properties.
+ *
+ * Load this file globally on every page. These variables penetrate
+ * shadow DOM boundaries automatically, so any component (light or shadow DOM)
+ * can reference them with var(--token-name).
+ *
+ * Source of truth for all color, typography, spacing, and easing values.
+ */
+
+:root {
+  /* ── Palette ───────────────────────────────────────── */
+  --black:          #0a0a0a;
+  --white:          #ffffff;
+  --background:     #f9f8f5;
+
+  --gray-50:  #f7f7f8;
+  --gray-100: #ececee;
+  --gray-200: #d4d4d8;
+  --gray-300: #c0c0c6;
+  --gray-400: #9ca3af;
+  --gray-500: #71717a;
+  --gray-600: #52525b;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+
+  --brand-green: #5FE83D;
+  --brand-blue:  #0016EB;
+
+  /* ── Semantic ──────────────────────────────────────── */
+  --accent:       var(--brand-blue);
+  --accent-light: #5b7aff;
+  --accent-glow:  rgba(59, 92, 255, 0.12);
+  --green:        #22c55e;
+
+  /* ── Typography ────────────────────────────────────── */
+  --font: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  /* ── Easing ────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

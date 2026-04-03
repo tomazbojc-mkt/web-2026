@@ -1,0 +1,24 @@
+/* <page-closer> ─────────────────────────────────────────── */
+
+.closer {
+  padding: 200px 0;
+  background: var(--black);
+  text-align: center;
+}
+
+.closer .large-text {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.closer .btn-primary {
+  background: var(--white);
+  color: var(--black);
+  margin-top: 48px;
+}
+
+.closer .btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+}

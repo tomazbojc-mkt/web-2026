@@ -1,0 +1,42 @@
+/**
+ * Component CSS barrel.
+ *
+ * Import order matters:
+ *   1. tokens  → custom properties (penetrate all components, including shadow DOM)
+ *   2. reset   → global base
+ *   3. shared  → utilities referenced inside component templates
+ *   4. component-specific CSS (order = render dependency)
+ *
+ * Usage in Hugo templates / new pages:
+ *   <link rel="stylesheet" href="/components/styles/index.css">
+ *
+ * The fuze.css file (scroll-story section) is imported separately
+ * because it ships with the original project.
+ */
+
+@import './tokens.css';
+@import './reset.css';
+@import './shared.css';
+
+/* ── Global components ──────────────────────────────────── */
+@import './site-nav.css';
+@import './site-footer.css';
+@import './page-closer.css';
+
+/* ── Section components ─────────────────────────────────── */
+@import './hero-section.css';
+@import './statement-section.css';
+@import './video-section.css';
+@import './pillars-section.css';
+@import './capability-list.css';
+@import './delivery-section.css';
+@import './trust-section.css';
+
+/* ── Content / game page components ────────────────────── */
+@import './logos-grid.css';
+@import './releases-grid.css';
+@import './feature-banner.css';
+@import './media-showcase.css';
+@import './product-roadmap.css';
+@import './geo-presence.css';
+@import './licensing-grid.css';
