@@ -21,6 +21,9 @@ document.body.classList.add('js-ready');
     const delta = y - lastY;
     lastY = y;
 
+    // Shadow when not at top
+    nav.classList.toggle('nav--scrolled', y > 0);
+
     // Always show near the top
     if (y < HIDE_AFTER) {
       nav.classList.remove('nav--hidden');
