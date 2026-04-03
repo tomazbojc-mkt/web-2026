@@ -221,6 +221,8 @@
     z-index: -1;
     pointer-events: none;
     transform: translateY(8%);
+    transform-origin: center center;
+    will-change: transform, opacity;
   }
 
   .phone-mask-img {

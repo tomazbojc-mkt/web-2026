@@ -450,13 +450,24 @@
 <script>
   (function () {
     const screens = document.querySelectorAll('.phone-screen');
+    const phoneBg = document.querySelector('.phone-bg');
     let current = 0;
+
+    function animateBg() {
+      if (!phoneBg) return;
+      gsap.to(phoneBg, {
+        rotation: '+=45',
+        duration: 0.6,
+        ease: 'back.out(1.6)'
+      });
+    }
 
     function showScreen(index) {
       if (index === current) return;
       screens[current].classList.remove('is-active');
       current = index;
       screens[current].classList.add('is-active');
+      animateBg();
     }
 
     screens[0].classList.add('is-active');
