@@ -1066,9 +1066,7 @@
   /* ==================== HUB BANNER ==================== */
   .hub-banner {
     position: relative;
-    min-height: 400px;
-    max-height: 800px;
-    height: 70vh;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
