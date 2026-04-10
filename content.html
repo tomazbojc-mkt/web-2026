@@ -16,14 +16,120 @@
   <div class="nav-inner">
     <img src="assets/logo-new.svg" alt="Bragg Logo" class="nav-logo-img" />
     <ul class="nav-links">
-      <li><a href="#solutions">What we do <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-      <li><a href="#why">About us <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-      <li><a href="#launch">Careers <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-      <li><a href="#investors">Investors <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      <li>
+        <a href="#" class="nav-link-trigger" data-menu="what-we-do" aria-expanded="false" aria-controls="mega-what-we-do">What we do <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </li>
+      <li>
+        <a href="#" class="nav-link-trigger" data-menu="about-us" aria-expanded="false" aria-controls="mega-about-us">About us <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </li>
+      <li>
+        <a href="#" class="nav-link-trigger" data-menu="careers" aria-expanded="false" aria-controls="mega-careers">Careers <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </li>
+      <li>
+        <a href="#" class="nav-link-trigger" data-menu="investors" aria-expanded="false" aria-controls="mega-investors">Investors <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </li>
     </ul>
     <div class="nav-actions">
       <a href="#contact" class="nav-cta">Talk to sales</a>
     </div>
+  </div>
+
+  <div class="nav-mega-wrap" id="navMega" aria-hidden="true">
+    <section class="nav-mega-panel nav-mega-solutions" id="mega-what-we-do" data-menu="what-we-do" role="region" aria-label="What we do">
+      <h3 class="mega-solutions-title">Explore our solutions</h3>
+
+      <div class="mega-solutions-grid">
+        <div class="mega-solutions-col">
+          <span class="mega-kicker">PAM</span>
+          <a href="#solutions">Platform overview</a>
+          <a href="#solutions">PAM features</a>
+        </div>
+        <div class="mega-solutions-col">
+          <span class="mega-kicker">Fuze</span>
+          <a href="fuze.html">Fuze overview</a>
+          <a href="fuze.html">Gamification tools</a>
+        </div>
+        <div class="mega-solutions-col">
+          <span class="mega-kicker">Casino Content</span>
+          <a href="#solutions">Content and studios</a>
+          <a href="#releases">Roadmap</a>
+        </div>
+        <div class="mega-solutions-col">
+          <span class="mega-kicker">Bragg Hub</span>
+          <a href="#solutions">Hub overview</a>
+          <a href="#solutions">RGS partnership</a>
+          <a href="#solutions">Distribution partnership</a>
+        </div>
+      </div>
+
+      <div class="mega-solutions-footer">
+        <a href="#">Awards and recognition <span aria-hidden="true">↗</span></a>
+        <a href="#contact">Contact our sales <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="nav-mega-panel" id="mega-about-us" data-menu="about-us" role="region" aria-label="About us">
+      <div class="mega-col">
+        <span class="mega-kicker">Company</span>
+        <a href="#">Our Story</a>
+        <a href="#">Leadership</a>
+        <a href="#">Sustainability</a>
+      </div>
+      <div class="mega-col">
+        <span class="mega-kicker">Updates</span>
+        <a href="#">Newsroom</a>
+        <a href="#">Press Releases</a>
+        <a href="#">Brand Assets</a>
+      </div>
+      <div class="mega-feature">
+        <span class="mega-kicker">Global</span>
+        <h4>Built across markets</h4>
+        <p>Teams in Toronto, London, Ljubljana, Sliema, Reno, and beyond.</p>
+        <a class="mega-feature-link" href="#">Meet the team</a>
+      </div>
+    </section>
+
+    <section class="nav-mega-panel" id="mega-careers" data-menu="careers" role="region" aria-label="Careers">
+      <div class="mega-col">
+        <span class="mega-kicker">Life at Bragg</span>
+        <a href="#">Culture &amp; Values</a>
+        <a href="#">Benefits</a>
+        <a href="#">Remote-first teams</a>
+      </div>
+      <div class="mega-col">
+        <span class="mega-kicker">Open Roles</span>
+        <a href="#">Engineering</a>
+        <a href="#">Product &amp; Design</a>
+        <a href="#">Commercial</a>
+      </div>
+      <div class="mega-feature">
+        <span class="mega-kicker">Hiring now</span>
+        <h4>Work on global launches</h4>
+        <p>Join teams shipping high-scale iGaming experiences in regulated markets.</p>
+        <a class="mega-feature-link" href="#">View openings</a>
+      </div>
+    </section>
+
+    <section class="nav-mega-panel" id="mega-investors" data-menu="investors" role="region" aria-label="Investors">
+      <div class="mega-col">
+        <span class="mega-kicker">Investor Relations</span>
+        <a href="#">Financial Reports</a>
+        <a href="#">Events &amp; Presentations</a>
+        <a href="#">Corporate Governance</a>
+      </div>
+      <div class="mega-col">
+        <span class="mega-kicker">Stock</span>
+        <a href="#">NASDAQ: BRAG</a>
+        <a href="#">TSX: BRAG</a>
+        <a href="#">Analyst Coverage</a>
+      </div>
+      <div class="mega-feature">
+        <span class="mega-kicker">Latest</span>
+        <h4>Q1 Highlights</h4>
+        <p>Read quarterly updates and strategic priorities for regulated market growth.</p>
+        <a class="mega-feature-link" href="#">Read report</a>
+      </div>
+    </section>
   </div>
 </nav>
 

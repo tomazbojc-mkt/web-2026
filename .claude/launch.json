@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "web",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "8080", "/Users/tomaz.bojc/Documents/sandbox/web-2026"],
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080"],
       "port": 8080
     }
   ]
