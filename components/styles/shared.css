@@ -97,6 +97,13 @@ h2 {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }
 
+@media (max-width: 768px) {
+  .btn-primary {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 /* Flair ripple element injected by main.js on hover */
 .btn-flair {
   position: absolute;

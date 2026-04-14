@@ -46,8 +46,8 @@
       </div>
     </div>
   </div>
- <div class="hero-fuze">
-        <img src="assets/img/fuze-hero.png" alt="Fuze player journey" class="hero-fuze--image">
+ <div class="fuze-hero__media">
+        <img src="assets/img/fuze-hero.png" alt="Fuze player journey" class="fuze-hero__image">
     </div>
 </section>
 
@@ -59,35 +59,38 @@
       <span class="accent">fuze transforms the player journey.</span>
     </h2>
     <div class="big-idea__phone fade-up stagger-2">
-        <div class="big-idea__label" aria-label="Jackpot">
-          <div class="big-idea__label-icon" aria-hidden="true">💎</div>
-          <div class="big-idea__label-text">
-            <span class="big-idea__label-title">jackpot triggered</span>
-            <span class="big-idea__label-value">EUR12,480</span>
+        <div class="feature-label" aria-label="Jackpot">
+          <div class="feature-label__icon" aria-hidden="true">💎</div>
+          <div class="feature-label__text">
+            <span class="feature-label__title">jackpot triggered</span>
+            <span class="feature-label__value">EUR12,480</span>
           </div>
         </div>
-        <div class="big-idea__label" aria-label="Session time">
-          <div class="big-idea__label-icon" aria-hidden="true">⬆️</div>
-          <div class="big-idea__label-text">
-            <span class="big-idea__label-title">session time</span>
-            <span class="big-idea__label-value">+32% with Fuze™</span>
+        <div class="feature-label" aria-label="Session time">
+          <div class="feature-label__icon" aria-hidden="true">⬆️</div>
+          <div class="feature-label__text">
+            <span class="feature-label__title">session time</span>
+            <span class="feature-label__value">+32% with Fuze™</span>
           </div>
         </div>
-        <div class="big-idea__label" aria-label="Reward unlocked">
-          <div class="big-idea__label-icon" aria-hidden="true">🎯</div>
-          <div class="big-idea__label-text">
-            <span class="big-idea__label-title">reward unlocked</span>
-            <span class="big-idea__label-value">reward unlocked</span>
+        <div class="feature-label" aria-label="Reward unlocked">
+          <div class="feature-label__icon" aria-hidden="true">🎯</div>
+          <div class="feature-label__text">
+            <span class="feature-label__title">reward unlocked</span>
+            <span class="feature-label__value">reward unlocked</span>
           </div>
         </div>
-        <div class="big-idea__label" aria-label="Live Tournament">
-          <div class="big-idea__label-icon" aria-hidden="true">🏆</div>
-          <div class="big-idea__label-text">
-            <span class="big-idea__label-title">Live Tournament</span>
-            <span class="big-idea__label-value">1,247 players</span>
+        <div class="feature-label" aria-label="Live Tournament">
+          <div class="feature-label__icon" aria-hidden="true">🏆</div>
+          <div class="feature-label__text">
+            <span class="feature-label__title">Live Tournament</span>
+            <span class="feature-label__value">1,247 players</span>
           </div>
         </div>
-      <img src="assets/fuze/phone-fuze.png" alt="Fuze phone gameplay preview" class="big-idea__phone-img">
+      <picture>
+        <source media="(max-width: 500px)" srcset="assets/fuze/fuze-early-life.png">
+        <img src="assets/fuze/phone-fuze.png" alt="Fuze product preview" class="big-idea__phone-img">
+      </picture>
     </div>
     <p class="big-idea__text fade-up stagger-3">
       Stand out with experiences that are personalized, fun and rewarding. Make every moment exciting and competitive, keeping players hooked and driving growth across engagement, conversions, and loyalty.
@@ -101,36 +104,36 @@
   <div class="fuze-presentation__articles">
 
     <!-- Section 0: Registration & Onboarding -->
-    <article class="fuze-presentation__article" id="registration" data-section="0">
-      <div class="content">
-        <p class="label">Registration &amp; Onboarding</p>
-        <h3 class="fp-heading">Convert new players from day one, turn early sessions into lasting habits</h3>
-        <p class="description">Stop wasting acquisition spend on churn and bonus abuse by guiding new players through habit-forming milestones from the moment they register.</p>
-        <div class="cards-grid">
-          <article class="card" data-flip-text="Identify high-value players at sign up. Personalize their bonuses and offers, ensuring the right incentive reaches the right player, while also preventing bonus abuse.">
+    <article class="fuze-presentation__article" id="registration" data-section="0" data-js="fuze-article">
+      <div class="fuze-presentation__content">
+        <p class="fuze-presentation__label">Registration &amp; Onboarding</p>
+        <h3 class="fuze-presentation__heading">Convert new players from day one, turn early sessions into lasting habits</h3>
+        <p class="fuze-presentation__description">Stop wasting acquisition spend on churn and bonus abuse by guiding new players through habit-forming milestones from the moment they register.</p>
+        <div class="card-grid">
+          <article class="card" data-flip-text="Identify high-value players at sign up. Personalize their bonuses and offers, ensuring the right incentive reaches the right player, while also preventing bonus abuse." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Bonus engine</h4>
+                <h4 class="card__title">Bonus engine</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <p class="card-metric">57<sup>%</sup></p>
-              <p class="card-desc">optimization of bonus costs</p>
+              <p class="card__metric">57<sup>%</sup></p>
+              <p class="card__description">optimization of bonus costs</p>
             </div>
           </article>
-          <article class="card" data-flip-text="Engage players with daily milestones and rewards for actions like logins, deposits, bets, and wins, driving repeat behavior and stronger sessions.">
+          <article class="card" data-flip-text="Engage players with daily milestones and rewards for actions like logins, deposits, bets, and wins, driving repeat behavior and stronger sessions." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Quests</h4>
+                <h4 class="card__title">Quests</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <p class="card-metric">74<sup>%</sup></p>
-              <p class="card-desc">increase in bets, session frequency &amp; length</p>
+              <p class="card__metric">74<sup>%</sup></p>
+              <p class="card__description">increase in bets, session frequency &amp; length</p>
             </div>
           </article>
         </div>
@@ -139,139 +142,139 @@
     </article>
 
     <!-- Section 1: Early Life -->
-    <article class="fuze-presentation__article" id="early-life" data-section="1">
-      <div class="content">
-        <p class="label">Early Life</p>
-        <h3 class="fp-heading">Help players discover the games they'll love without relying on bonuses</h3>
-        <p class="description">Instead of burying thousands of titles in a generic lobby, Fuze&#8482; uses machine learning to deliver a hyper-personalized game discovery experience that drives higher session value.</p>
-        <div class="cards-grid">
-        <article class="card card-full" data-flip-text="Deliver the most relevant games with Fuze™’s predictive engine that learns each player’s preferences in real-time.">
-          <div>
-            <header>
-              <h4 class="card-title">Game Recommendation System</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-            </header>
-            <p class="card-tags">Casino</p>
-          </div>
-          <div>
-            <p class="card-metric">45<sup>%</sup></p>
-            <p class="card-desc">increase in average revenue per session</p>
-          </div>
-        </article>
+    <article class="fuze-presentation__article" id="early-life" data-section="1" data-js="fuze-article">
+      <div class="fuze-presentation__content">
+        <p class="fuze-presentation__label">Early Life</p>
+        <h3 class="fuze-presentation__heading">Help players discover the games they'll love without relying on bonuses</h3>
+        <p class="fuze-presentation__description">Instead of burying thousands of titles in a generic lobby, Fuze&#8482; uses machine learning to deliver a hyper-personalized game discovery experience that drives higher session value.</p>
+        <div class="card-grid">
+          <article class="card card--full" data-flip-text="Deliver the most relevant games with Fuze™'s predictive engine that learns each player's preferences in real-time." data-js="flip-card">
+            <div>
+              <header>
+                <h4 class="card__title">Game Recommendation System</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+              </header>
+              <p class="card__tags">Casino</p>
+            </div>
+            <div>
+              <p class="card__metric">45<sup>%</sup></p>
+              <p class="card__description">increase in average revenue per session</p>
+            </div>
+          </article>
         </div>
         <a href="#" class="btn-primary">book a demo</a>
       </div>
     </article>
 
     <!-- Section 2: Retention & Cross-sell -->
-    <article class="fuze-presentation__article" id="retention" data-section="2">
-      <div class="content">
-        <p class="label">Retention &amp; Cross-sell</p>
-        <h3 class="fp-heading">Keep players coming back with excitement and real-time rewards</h3>
-        <p class="description">Break the cycle of transactional play by replacing static bonuses with dynamic, real-time mechanics that build long-term loyalty and seamless cross-sell.</p>
-        <div class="cards-grid">
-          <article class="card" data-flip-text="Turn solo play into competitive experiences with configurable leaderboards - entry rules, prize pools and durations - creating quick daily challenges or weekly competitions.">
+    <article class="fuze-presentation__article" id="retention" data-section="2" data-js="fuze-article">
+      <div class="fuze-presentation__content">
+        <p class="fuze-presentation__label">Retention &amp; Cross-sell</p>
+        <h3 class="fuze-presentation__heading">Keep players coming back with excitement and real-time rewards</h3>
+        <p class="fuze-presentation__description">Break the cycle of transactional play by replacing static bonuses with dynamic, real-time mechanics that build long-term loyalty and seamless cross-sell.</p>
+        <div class="card-grid">
+          <article class="card" data-flip-text="Turn solo play into competitive experiences with configurable leaderboards - entry rules, prize pools and durations - creating quick daily challenges or weekly competitions." data-js="flip-card">
             <div>
               <header>
-              <h4 class="card-title">Tournaments with real-time leaderboards</h4>
+              <h4 class="card__title">Tournaments with real-time leaderboards</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <p class="card-metric">60<sup>%</sup></p>
-              <p class="card-desc">extra revenue in bets during tournament periods</p>
+              <p class="card__metric">60<sup>%</sup></p>
+              <p class="card__description">extra revenue in bets during tournament periods</p>
             </div>
           </article>
-          <article class="card" data-flip-text="Reward players for their gameplay and encourage repeat visits with weekly draws and digital scratch cards, building anticipation to see what they'll win next.">
+          <article class="card" data-flip-text="Reward players for their gameplay and encourage repeat visits with weekly draws and digital scratch cards, building anticipation to see what they'll win next." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Big Ticket Bonanza</h4>
+                <h4 class="card__title">Big Ticket Bonanza</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <p class="card-metric">80<sup>%</sup></p>
-              <p class="card-desc">increase in bets</p>
+              <p class="card__metric">80<sup>%</sup></p>
+              <p class="card__description">increase in bets</p>
             </div>
           </article>
-          <article class="card" data-flip-text="Add a layer of always-winning free-to-play games, and surprise players with rewards while driving deposits, gameplay frequency, and participation in campaigns.">
+          <article class="card" data-flip-text="Add a layer of always-winning free-to-play games, and surprise players with rewards while driving deposits, gameplay frequency, and participation in campaigns." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Fuze&#8482; Arcade</h4>
+                <h4 class="card__title">Fuze&#8482; Arcade</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <img src="assets/svg/zap.svg" class="card-icon" alt="" />
-              <p class="card-desc">On-the-spot excitement that keeps players coming back</p>
+              <img src="assets/svg/zap.svg" class="card__icon" alt="" />
+              <p class="card__description">On-the-spot excitement that keeps players coming back</p>
             </div>
           </article>
-          <article class="card" data-flip-text="Add self-funded jackpot drops to selected games and encourage players to stay longer and play more, creating a sense of urgency.">
+          <article class="card" data-flip-text="Add self-funded jackpot drops to selected games and encourage players to stay longer and play more, creating a sense of urgency." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Flash Jackpot</h4>
+                <h4 class="card__title">Flash Jackpot</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <img src="assets/svg/zap.svg" class="card-icon" alt="" />
-              <p class="card-desc">Instant player activity and heightened attention</p>
+              <img src="assets/svg/zap.svg" class="card__icon" alt="" />
+              <p class="card__description">Instant player activity and heightened attention</p>
             </div>
           </article>
-          <article class="card card-full" data-flip-text="Deliver contextual messages directly within gameplay to promote offers, new content, and cross-sell opportunities without disrupting the experience.">
+          <article class="card card--full" data-flip-text="Deliver contextual messages directly within gameplay to promote offers, new content, and cross-sell opportunities without disrupting the experience." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">In-game notifications</h4>
+                <h4 class="card__title">In-game notifications</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino · Sportsbook</p>
+              <p class="card__tags">Casino · Sportsbook</p>
             </div>
             <div>
-              <img src="assets/svg/zap.svg" class="card-icon" alt="" />
-              <p class="card-desc">Immediate engagement and conversions</p>
+              <img src="assets/svg/zap.svg" class="card__icon" alt="" />
+              <p class="card__description">Immediate engagement and conversions</p>
             </div>
           </article>
         </div>
-        
+
         <a href="#" class="btn-primary">book a demo</a>
       </div>
     </article>
 
     <!-- Section 3: VIP & Lifetime Value -->
-    <article class="fuze-presentation__article" id="vip" data-section="3">
-      <div class="content">
-        <p class="label">VIP &amp; Lifetime Value</p>
-        <h3 class="fp-heading">Turn everyday players into VIP and keep them playing longer</h3>
-        <p class="description">Since high-value players are built rather than born, Fuze&#8482; provides the personalized incentives and progression needed to nurture regular users into loyal, long-term VIPs.</p>
-        <div class="cards-grid">
-          <article class="card" data-flip-text="Unify all mechanics into a single gamified economy, where players cross-game rewards creating a continuous progression, engagement and VIP growth.">
+    <article class="fuze-presentation__article" id="vip" data-section="3" data-js="fuze-article">
+      <div class="fuze-presentation__content">
+        <p class="fuze-presentation__label">VIP &amp; Lifetime Value</p>
+        <h3 class="fuze-presentation__heading">Turn everyday players into VIP and keep them playing longer</h3>
+        <p class="fuze-presentation__description">Since high-value players are built rather than born, Fuze&#8482; provides the personalized incentives and progression needed to nurture regular users into loyal, long-term VIPs.</p>
+        <div class="card-grid">
+          <article class="card" data-flip-text="Unify all mechanics into a single gamified economy, where players cross-game rewards creating a continuous progression, engagement and VIP growth." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">Loyalty System &ndash; Full Fuze&#8482; Stack</h4>
+                <h4 class="card__title">Loyalty System &ndash; Full Fuze&#8482; Stack</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino &middot; Sportsbook</p>
+              <p class="card__tags">Casino &middot; Sportsbook</p>
             </div>
             <div>
-              <img src="assets/svg/zap.svg" class="card-icon" alt="" />
-              <p class="card-desc">More bets per session as players chase progression milestones</p>
+              <img src="assets/svg/zap.svg" class="card__icon" alt="" />
+              <p class="card__description">More bets per session as players chase progression milestones</p>
             </div>
           </article>
-          <article class="card" data-flip-text="Reward top players with access to premium competitions. As they progress, they unlock exclusive tournaments and high-value rewards, reinforcing status and long-term engagement.">
+          <article class="card" data-flip-text="Reward top players with access to premium competitions. As they progress, they unlock exclusive tournaments and high-value rewards, reinforcing status and long-term engagement." data-js="flip-card">
             <div>
               <header>
-                <h4 class="card-title">VIP Progression &ndash; Exclusive Tournaments</h4>
+                <h4 class="card__title">VIP Progression &ndash; Exclusive Tournaments</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               </header>
-              <p class="card-tags">Casino &middot; Sportsbook</p>
+              <p class="card__tags">Casino &middot; Sportsbook</p>
             </div>
             <div>
-              <img src="assets/svg/zap.svg" class="card-icon" alt="" />
-              <p class="card-desc">Longer player lifecycles through progression-based engagement</p>
+              <img src="assets/svg/zap.svg" class="card__icon" alt="" />
+              <p class="card__description">Longer player lifecycles through progression-based engagement</p>
             </div>
           </article>
         </div>
@@ -282,21 +285,21 @@
   </div><!-- /.fuze-presentation__articles -->
 
   <!-- Right: sticky phone -->
-  <div class="phone-track" aria-hidden="true">
-    <img src="assets/fuze/rectangle-background.svg" class="phone-bg" alt="" />
-    <div class="phone">
-      <img src="assets/img/phone-mask.png" class="phone-mask-img" alt="" />
-      <div class="phone-screens">
-        <div class="phone-screen" data-screen="0">
-          <video class="phone-video" src="assets/video/01Registration-Onboarding.webm" autoplay loop muted playsinline></video>
+  <div class="phone" aria-hidden="true">
+    <img src="assets/fuze/rectangle-background.svg" class="phone__bg" alt="" data-js="phone-bg" />
+    <div class="phone__shell">
+      <img src="assets/img/phone-mask.png" class="phone__mask" alt="" />
+      <div class="phone__screens">
+        <div class="phone__screen" data-screen="0" data-js="phone-screen">
+          <video class="phone__video" src="assets/video/01Registration-Onboarding.webm" autoplay loop muted playsinline></video>
         </div>
-        <div class="phone-screen" data-screen="1">
+        <div class="phone__screen" data-screen="1" data-js="phone-screen">
           <img src="assets/fuze/fuze-early-life.png" alt="">
         </div>
-        <div class="phone-screen" data-screen="2">
+        <div class="phone__screen" data-screen="2" data-js="phone-screen">
           <img src="assets/fuze/fuze-retention.png" alt="">
         </div>
-        <div class="phone-screen" data-screen="3">
+        <div class="phone__screen" data-screen="3" data-js="phone-screen">
           <img src="assets/fuze/fuze-vip.png" alt="">
         </div>
       </div>

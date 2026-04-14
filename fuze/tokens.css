@@ -1,0 +1,22 @@
+/* ============================================================
+   fuze/tokens.css
+   Fuze-specific tokens that extend variables.css.
+   Only define here what the global system doesn't already cover.
+   ============================================================ */
+
+:root {
+  /* Glass / frosted surface */
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-blur:   4.6px;
+  --glass-shadow: 0 4px 7px rgba(0, 0, 0, 0.07);
+
+  /* Shadows */
+  --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* Typography: large display number used in card metrics.
+     28px sits between --font-size-xl (24px) and --font-size-3xl (36px). */
+  --font-size-display: 28px;
+
+  /* Phone screen background (off-brand dark, not in the color palette) */
+  --phone-screen-bg: #1c1c1e;
+}

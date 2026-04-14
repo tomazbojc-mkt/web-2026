@@ -1,0 +1,13 @@
+/* ==================== PAGE-LEVEL SCROLL SNAP ==================== */
+
+html:has(.page-fuze) {
+  scroll-snap-type: y mandatory;
+}
+
+.page-fuze .hero.fuze-hero,
+.page-fuze .big-idea,
+.page-fuze .fuze-presentation__article,
+.page-fuze .closer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

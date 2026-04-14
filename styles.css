@@ -1,3 +1,4 @@
+@import url(variables.css);
 @import url(fuze.css);
 @import url(navigation.css);
 
@@ -159,6 +160,13 @@
 
   .btn-primary:hover .btn-label {
     color: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    .btn-primary {
+      width: 100%;
+      min-width: 0;
+    }
   }
 
   .btn-flair {
