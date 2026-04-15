@@ -69,7 +69,8 @@
 
   .fuze-presentation__media {
     display: block;
-    width: min(70vw, 320px);
+    width: fit-content;
+    height: 60vh;
     margin: 0 auto var(--units-spacing-xl);
     border-radius: 32px;
     overflow: hidden;
@@ -78,9 +79,8 @@
 
   .fuze-presentation__media-asset {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 300 / 648;
+    width: auto;
+    height: 100%;
     object-fit: cover;
   }
 }

@@ -33,3 +33,20 @@
    line-height: var(--font-line-height-5xl, 64px);
    text-transform: lowercase;
 }
+
+.fuze-benefits__cards {
+  display: flex;
+  gap: var(--units-spacing-2xl);
+  max-width: 1440px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .fuze-benefits {
+    padding: var(--units-size-xl) var(--units-spacing-lg);
+  }
+
+  .fuze-benefits__cards {
+    flex-direction: column;
+  }
+}
