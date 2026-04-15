@@ -1,17 +1,36 @@
 /* ==================== FUZE HERO ==================== */
 
+/* Ensure hero text always renders above the background image */
+.fuze-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 .fuze-hero__media {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
   max-width: 1440px;
-  height: 100%;
-  object-fit: cover;
   z-index: 0;
   pointer-events: none;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: flex-end;      /* anchor to bottom */
+  justify-content: flex-end;  /* anchor to right */
 }
+
+/* picture is the flex child — needs height to pass down to img */
+.fuze-hero__media picture {
+  display: block;
+  height: 100%;
+}
+
+/* Desktop: full-height image, auto width to preserve aspect ratio */
+.fuze-hero__image {
+  display: block;
+  height: auto;
+  width: auto;
+  object-fit: cover;
+  object-position: bottom right;
+}
+

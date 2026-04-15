@@ -47,7 +47,11 @@
     </div>
   </div>
   <div class="fuze-hero__media">
-    <img src="assets/img/fuze-hero.png" alt="Fuze player journey" class="fuze-hero__image">
+    <picture>
+      <source media="(max-width: 500px)"  srcset="assets/fuze/fuze-hero-mobile.png">
+      <source media="(max-width: 767px)" srcset="assets/fuze/fuze-hero-tablet.png">
+      <img src="assets/fuze/fuze-hero-desktop.png" alt="Fuze player journey" class="fuze-hero__image">
+    </picture>
   </div>
 </section>
 
