@@ -50,6 +50,10 @@
   margin-bottom: 28px;
 }
 
+.fuze-presentation__media {
+  display: none;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
@@ -61,5 +65,22 @@
   .fuze-presentation__article {
     min-height: auto;
     padding: 60px 0;
+  }
+
+  .fuze-presentation__media {
+    display: block;
+    width: min(70vw, 320px);
+    margin: 0 auto var(--units-spacing-xl);
+    border-radius: 32px;
+    overflow: hidden;
+    background: var(--phone-screen-bg);
+  }
+
+  .fuze-presentation__media-asset {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 300 / 648;
+    object-fit: cover;
   }
 }

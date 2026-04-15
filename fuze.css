@@ -1,11 +1,10 @@
 /* ============================================================
    fuze.css — component index
-   Import order matters: page → hero → big-idea → presentation
+   Import order matters: hero → big-idea → presentation
                          → phone → card
    ============================================================ */
 
 @import url('fuze/tokens.css');
-@import url('fuze/page.css');
 @import url('fuze/hero.css');
 @import url('fuze/feature-label.css');
 @import url('fuze/big-idea.css');

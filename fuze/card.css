@@ -11,7 +11,6 @@
 /* ==================== CARD ==================== */
 
 .card {
-  border-radius: 12px;
   transition: box-shadow 200ms ease;
 }
 
@@ -31,7 +30,7 @@
 .card__back {
   position: absolute;
   inset: 0;
-  border-radius: 12px;
+  border-radius: var(--units-radius-lg);
   padding: var(--units-spacing-md) 18px;
   border-width: var(--units-border-sm);
   border-style: solid;
@@ -54,7 +53,7 @@
   pointer-events: none;
 }
 
-.card__front header {
+.card__heading-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -62,7 +61,7 @@
   margin-bottom: var(--units-spacing-2xs);
 }
 
-.card__front header svg {
+.card__heading-row svg {
   flex-shrink: 0;
   color: var(--color-gray-300);
   transition: color 0.2s;
@@ -70,7 +69,7 @@
   margin-top: 1px;
 }
 
-.card__front header svg:hover {
+.card__heading-row svg:hover {
   color: var(--black);
 }
 

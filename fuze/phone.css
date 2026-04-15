@@ -81,9 +81,6 @@
 
 @media (max-width: 900px) {
   .phone {
-    position: relative;
-    height: auto;
-    padding: 60px 0 40px;
-    top: auto;
+    display: none;
   }
 }
