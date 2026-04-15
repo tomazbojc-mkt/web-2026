@@ -299,7 +299,33 @@ nav.nav--menu-open {
 	}
 }
 
-@media (max-width: 640px) {
-	.nav-links { display: none; }
-	.nav-mega-wrap { display: none; }
+.nav-hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	padding: 8px;
+	cursor: default;
+}
+
+.nav-hamburger span {
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: var(--black);
+	border-radius: 2px;
+}
+
+@media (max-width: 1000px) {
+	.nav-inner {
+		grid-template-columns: 1fr auto;
+	}
+	.nav-links,
+	.nav-actions,
+	.nav-mega-wrap {
+		display: none;
+	}
+	.nav-hamburger {
+		display: flex;
+	}
 }

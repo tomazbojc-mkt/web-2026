@@ -276,7 +276,7 @@
   .hero h2 {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    max-width: 620px;
+    max-width: 55vw;
   }
 
   .hero-buttons {
@@ -429,6 +429,10 @@
   .content-hero h1 {
     font-size: clamp(3rem, 7vw, 6.25rem);
     white-space: nowrap;
+  }
+
+  .content-hero h2 {
+    font-size: clamp(1rem, 0.91rem + 0.38vw, 1.25rem);
   }
 
   .flip-i {
