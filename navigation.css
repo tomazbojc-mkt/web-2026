@@ -277,7 +277,7 @@ nav.nav--menu-open {
 }
 
 @media (max-width: 1024px) {
-	nav { padding: 0 24px; }
+	nav { padding: 0 ; }
 	.nav-mega-wrap {
 		padding: 0 24px;
 	}
