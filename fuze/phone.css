@@ -77,6 +77,17 @@
   display: block;
 }
 
+/* ── Multi-image crossfade (any screen with 2+ images) ── */
+
+.phone__screen--cycling img {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.phone__screen--cycling img.is-active {
+  opacity: 1;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
