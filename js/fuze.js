@@ -44,26 +44,52 @@
     gsap.to(phoneBg, { rotation: '+=45', duration: 0.6, ease: 'back.out(1.6)' });
   }
 
-  function showScreen(index) {
+  function showScreen(index, dir = 1) {
     if (index === current) return;
-    stopCycle(screens[current]);
-    screens[current].classList.remove('phone__screen--active');
+
+    const outScreen = screens[current];
+    const inScreen  = screens[index];
+
+    stopCycle(outScreen);
+
+    const outY    = dir >= 0 ? '100%' : '-100%';
+    const inFromY = dir >= 0 ? '100%' : '-100%';
+
+    gsap.killTweensOf(outScreen);
+    gsap.killTweensOf(inScreen);
+
+    inScreen.classList.add('phone__screen--active');
+
+    gsap.to(outScreen, {
+      y: outY,
+      duration: 0.5,
+      ease: 'power3.inOut',
+      onComplete: () => outScreen.classList.remove('phone__screen--active'),
+    });
+
+    gsap.fromTo(inScreen,
+      { y: inFromY },
+      { y: '0%', duration: 0.5, ease: 'power3.inOut' }
+    );
+
     current = index;
-    screens[current].classList.add('phone__screen--active');
-    startCycle(screens[current]);
+    startCycle(inScreen);
     animateBg();
   }
 
+  // Position all screens below, screen 0 visible
+  gsap.set(screens, { y: '100%' });
   screens[0].classList.add('phone__screen--active');
+  gsap.set(screens[0], { y: '0%' });
   startCycle(screens[0]);
 
-  document.querySelectorAll('[data-js-article]').forEach(article => {
+  document.querySelectorAll('[data-js-article]:not([hidden])').forEach(article => {
     ScrollTrigger.create({
       trigger: article,
       start: 'top center',
       end:   'bottom center',
-      onEnter:     () => showScreen(Number(article.dataset.section)),
-      onEnterBack: () => showScreen(Number(article.dataset.section)),
+      onEnter:     () => showScreen(Number(article.dataset.section), 1),
+      onEnterBack: () => showScreen(Number(article.dataset.section), -1),
     });
   });
 })();

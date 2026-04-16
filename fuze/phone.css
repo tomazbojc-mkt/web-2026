@@ -11,7 +11,7 @@
   justify-content: center;
   pointer-events: none;
   z-index: 10;
-  isolation: isolate;
+  will-change: transform;
 }
 
 /* ── Shell ── */
@@ -50,20 +50,18 @@
   inset: 8px 9px;
   border-radius: 42px;
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .phone__screen {
   position: absolute;
   inset: 0;
   background: var(--phone-screen-bg);
-  opacity: 0;
-  transition: opacity 0.55s ease;
-  overflow: hidden;
   z-index: 0;
+  will-change: transform;
 }
 
 .phone__screen--active {
-  opacity: 1;
   z-index: 1;
 }
 
