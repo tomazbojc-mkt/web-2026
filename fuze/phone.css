@@ -51,6 +51,7 @@
   border-radius: 42px;
   overflow: hidden;
   transform: translateZ(0);
+  background: var(--phone-screen-bg);
 }
 
 .phone__screen {

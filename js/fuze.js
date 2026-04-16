@@ -52,8 +52,8 @@
 
     stopCycle(outScreen);
 
-    const outY    = dir >= 0 ? '100%' : '-100%';
-    const inFromY = dir >= 0 ? '100%' : '-100%';
+    const outY    = dir >= 0 ? '-100%' : '100%';
+    const inFromY = dir >= 0 ? '100%'  : '-100%';
 
     gsap.killTweensOf(outScreen);
     gsap.killTweensOf(inScreen);

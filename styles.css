@@ -63,6 +63,15 @@
 
   .fade-up {
     will-change: opacity, transform;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  /* Clip-wipe headings: GSAP hides individual split lines, not the element */
+  h2.fade-up,
+  .content-hero h1.fade-up {
+    opacity: 1;
+    transform: none;
   }
 
   /* Stacked overlap — sections layer over each other */
