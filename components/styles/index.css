@@ -16,6 +16,7 @@
 
 @import './tokens.css';
 @import './reset.css';
+@import '../../fuze/btn.css';
 @import './shared.css';
 
 /* ── Global components ──────────────────────────────────── */

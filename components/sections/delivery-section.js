@@ -60,7 +60,7 @@ class DeliverySection extends HTMLElement {
       <p class="large-text fade-up stagger-1">${d.headline}</p>
       <p class="supporting fade-up stagger-2">${d.supporting}</p>
       <div style="margin-top: 32px;" class="fade-up stagger-3">
-        <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel} <span>→</span></a>
+        <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel} <span>→</span></a>
       </div>
     </div>
     <div class="launch-cards">${cardHTML}</div>

@@ -13,12 +13,6 @@
   line-height: 1.1;
 }
 
-.closer .btn-primary {
-  background: var(--white);
-  color: var(--black);
+.closer .btn--primary {
   margin-top: 48px;
-}
-
-.closer .btn-primary:hover {
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
 }

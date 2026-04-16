@@ -86,7 +86,7 @@ class StatementSection extends HTMLElement {
     <p class="large-text fade-up">${d.largeText}</p>
     <p class="supporting fade-up stagger-1">${d.supportingText}</p>
     <div style="text-align: center; margin-top: 40px;" class="fade-up stagger-2">
-      <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel}</a>
+      <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel}</a>
     </div>
   </div>
 </section>`;

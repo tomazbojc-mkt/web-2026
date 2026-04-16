@@ -47,7 +47,7 @@ class ProductRoadmap extends HTMLElement {
 
     const cardHTML = (d.games || []).map(g => `
 <div class="roadmap-card">
-  <div class="roadmap-thumb">
+  <div class="roadmap-thumb" data-js="thumb-overlay-host">
     ${g.badge ? `<span class="roadmap-badge">${g.badge}</span>` : ''}
     <img src="${g.src}" alt="${g.alt}">
   </div>
@@ -69,7 +69,7 @@ class ProductRoadmap extends HTMLElement {
         <label>Jurisdiction</label>
         <select>${jurisdictionOptions}</select>
       </div>
-      <a href="${d.viewAllHref}" class="btn-secondary btn-standalone">${d.viewAllLabel}</a>
+      <a href="${d.viewAllHref}" class="btn btn--secondary">${d.viewAllLabel}</a>
     </div>
     <div class="roadmap-carousel fade-up stagger-3">
       <div class="roadmap-track">${cardHTML}</div>

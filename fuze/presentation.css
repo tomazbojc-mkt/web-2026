@@ -9,12 +9,6 @@
   padding: 0 var(--units-spacing-2xl);
 }
 
-/* ── Left: scrolling articles ── */
-
-.fuze-presentation__articles {
-  /* natural scroll flow */
-}
-
 .fuze-presentation__article {
   min-height: 100vh;
   display: flex;
@@ -24,14 +18,6 @@
 
 .fuze-presentation__content {
   width: 100%;
-}
-
-/* ── Article text ── */
-
-.fuze-presentation__label {
-  color: var(--accent);
-  margin-bottom: 14px;
-  text-transform: lowercase;
 }
 
 .fuze-presentation__heading {

@@ -33,9 +33,9 @@
 </nav>
 
 <!-- SECTION 1: HERO -->
-<section class="hero content-hero fuze-hero section">
-  <div class="container">
-    <div class="hero-content">
+<section class="content-hero fuze-hero">
+  <div class="fuze-hero__container">
+    <div class="fuze-hero__hero-content">
       <h1 class="fade-up stagger-1">
         grab attention.<br>
         spark engagement.<br>
@@ -46,15 +46,15 @@
         Map out the player journeys, reduce friction and boost retention with real-time behavioral intelligence that maximizes lifetime value.
       </h2>
       <div class="hero-buttons fade-up stagger-3">
-        <a href="#contact" class="btn-primary">book a demo</a>
-        <a href="#solutions" class="btn-secondary btn-standalone">explore</a>
+        <a href="#contact" class="btn btn--primary" data-js="btn-flair">book a demo</a>
+        <a href="#solutions" class="btn btn--secondary">explore</a>
       </div>
     </div>
   </div>
   <div class="fuze-hero__media">
     <picture>
-      <source media="(max-width: 500px)"  srcset="assets/fuze/fuze-hero-mobile.png">
-      <source media="(max-width: 767px)" srcset="assets/fuze/fuze-hero-tablet.png">
+      <source media="(max-width: 600px)"  srcset="assets/fuze/fuze-hero-mobile.png">
+      <source media="(max-width: 1000px)" srcset="assets/fuze/fuze-hero-tablet.png">
       <img src="assets/fuze/fuze-hero-desktop.png" alt="Fuze player journey" class="fuze-hero__image">
     </picture>
   </div>
@@ -115,7 +115,7 @@
     <!-- Section 0: Registration & Onboarding -->
     <article class="fuze-presentation__article" id="registration" data-section="0" data-js="fuze-article">
       <div class="fuze-presentation__content">
-        <p class="fuze-presentation__label">Registration &amp; Onboarding</p>
+        <p class="c-eyebrow">Registration &amp; Onboarding</p>
         <h3 class="fuze-presentation__heading">Convert new players from day one, turn early sessions into lasting habits</h3>
         <p class="fuze-presentation__description">Stop wasting acquisition spend on churn and bonus abuse by guiding new players through habit-forming milestones from the moment they register.</p>
         <figure class="fuze-presentation__media">
@@ -165,14 +165,14 @@
             </div>
           </article>
         </div>
-        <a href="#" class="btn-primary">book a demo</a>
+        <a href="#" class="btn btn--primary" data-js="btn-flair">book a demo</a>
       </div>
     </article>
 
     <!-- Section 1: Early Life -->
     <article class="fuze-presentation__article" id="early-life" data-section="1" data-js="fuze-article">
       <div class="fuze-presentation__content">
-        <p class="fuze-presentation__label">Early Life</p>
+        <p class="c-eyebrow">Early Life</p>
         <h3 class="fuze-presentation__heading">Help players discover the games they'll love without relying on bonuses</h3>
         <p class="fuze-presentation__description">Instead of burying thousands of titles in a generic lobby, Fuze&#8482; uses machine learning to deliver a hyper-personalized game discovery experience that drives higher session value.</p>
         <figure class="fuze-presentation__media">
@@ -201,14 +201,14 @@
             </div>
           </article>
         </div>
-        <a href="#" class="btn-primary">book a demo</a>
+        <a href="#" class="btn btn--primary" data-js="btn-flair">book a demo</a>
       </div>
     </article>
 
     <!-- Section 2: Retention & Cross-sell -->
     <article class="fuze-presentation__article" id="retention" data-section="2" data-js="fuze-article">
       <div class="fuze-presentation__content">
-        <p class="fuze-presentation__label">Retention &amp; Cross-sell</p>
+        <p class="c-eyebrow">Retention &amp; Cross-sell</p>
         <h3 class="fuze-presentation__heading">Keep players coming back with excitement and real-time rewards</h3>
         <p class="fuze-presentation__description">Break the cycle of transactional play by replacing static bonuses with dynamic, real-time mechanics that build long-term loyalty and seamless cross-sell.</p>
         <figure class="fuze-presentation__media">
@@ -322,14 +322,14 @@
           </article>
         </div>
 
-        <a href="#" class="btn-primary">book a demo</a>
+        <a href="#" class="btn btn--primary" data-js="btn-flair">book a demo</a>
       </div>
     </article>
 
     <!-- Section 3: VIP & Lifetime Value -->
     <article class="fuze-presentation__article" id="vip" data-section="3" data-js="fuze-article">
       <div class="fuze-presentation__content">
-        <p class="fuze-presentation__label">VIP &amp; Lifetime Value</p>
+        <p class="c-eyebrow">VIP &amp; Lifetime Value</p>
         <h3 class="fuze-presentation__heading">Turn everyday players into VIP and keep them playing longer</h3>
         <p class="fuze-presentation__description">Since high-value players are built rather than born, Fuze&#8482; provides the personalized incentives and progression needed to nurture regular users into loyal, long-term VIPs.</p>
         <figure class="fuze-presentation__media">
@@ -379,7 +379,7 @@
             </div>
           </article>
         </div>
-        <a href="#" class="btn-primary">book a demo</a>
+        <a href="#" class="btn btn--primary" data-js="btn-flair">book a demo</a>
       </div>
     </article>
 
@@ -463,7 +463,73 @@
       built around the player.<br>
       <span class="muted">smart where it matters.</span>
     </p>
-    <a href="#contact" class="btn-primary fade-up stagger-1">book a demo</a>
+    <a href="#contact" class="btn btn--primary fade-up stagger-1" data-js="btn-flair">book a demo</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq__container">
+    <div class="faq__header">
+      <p class="c-eyebrow">Frequently Asked Questions</p>
+      <h2 class="faq__heading">Gamification &amp; Player Engagement Software</h2>
+    </div>
+    <div class="faq__accordion">
+
+      <details class="faq__item" open>
+        <summary class="faq__question">What problems does Fuze&#8482; solve for operators?</summary>
+        <div class="faq__answer">
+          <p>Fuze&#8482; solves high acquisition costs, bonus abuse, and player churn. By reacting instantly to how players play, Fuze&#8482; turns raw gameplay into a dynamic, interactive experience that provides reasons to return, progress, and engage more deeply, directly maximizing Lifetime Value (LTV).</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Which games and verticals is Fuze&#8482; compatible with?</summary>
+        <div class="faq__answer">
+          <p>Fuze&#8482; is entirely platform and provider agnostic. It works seamlessly across Bragg proprietary games, third-party slots, aggregated games, and your sportsbook platform. It eliminates vertical silos.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Can Fuze&#8482; be customized to match our brand and segmentation strategy?</summary>
+        <div class="faq__answer">
+          <p>Yes. Fuze&#8482; is fully configurable and brand-customisable. Operators can tailor:</p>
+          <ul>
+            <li>Campaign mechanics, triggers, and rewards</li>
+            <li>Player segmentation rules (VIPs, casuals, new players, reactivation cohorts, etc.)</li>
+            <li>Visual elements and UX to align with brand identity</li>
+          </ul>
+          <p>Campaigns can be adjusted in real time, allowing teams to test, optimise, and localise engagement strategies per market or player segment.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Is Fuze&#8482; compliant with regulated gaming markets?</summary>
+        <div class="faq__answer">
+          <p>Yes. Fuze&#8482; is built to operate within regulated iGaming environments. It supports market-specific compliance requirements, responsible gaming tools, player protections, and configurable controls to ensure promotions meet local regulatory standards.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">How do I measure campaign performance using Fuze&#8482;?</summary>
+        <div class="faq__answer">
+          <p>Fuze&#8482; provides real-time reporting and analytics dashboards that allow operators to track campaign performance across key KPIs, including:</p>
+          <ul>
+            <li>Player participation and engagement rates</li>
+            <li>Retention and reactivation performance</li>
+            <li>Bonus cost and ROI</li>
+            <li>Uplift in play frequency and spend</li>
+          </ul>
+          <p>These insights allow operators to continuously optimize campaigns, adjust mechanics on the fly, and clearly demonstrate commercial impact.</p>
+        </div>
+      </details>
+
+      <div class="faq__contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        Have any more questions? <a href="#contact">Contact us</a>
+      </div>
+
+    </div>
   </div>
 </section>
 

@@ -37,7 +37,7 @@ class ReleasesGrid extends HTMLElement {
     const d = scriptTag ? { ...RELEASES_GRID_DEFAULTS, ...JSON.parse(scriptTag.textContent) } : RELEASES_GRID_DEFAULTS;
 
     const thumbHTML = (d.games || []).map(g => `
-<div class="game-thumb"><img src="${g.src}" alt="${g.alt}"></div>`).join('');
+  <div class="game-thumb" data-js="thumb-overlay-host"><img src="${g.src}" alt="${g.alt}"></div>`).join('');
 
     this.innerHTML = `
 <section class="game-releases section" id="releases">
@@ -47,7 +47,7 @@ class ReleasesGrid extends HTMLElement {
         <h2 class="releases-heading fade-up">${d.heading}</h2>
         <p class="releases-sub fade-up stagger-1">${d.subheading}</p>
         <div class="releases-buttons fade-up stagger-2">
-          <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel}</a>
+          <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel}</a>
         </div>
       </div>
       <div class="releases-grid">${thumbHTML}</div>

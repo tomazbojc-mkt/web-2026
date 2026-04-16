@@ -124,7 +124,7 @@ class TrustSection extends HTMLElement {
     <p class="supporting fade-up stagger-1">${d.supporting}</p>
     <div class="stats-grid fade-up stagger-2">${statsHTML}</div>
     <div style="text-align: center; margin: 48px 0 56px;" class="fade-up stagger-3">
-      <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel} <span>→</span></a>
+      <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel} <span>→</span></a>
     </div>
     <div class="license-marquee-wrapper fade-up stagger-4">
       <div class="license-marquee">

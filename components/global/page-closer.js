@@ -30,7 +30,7 @@ class PageCloser extends HTMLElement {
       ${lines}<br>
       <span class="muted">${mutedLine}</span>
     </p>
-    <a href="${ctaHref}" class="btn-primary fade-up stagger-1">${ctaLabel}</a>
+    <a href="${ctaHref}" class="btn btn--primary fade-up stagger-1" data-js="btn-flair">${ctaLabel}</a>
   </div>
 </section>`;
   }

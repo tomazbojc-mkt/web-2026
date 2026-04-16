@@ -1,0 +1,5 @@
+.c-eyebrow {
+  color: var(--brand-accent);
+  margin-bottom: 14px;
+  text-transform: lowercase;
+}

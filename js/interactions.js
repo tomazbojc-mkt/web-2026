@@ -18,8 +18,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 
 // ── Button flair hover ────────────────────────
-// Creates a radial "blob" that follows the cursor inside each .btn-primary
-document.querySelectorAll('.btn-primary').forEach(btn => {
+// Creates a radial "blob" that follows the cursor inside each primary button
+document.querySelectorAll('[data-js="btn-flair"]').forEach(btn => {
   const label = document.createElement('span');
   label.className = 'btn-label';
   while (btn.firstChild) label.appendChild(btn.firstChild);
@@ -65,7 +65,7 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 
 // ── Game / roadmap thumb hover overlay ────────
 // Injects "play game" and "more info" links on hover
-document.querySelectorAll('.game-thumb, .roadmap-thumb').forEach(thumb => {
+document.querySelectorAll('[data-js="thumb-overlay-host"]').forEach(thumb => {
   const overlay = document.createElement('div');
   overlay.className = 'thumb-overlay';
   overlay.innerHTML = `

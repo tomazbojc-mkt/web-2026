@@ -525,7 +525,7 @@ if (gameThumbs.length) {
 
 
 // ==================== BUTTON FLAIR HOVER ====================
-document.querySelectorAll('.btn-primary').forEach(btn => {
+document.querySelectorAll('[data-js="btn-flair"]').forEach(btn => {
   // Wrap existing contents in a label span
   const label = document.createElement('span');
   label.className = 'btn-label';
@@ -573,7 +573,7 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 });
 
 // ==================== GAME THUMB HOVER OVERLAY ====================
-document.querySelectorAll('.game-thumb, .roadmap-thumb').forEach(thumb => {
+document.querySelectorAll('[data-js="thumb-overlay-host"]').forEach(thumb => {
   const overlay = document.createElement('div');
   overlay.className = 'thumb-overlay';
   overlay.innerHTML = `

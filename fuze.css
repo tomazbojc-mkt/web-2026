@@ -8,11 +8,14 @@
 @import url('fuze/hero.css');
 @import url('fuze/feature-label.css');
 @import url('fuze/big-idea.css');
+@import url('fuze/btn.css');
+@import url('fuze/c-eyebrow.css');
 @import url('fuze/presentation.css');
 @import url('fuze/phone.css');
 @import url('fuze/c-icon.css');
 @import url('fuze/card.css');
 @import url('fuze/c-card.css');
+@import url('fuze/accordion.css');
 
 
 .fuze-benefits {
@@ -37,7 +40,7 @@
 .fuze-benefits__cards {
   display: flex;
   gap: var(--units-spacing-2xl);
-  max-width: 1440px;
+  max-width: var(--media-size);
   width: 100%;
 }
 

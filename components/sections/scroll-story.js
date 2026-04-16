@@ -133,7 +133,7 @@ class ScrollStory extends HTMLElement {
     <h3 class="fp-heading">${sec.heading}</h3>
     <p class="description">${sec.description}</p>
     ${gridHTML}${fullHTML}
-    <a href="${sec.ctaHref}" class="btn-primary">${sec.ctaLabel}</a>
+    <a href="${sec.ctaHref}" class="btn btn--primary" data-js="btn-flair">${sec.ctaLabel}</a>
   </div>
 </article>`;
     }).join('');

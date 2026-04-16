@@ -53,7 +53,7 @@ class PillarsSection extends HTMLElement {
       <h1 class="fade-up">${d.heading}</h1>
       <p class="answer fade-up stagger-1">${d.answer}</p>
       <div style="margin-top: 40px;" class="fade-up stagger-2">
-        <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel} <span>→</span></a>
+        <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel} <span>→</span></a>
       </div>
     </div>
     <div class="pillar-cards">${cardHTML}</div>

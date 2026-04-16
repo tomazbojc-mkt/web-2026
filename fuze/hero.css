@@ -1,10 +1,29 @@
 /* ==================== FUZE HERO ==================== */
+.fuze-hero {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1440px;
+}
 
-/* Ensure hero text always renders above the background image */
-.fuze-hero .container {
+.fuze-hero__container {
+  flex: 1;
+  max-width: 1440px;
   position: relative;
   z-index: 1;
+  padding: var(--units-spacing-xl);
 }
+
+.fuze-hero__hero-content {
+  display: grid;
+  gap: var(--units-spacing-xl);
+}
+
+.fuze-hero__hero-content > h2 {
+  max-width: 50vw;
+}
+
 
 .fuze-hero__media {
   position: absolute;
@@ -15,11 +34,10 @@
   z-index: 0;
   pointer-events: none;
   display: flex;
-  align-items: flex-end;      /* anchor to bottom */
-  justify-content: flex-end;  /* anchor to right */
+  align-items: flex-end;      
+  justify-content: flex-end; 
 }
 
-/* picture is the flex child — needs height to pass down to img */
 .fuze-hero__media picture {
   display: block;
   height: 100%;
@@ -34,3 +52,20 @@
   object-position: bottom right;
 }
 
+@media (max-width: 1000px) {
+  .fuze-hero__hero-content > h2 {
+    max-width: 70vw;
+  }
+  .fuze-hero__hero-content {
+    gap: var(--units-spacing-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .fuze-hero__hero-content > h2 {
+    max-width: 100%;
+  }
+  .fuze-hero__hero-content {
+    gap: var(--units-spacing-3xl);
+  }
+}

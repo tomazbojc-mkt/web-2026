@@ -87,8 +87,8 @@ class HeroSection extends HTMLElement {
       <h1 class="fade-up stagger-1">${d.headline}</h1>
       <h2 class="fade-up stagger-2">${d.subheadline}</h2>
       <div class="hero-buttons fade-up stagger-3">
-        <a href="${d.primaryCtaHref}" class="btn-primary">${d.primaryCtaLabel}</a>
-        <a href="${d.secondaryCtaHref}" class="btn-secondary btn-standalone">${d.secondaryCtaLabel}</a>
+        <a href="${d.primaryCtaHref}" class="btn btn--primary" data-js="btn-flair">${d.primaryCtaLabel}</a>
+        <a href="${d.secondaryCtaHref}" class="btn btn--secondary">${d.secondaryCtaLabel}</a>
       </div>
     </div>
   </div>
@@ -108,8 +108,8 @@ class HeroSection extends HTMLElement {
       </h1>
       <h2 class="fade-up stagger-2">${d.subheadline}</h2>
       <div class="hero-buttons fade-up stagger-3">
-        <a href="${d.primaryCtaHref}" class="btn-primary">${d.primaryCtaLabel}</a>
-        <a href="${d.secondaryCtaHref}" class="btn-secondary btn-standalone">${d.secondaryCtaLabel}</a>
+        <a href="${d.primaryCtaHref}" class="btn btn--primary" data-js="btn-flair">${d.primaryCtaLabel}</a>
+        <a href="${d.secondaryCtaHref}" class="btn btn--secondary">${d.secondaryCtaLabel}</a>
       </div>
     </div>
     <div class="hero-visual fade-up stagger-2">
@@ -144,7 +144,7 @@ class HeroSection extends HTMLElement {
       <h1 class="fade-up stagger-1">${d.headline}</h1>
       <h2 class="fade-up stagger-2">${d.subheadline}</h2>
       <div class="hero-buttons fade-up stagger-3">
-        <a href="${d.ctaHref}" class="btn-primary">${d.ctaLabel}</a>
+        <a href="${d.ctaHref}" class="btn btn--primary" data-js="btn-flair">${d.ctaLabel}</a>
       </div>
     </div>
     <div class="hero-visual fade-up stagger-2">

@@ -34,7 +34,7 @@ class MediaCard extends HTMLElement {
 
       this.innerHTML = `
 <div class="roadmap-card">
-  <div class="roadmap-thumb">
+  <div class="roadmap-thumb" data-js="thumb-overlay-host">
     ${badge ? `<span class="roadmap-badge">${badge}</span>` : ''}
     <img src="${src}" alt="${alt}">
   </div>
@@ -60,7 +60,7 @@ class MediaCard extends HTMLElement {
       ].filter(Boolean).join(' ');
 
       this.innerHTML = `
-<div class="game-thumb" ${scatterAttrs}>
+<div class="game-thumb" data-js="thumb-overlay-host" ${scatterAttrs}>
   <img src="${src}" alt="${alt}">
 </div>`;
     }
