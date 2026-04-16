@@ -108,7 +108,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .big-idea__phone .feature-label {
     position: absolute;
     inset: auto;
