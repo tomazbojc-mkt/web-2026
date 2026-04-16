@@ -123,3 +123,27 @@ allFlipCards.forEach(card => {
   // Clicking the back → flip back to front
   back.addEventListener('click', () => card.classList.remove('card--flipped'));
 });
+
+
+// ── Feature labels: pop-in sequence on scroll into view ──────
+(() => {
+  const phone = document.querySelector('.big-idea__phone');
+  if (!phone) return;
+  const labels = phone.querySelectorAll('.feature-label--animated');
+  if (!labels.length) return;
+
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          labels.forEach((label, i) => {
+            setTimeout(() => label.classList.add('is-visible'), i * 180);
+          });
+          obs.disconnect();
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+  obs.observe(phone);
+})();

@@ -1,0 +1,92 @@
+/* ===== Feature Label — animated modifier =====
+   Adds:
+     1. Pop-in sequence on first viewport entry (.is-visible added by JS)
+     2. Subtle continuous float on x/y axis
+   Uses individual CSS transform properties (translate, scale) so they
+   compose cleanly with the transform: rotate() set by the parent context.
+   feature-label.css remains untouched.
+============================================== */
+
+/* ── Float keyframes (each label gets its own phase) ── */
+
+@keyframes fl-float-a {
+  0%, 100% { translate:  0px   0px; }
+  25%       { translate:  2px  -6px; }
+  50%       { translate: -1px   4px; }
+  75%       { translate:  2px   2px; }
+}
+
+@keyframes fl-float-b {
+  0%, 100% { translate:  0px  0px; }
+  30%       { translate: -2px -4px; }
+  60%       { translate:  1px  6px; }
+  85%       { translate: -1px -2px; }
+}
+
+@keyframes fl-float-c {
+  0%, 100% { translate:  0px  0px; }
+  20%       { translate:  1px  5px; }
+  55%       { translate: -2px -5px; }
+  80%       { translate:  2px -3px; }
+}
+
+@keyframes fl-float-d {
+  0%, 100% { translate:  0px  0px; }
+  35%       { translate: -2px  4px; }
+  65%       { translate:  2px -6px; }
+  85%       { translate: -1px  3px; }
+}
+
+/* ── Initial state: hidden, slightly shrunk ── */
+
+.feature-label--animated {
+  opacity: 0;
+  scale: 0.78;
+  transition:
+    opacity 0.45s ease,
+    scale   0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Visible: reveal + start float (float delay = pop-in end) ── */
+
+.feature-label--animated.is-visible {
+  opacity: 1;
+  scale: 1;
+}
+
+.feature-label--animated.is-visible:nth-child(1) {
+  animation: fl-float-a 6s   ease-in-out 0.65s infinite;
+}
+.feature-label--animated.is-visible:nth-child(2) {
+  animation: fl-float-b 7.5s ease-in-out 0.82s infinite;
+}
+.feature-label--animated.is-visible:nth-child(3) {
+  animation: fl-float-c 8s   ease-in-out 1s    infinite;
+}
+.feature-label--animated.is-visible:nth-child(4) {
+  animation: fl-float-d 6.5s ease-in-out 1.18s infinite;
+}
+
+/* ── Desktop hover: freeze float, lift + glow ── */
+
+@media (hover: hover) {
+  .feature-label--animated.is-visible:hover {
+    animation-play-state: paused;
+    scale: 1.07;
+    filter: drop-shadow(0 10px 28px rgba(20, 60, 200, 0.2));
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  }
+}
+
+/* ── Respect reduced motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-label--animated {
+    opacity: 1;
+    scale: 1;
+    transition: none;
+  }
+  .feature-label--animated.is-visible {
+    animation: none;
+  }
+}
