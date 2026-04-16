@@ -1,6 +1,6 @@
 /* ==================== FUZE HERO ==================== */
 .fuze-hero {
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   margin: 0 auto;
