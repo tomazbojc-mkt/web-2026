@@ -14,14 +14,70 @@ let selectCardImages = null;
 (() => {
   if (!window.matchMedia('(min-width: 901px)').matches) return;
 
+  const articles = Array.from(document.querySelectorAll('[data-js-article]'));
   const screens = Array.from(document.querySelectorAll('[data-js-screen]'));
   const phoneBg = document.querySelector('[data-js-bg]');
   const presentation = document.querySelector('.fuze-presentation');
-  if (!screens.length) return;
+  if (!screens.length || !articles.length) return;
+
+  const sections = new Map();
+
+  articles.forEach(article => {
+    const sectionIndex = Number(article.dataset.section);
+    const screen = screens[sectionIndex];
+    if (!screen) return;
+
+    const cards = Array.from(article.querySelectorAll('[data-js-flip-card]'));
+    const screenSets = Array.from(screen.querySelectorAll('[data-js-screen-set]'));
+    const activeSet = screenSets.find(set => set.hasAttribute('data-js-screen-set-active')) || screenSets[0] || null;
+
+    sections.set(sectionIndex, {
+      article,
+      screen,
+      cards,
+      cardsByName: new Map(cards.map(card => [card.dataset.name, card])),
+      screenSets,
+      screenSetsByName: new Map(screenSets.map(set => [set.dataset.jsScreenSet, set])),
+      selectedSetName: activeSet ? activeSet.dataset.jsScreenSet : null,
+    });
+  });
+
+  if (!sections.size) return;
 
   let current = 0;
   let cycleTimer = null;
   let activeCycleScreen = null;
+
+  function getSection(sectionIndex) {
+    return sections.get(sectionIndex) || null;
+  }
+
+  function resetImageSetFrame(container) {
+    Array.from(container.querySelectorAll('img')).forEach((img, index) => {
+      img.classList.toggle('is-active', index === 0);
+    });
+  }
+
+  function applySectionSelection(section, setName) {
+    if (!section || !section.screenSets.length) return null;
+
+    const targetSet = section.screenSetsByName.get(setName) || section.screenSets[0];
+    if (!targetSet) return null;
+
+    section.selectedSetName = targetSet.dataset.jsScreenSet;
+    section.screenSets.forEach(set => {
+      if (set === targetSet) set.setAttribute('data-js-screen-set-active', '');
+      else set.removeAttribute('data-js-screen-set-active');
+    });
+    resetImageSetFrame(targetSet);
+
+    section.cards.forEach(card => {
+      if (card.dataset.name === section.selectedSetName) card.setAttribute('data-js-card-selected', '');
+      else card.removeAttribute('data-js-card-selected');
+    });
+
+    return targetSet;
+  }
 
   // ── Generic multi-image crossfade cycle ──
   function getScreenImages(screen) {
@@ -80,40 +136,21 @@ let selectCardImages = null;
     gsap.to(phoneBg, { rotation: '+=45', duration: 0.6, ease: 'back.out(1.6)' });
   }
 
-  function clearSectionSelection(sectionIndex) {
-    const article = document.querySelector(`[data-js-article][data-section="${sectionIndex}"]`);
-    if (article) article.querySelectorAll('[data-js-flip-card]').forEach(c => c.removeAttribute('data-js-card-selected'));
-  }
-
-  function activateDefaultSet(screen, sectionIndex) {
-    const sets = Array.from(screen.querySelectorAll('[data-js-screen-set]'));
-    if (!sets.length) return;
-    sets.forEach((set, i) => {
-      if (i === 0) set.setAttribute('data-js-screen-set-active', '');
-      else set.removeAttribute('data-js-screen-set-active');
-    });
-    Array.from(sets[0].querySelectorAll('img')).forEach((img, i) => img.classList.toggle('is-active', i === 0));
-    const article = document.querySelector(`[data-js-article][data-section="${sectionIndex}"]`);
-    if (!article) return;
-    const grid = article.querySelector('.card-grid');
-    if (!grid) return;
-    grid.querySelectorAll('[data-js-flip-card]').forEach(c => c.removeAttribute('data-js-card-selected'));
-    const firstCard = grid.querySelector(`[data-js-flip-card][data-name="${sets[0].dataset.jsScreenSet}"]`);
-    if (firstCard) firstCard.setAttribute('data-js-card-selected', '');
-  }
-
   function showScreen(index, dir = 1) {
-    const inScreen = screens[index];
-    if (!inScreen) return;
+    const nextSection = getSection(index);
+    if (!nextSection) return;
+
+    const inScreen = nextSection.screen;
 
     if (index === current) {
       if (activeCycleScreen !== inScreen) startCycle(inScreen);
       return;
     }
 
-    activateDefaultSet(inScreen, index);
+    applySectionSelection(nextSection, nextSection.selectedSetName);
 
-    const outScreen = screens[current];
+    const outSection = getSection(current);
+    const outScreen = outSection ? outSection.screen : screens[current];
 
     stopCycle(outScreen, { reset: false });
 
@@ -151,6 +188,7 @@ let selectCardImages = null;
 
   // Position all screens below, screen 0 visible
   screens.forEach(resetScreenFrame);
+  sections.forEach(section => applySectionSelection(section, section.selectedSetName));
   gsap.set(screens, { y: '100%' });
   screens[0].classList.add('phone__screen--active');
   gsap.set(screens[0], { y: '0%' });
@@ -165,7 +203,7 @@ let selectCardImages = null;
     });
   }
 
-  document.querySelectorAll('[data-js-article]:not([hidden])').forEach(article => {
+  articles.filter(article => !article.hasAttribute('hidden')).forEach(article => {
     ScrollTrigger.create({
       trigger: article,
       start: 'top center',
@@ -180,50 +218,25 @@ let selectCardImages = null;
     const article = card.closest('[data-js-article]');
     if (!article) return;
     const sectionIndex = Number(article.dataset.section);
-    const screen = screens[sectionIndex];
-    if (!screen) return;
+    const section = getSection(sectionIndex);
+    if (!section || !section.screenSetsByName.has(card.dataset.name)) return;
 
-    const targetSet = screen.querySelector(`[data-js-screen-set="${card.dataset.name}"]`);
-    if (!targetSet) return;
-
-    // Pre-activate first image before the set becomes visible
-    Array.from(targetSet.querySelectorAll('img')).forEach((img, i) => {
-      img.classList.toggle('is-active', i === 0);
-    });
-
-    screen.querySelectorAll('[data-js-screen-set]').forEach(set => {
-      if (set === targetSet) set.setAttribute('data-js-screen-set-active', '');
-      else set.removeAttribute('data-js-screen-set-active');
-    });
-
-    const grid = card.closest('.card-grid');
-    if (grid) {
-      grid.querySelectorAll('[data-js-flip-card]').forEach(c => c.removeAttribute('data-js-card-selected'));
-    }
-    card.setAttribute('data-js-card-selected', '');
+    applySectionSelection(section, card.dataset.name);
 
     if (sectionIndex === current) {
-      stopCycle(screen, { reset: false });
-      screen.classList.add('phone__screen--sequenced');
-      screen.classList.remove('phone__screen--cycling');
-      startCycle(screen);
+      stopCycle(section.screen, { reset: false });
+      section.screen.classList.add('phone__screen--sequenced');
+      section.screen.classList.remove('phone__screen--cycling');
+      startCycle(section.screen);
     }
   };
 
-  // Wire all flip cards; no-op if no matching set exists
-  document.querySelectorAll('[data-js-flip-card]').forEach(card => {
-    const front = card.querySelector('.card__front');
-    if (front) front.addEventListener('click', () => selectCardImages(card));
-  });
+  document.addEventListener('click', event => {
+    const front = event.target.closest('[data-js-flip-card] .card__front');
+    if (!front) return;
 
-  // Initialize selected state from whichever set is active in HTML
-  document.querySelectorAll('[data-js-screen-set-active]').forEach(activeSet => {
-    const screen = activeSet.closest('[data-js-screen]');
-    if (!screen) return;
-    const article = document.querySelector(`[data-js-article][data-section="${screen.dataset.screen}"]`);
-    if (!article) return;
-    const card = article.querySelector(`[data-js-flip-card][data-name="${activeSet.dataset.jsScreenSet}"]`);
-    if (card) card.setAttribute('data-js-card-selected', '');
+    const card = front.closest('[data-js-flip-card]');
+    if (card) selectCardImages(card);
   });
 })();
 
