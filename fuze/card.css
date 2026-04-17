@@ -6,17 +6,23 @@
   grid-auto-rows: 215px;
   gap: var(--units-spacing-lg);
   margin-bottom: var(--units-spacing-xl);
+
+  --selected-card-shadow: 0 0 14.5px 6px rgba(0, 22, 235, 0.10);
 }
 
 /* ==================== CARD ==================== */
 
 .card {
   transition: box-shadow 200ms ease;
+  cursor: pointer;
+  border-radius: var(--units-radius-lg);
 }
 
 .card:hover {
   box-shadow: var(--shadow-card-hover);
 }
+
+
 
 /* ── Structure ── */
 
@@ -35,6 +41,13 @@
   border-width: var(--units-border-sm);
   border-style: solid;
   transition: opacity 0.25s ease;
+}
+
+[data-js-card-selected] .card__front,
+[data-js-card-selected] .card__back {
+  box-shadow: var(--selected-card-shadow);
+  outline: 1.5px solid var(--color-accent, #2563eb);
+  outline-offset: -1.5px;
 }
 
 /* ── Front face ── */

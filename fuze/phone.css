@@ -76,14 +76,26 @@
   display: block;
 }
 
+/* ── Image sets (one per card; toggled by JS) ── */
+
+[data-js-screen-set] {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+[data-js-screen-set-active] {
+  display: block;
+}
+
 /* ── Multi-image crossfade (any screen with 2+ images) ── */
 
-.phone__screen--cycling img {
+.phone__screen--sequenced img {
   opacity: 0;
   transition: opacity 0.9s ease;
 }
 
-.phone__screen--cycling img.is-active {
+.phone__screen--sequenced img.is-active {
   opacity: 1;
 }
 

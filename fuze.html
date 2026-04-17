@@ -122,7 +122,7 @@
           <img class="fuze-presentation__media-asset" src="assets/fuze/presentation/01-bonus.png" alt="Fuze registration product preview">
         </figure>
         <div class="card-grid">
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Bonus" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -143,7 +143,7 @@
               </div>
             </div>
           </article>
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Quests" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -170,7 +170,7 @@
     </article>
 
     <!-- Section 1: Early Life -->
-    <article class="fuze-presentation__article fade-up stagger-1" id="early-life" data-section="1" data-js-article>
+    <article class="fuze-presentation__article fade-up stagger-1" id="early-life" data-section="1" data-js-article >
       <div class="fuze-presentation__content">
         <p class="c-eyebrow">Early Life</p>
         <h3 class="fuze-presentation__heading">Help players discover the games they'll love without relying on bonuses</h3>
@@ -179,7 +179,7 @@
           <img class="fuze-presentation__media-asset" src="assets/fuze/fuze-early-life.png" alt="Fuze early life product preview">
         </figure>
         <div class="card-grid">
-          <article class="card card--full" data-js-flip-card>
+          <article class="card card--full" data-name="Game Recommendation System" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -216,7 +216,7 @@
         </figure>
         <div class="card-grid">
 
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Big Ticket Bonanza" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -237,7 +237,7 @@
               </div>
             </div>
           </article>
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Fuze Arcade" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -258,7 +258,7 @@
               </div>
             </div>
           </article>
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Flash Jackpot" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -295,7 +295,7 @@
           <img class="fuze-presentation__media-asset" src="assets/fuze/fuze-retention.png" alt="Fuze retention product preview">
         </figure>
         <div class="card-grid">
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Promo push notifications" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -316,7 +316,7 @@
               </div>
             </div>
           </article>
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Tournaments with real-time leaderboards" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -353,7 +353,7 @@
           <img class="fuze-presentation__media-asset" src="assets/fuze/fuze-vip.png" alt="Fuze VIP product preview">
         </figure>
         <div class="card-grid">
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="Loyalty System" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -374,7 +374,7 @@
               </div>
             </div>
           </article>
-          <article class="card" data-js-flip-card>
+          <article class="card" data-name="VIP Progression & Exclusive Tournaments" data-js-flip-card>
             <div class="card__inner">
               <div class="card__front">
                 <header class="card__header">
@@ -408,23 +408,51 @@
     <div class="phone__shell">
       <img src="assets/img/phone-mask.png" class="phone__mask" alt="" />
       <div class="phone__screens">
-        <div class="phone__screen" data-screen="0" data-js-screen>
-          <img src="assets/fuze/presentation/01-bonus-L.png" alt="">
-          <img src="assets/fuze/presentation/02-bonus-L.png" alt="">
+        <div class="phone__screen" aria-label="Bonus" data-screen="0" data-js-screen>
+          <div data-js-screen-set="Bonus" data-js-screen-set-active>
+            <img src="assets/fuze/presentation/bonus.png" alt="">
+            <img src="assets/fuze/presentation/bonus-popup.png" alt="">
+          </div>
+          <div data-js-screen-set="Quests">
+            <img src="assets/fuze/presentation/quest.png" alt="">
+            <img src="assets/fuze/presentation/quest-inGame.png" alt="">
+          </div>
         </div>
-        <div class="phone__screen" data-screen="1" data-js-screen>
-          <img src="assets/fuze/presentation/05-game-recommender-L.png" alt="">
-          <img src="assets/fuze/presentation/06-game-recommender-L.png" alt="">
+
+        <div class="phone__screen" aria-label="Game Recommendation System" data-screen="1" data-js-screen>
+          <div data-js-screen-set="Game Recommendation System" data-js-screen-set-active>
+            <img src="assets/fuze/presentation/recomender.png" alt="">
+            <img src="assets/fuze/presentation/recomender-inGame.png" alt="">
+          </div>
         </div>
-        <div class="phone__screen" data-screen="2" data-js-screen>
-          <img src="assets/fuze/presentation/07-btb-L.png" alt="">
-          <img src="assets/fuze/presentation/08-btb-L.png" alt="">
+
+        <div class="phone__screen" aria-label="BTB" data-screen="2" data-js-screen>
+          <div data-js-screen-set="Big Ticket Bonanza" data-js-screen-set-active>
+            <img src="assets/fuze/presentation/BTB.png" alt="">
+            <img src="assets/fuze/presentation/BTB-inGame.png" alt="">
+          </div>
+          <div data-js-screen-set="Fuze Arcade">
+            <img src="assets/fuze/presentation/arcade.png" alt="">
+            <img src="assets/fuze/presentation/arcade-inGame.png" alt="">
+          </div>
+          <div data-js-screen-set="Flash Jackpot">
+            <img src="assets/fuze/presentation/jackpot.png" alt="">
+            <img src="assets/fuze/presentation/jackpot-inGame.png" alt="">
+          </div>
         </div>
-        <div class="phone__screen" data-screen="3" data-js-screen>
-          <img src="assets/fuze/presentation/09-notifications-L.png" alt="">
-          <img src="assets/fuze/presentation/10-notifications-L.png" alt="">
+
+        <div class="phone__screen" aria-label="Notifications" data-screen="3" data-js-screen>
+          <div data-js-screen-set="Promo push notifications" data-js-screen-set-active>
+            <img src="assets/fuze/presentation/notifications.png" alt="">
+            <img src="assets/fuze/presentation/notifications-inGame.png" alt="">
+          </div>
+          <div data-js-screen-set="Tournaments with real-time leaderboards">
+            <img src="assets/fuze/presentation/leaderboard.png" alt="">
+            <img src="assets/fuze/presentation/leaderboard-inGame.png" alt="">  
+          </div>
         </div>
-        <div class="phone__screen" data-screen="4" data-js-screen hidden>
+
+        <div class="phone__screen" aria-label="VIP" data-screen="4" data-js-screen hidden>
           <img src="assets/fuze/fuze-vip.png" alt="">
         </div>
       </div>
