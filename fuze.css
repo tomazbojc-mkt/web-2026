@@ -4,6 +4,7 @@
    Import order matters: hero → big-idea → presentation
                          → phone → card
    ============================================================ */
+@import '../variables.css';
 /* ============================================================
    fuze/tokens.scss
    Fuze-specific tokens that extend variables.css.
@@ -413,6 +414,16 @@
 .btn--primary:hover .btn-label {
   color: var(--white);
 }
+.btn--primary.btn--accent {
+  background: var(--accent);
+  color: var(--white);
+}
+.btn--primary.btn--accent:hover {
+  background: var(--black);
+}
+.btn--primary.btn--accent .btn-flair::before {
+  background-color: var(--black);
+}
 .btn-flair {
   position: absolute;
   inset: 0;
@@ -809,6 +820,41 @@
 .c-card__text {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
+}
+
+.generic-wrapper-class-name {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--units-spacing-4xl) 0;
+}
+
+.c-cta-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--units-spacing-xl);
+  padding: var(--units-spacing-3xl, 64px);
+  border: solid var(--units-border-md) var(--card-container-border);
+  border-radius: var(--units-radius-lg);
+}
+.c-cta-banner__heading {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: var(--units-spacing-2xl, 48px);
+}
+.c-cta-banner__icon {
+  width: 56px;
+  height: 56px;
+}
+.c-cta-banner__text {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+}
+.c-cta-banner__text > p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-md);
 }
 
 .faq {

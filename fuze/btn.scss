@@ -37,6 +37,19 @@
     &:hover .btn-label {
       color: var(--white);
     }
+
+    &.btn--accent {
+      background: var(--accent);
+      color: var(--white);
+
+      &:hover {
+        background: var(--black);
+      }
+
+      .btn-flair::before {
+        background-color: var(--black);
+      }
+    }
   }
 
   &-flair {
