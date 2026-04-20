@@ -10,13 +10,13 @@
  * Usage in Hugo templates / new pages:
  *   <link rel="stylesheet" href="/components/styles/index.css">
  *
- * The fuze.css file (scroll-story section) is imported separately
- * because it ships with the original project.
+ * The Fuze bundle is imported here so shared button styles come
+ * from the same compiled source as the original page.
  */
 
 @import './tokens.css';
 @import './reset.css';
-@import '../../fuze/btn.css';
+@import '../../fuze.css';
 @import './shared.css';
 
 /* ── Global components ──────────────────────────────────── */

@@ -1,0 +1,142 @@
+.faq {
+  padding: var(--units-spacing-4xl) var(--units-spacing-2xl);
+  background: var(--color-gray-white);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--units-spacing-2xl);
+    max-width: var(--media-size);
+    margin: 0 auto;
+  }
+
+  &__header {
+    padding-top: var(--units-spacing-lg);
+  }
+
+  &__heading {
+    margin-top: var(--units-spacing-md);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-strong);
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--color-gray-200);
+
+    summary {
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+
+    &[open] {
+      .faq__question::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--units-spacing-lg);
+    padding: var(--units-spacing-lg) 0;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--text-strong);
+    cursor: pointer;
+    user-select: none;
+
+    &::after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%230a0a0a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.25s var(--ease-out, ease);
+    }
+  }
+
+  &__answer {
+    padding-bottom: var(--units-spacing-lg);
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    color: var(--text-secondary);
+
+    p + p {
+      margin-top: var(--units-spacing-sm);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--units-spacing-2xs);
+      margin-top: var(--units-spacing-sm);
+      padding-left: var(--units-spacing-lg);
+    }
+
+    li {
+      line-height: 1.6;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: var(--units-spacing-sm);
+    margin-top: var(--units-spacing-lg);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+
+    svg {
+      flex-shrink: 0;
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--text-strong);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__container {
+      grid-template-columns: 1fr;
+      gap: var(--units-spacing-xl);
+    }
+
+    &__header {
+      padding-top: 0;
+    }
+
+    &__heading {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--units-spacing-3xl) var(--units-spacing-lg);
+
+    &__question {
+      font-size: var(--font-size-sm);
+    }
+  }
+}

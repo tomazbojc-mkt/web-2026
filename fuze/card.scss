@@ -1,0 +1,164 @@
+/* ==================== CARD GRID ==================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 215px;
+  gap: var(--units-spacing-lg);
+  margin-bottom: var(--units-spacing-xl);
+
+  --selected-card-shadow: 0 0 14.5px 6px rgba(0, 22, 235, 0.10);
+}
+
+/* ==================== CARD ==================== */
+
+.card {
+  transition: box-shadow 200ms ease;
+  cursor: pointer;
+  border-radius: var(--units-radius-lg);
+
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* ── Structure ── */
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--units-radius-lg);
+    padding: var(--units-spacing-md) 18px;
+    border-width: var(--units-border-sm);
+    border-style: solid;
+    transition: opacity 0.25s ease;
+  }
+
+  [data-js-card-selected] &__front,
+  [data-js-card-selected] &__back {
+    box-shadow: var(--selected-card-shadow);
+    outline: var(--units-border-md) solid rgb(var(--color-accent-rgb, 0 22 235) / .5);
+    outline-offset: calc(var(--units-border-md) * -1);
+  }
+
+  /* ── Front face ── */
+
+  &__front {
+    background: var(--surface-background);
+    border-color: var(--color-gray-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1; /* explicit start value required for the opacity transition */
+  }
+
+  &--flipped &__front {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: var(--units-spacing-2xs);
+
+    svg {
+      flex-shrink: 0;
+      color: var(--color-gray-300);
+      transition: color 0.2s;
+      cursor: pointer;
+      margin-top: 1px;
+
+      &:hover {
+        color: var(--black);
+      }
+    }
+  }
+
+  /* ── Back face ── */
+
+  &__back {
+    cursor: pointer;
+    background-color: var(--black);
+    border-color: var(--color-blue-dark-800);
+    color: var(--white);
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: var(--font-size-xs);
+    line-height: 1.6;
+  }
+
+  &--flipped &__back {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__back-close {
+    position: absolute;
+    top: var(--units-spacing-md);
+    right: 18px;
+    color: var(--color-white-transparent-04);
+    transition: color 0.2s;
+  }
+
+  &__back:hover &__back-close {
+    color: var(--white);
+  }
+
+  /* ── Content elements ── */
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+  }
+
+  &__tags {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--units-spacing-sm);
+  }
+
+  &__metric {
+    font-size: var(--font-size-display);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: var(--units-spacing-2xs);
+    color: var(--accent);
+
+    sup {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    margin-bottom: 6px;
+  }
+
+  &__description {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    line-height: 1.4;
+  }
+
+  /* ── Modifiers ── */
+
+  &--full {
+    grid-column: 1 / -1;
+  }
+}

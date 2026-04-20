@@ -1,0 +1,76 @@
+/* ==================== FUZE PRESENTATION ==================== */
+
+.fuze-presentation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--units-spacing-2xl);
+
+  &__article {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__heading {
+    font-size: clamp(22px, 2.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--units-spacing-md);
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-gray-700);
+    margin-bottom: 28px;
+  }
+
+  &__media {
+    display: none;
+  }
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .fuze-presentation {
+    grid-template-columns: 1fr;
+    padding: 0 var(--units-spacing-lg);
+
+    &__article {
+      min-height: auto;
+      padding: 60px 0;
+    }
+
+    &__media {
+      display: block;
+      width: fit-content;
+      height: 60vh;
+      margin: 0 auto var(--units-spacing-xl);
+      border-radius: 32px;
+      overflow: hidden;
+      background: var(--phone-screen-bg);
+    }
+
+    &__media-asset {
+      display: block;
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

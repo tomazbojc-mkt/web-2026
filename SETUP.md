@@ -8,8 +8,11 @@ web-2026/
 ├── content.html        ← Games / Content page
 ├── fuze.html           ← Fuze product page
 ├── styles.css          ← All shared styles
-├── fuze.css            ← Fuze-specific styles (imported by styles.css)
+├── fuze.scss           ← Fuze SCSS entrypoint
+├── fuze.css            ← Compiled Fuze CSS entrypoint (imported by styles.css)
+├── package.json        ← Sass build scripts
 ├── assets/             ← Images, SVGs, videos, fonts
+├── fuze/               ← Fuze SCSS sources + compiled CSS outputs
 └── js/                 ← Site JavaScript — one file per concern
     ├── gsap-setup.js   ← GSAP plugin registration (must load first)
     ├── nav.js          ← Navigation: hide-on-scroll + mega menu
@@ -21,7 +24,7 @@ web-2026/
 
 ## How to run locally
 
-No build tools or installs required. Just serve the folder over HTTP.
+If you are only viewing the site, no build tools are required. Just serve the folder over HTTP.
 
 **Option A — Python (built into macOS/Linux):**
 ```bash
@@ -34,6 +37,36 @@ Then open `http://localhost:8080` in your browser.
 ```bash
 npx serve .
 ```
+
+## Working on Fuze SCSS
+
+The Fuze styles now use `.scss` source files that compile back to the existing `.css` files in place.
+That keeps all current HTML and CSS imports working unchanged.
+
+Install dependencies once:
+
+```bash
+npm install
+```
+
+Build the Fuze SCSS once:
+
+```bash
+npm run build:scss
+```
+
+Watch the Fuze SCSS during development:
+
+```bash
+npm run watch:scss
+```
+
+Source files:
+
+- `fuze.scss` → `fuze.css`
+- `fuze/*.scss` → `fuze/*.css`
+
+The compiled CSS remains part of the project output, so deployment is still static.
 
 > ⚠️ Do not open HTML files directly with `file://` — some browsers block scripts loaded that way.
 
@@ -91,6 +124,6 @@ gsap.to(el, { duration: 0.9, ease: 'power3.out', ... })
 
 ## Deploying
 
-The site is plain HTML/CSS/JS — no compilation needed. Copy the entire folder to any static host (GitHub Pages, Netlify, Vercel, S3, etc.).
+The site is still deployed as plain HTML/CSS/JS. If you changed any Fuze `.scss` files, run the Sass build first so the generated `.css` files are up to date, then copy the entire folder to any static host (GitHub Pages, Netlify, Vercel, S3, etc.).
 
 GitHub Pages is already configured via `.github/workflows/`. Push to `main` and the site publishes automatically.

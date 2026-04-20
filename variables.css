@@ -216,6 +216,8 @@
   --brand-secondary: #012169;
   --brand-tertiary: var(--color-blue-light-400);
   --brand-accent: var(--brand-primary);
+  --color-accent: var(--brand-primary);
+  --color-accent-rgb: 0 22 235;
   --color-white-transparent-09: #ffffffe5;
   --color-yellow-100: #fffbebff;
   --color-yellow-200: #fef3c7ff;

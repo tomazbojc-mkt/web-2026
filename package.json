@@ -1,0 +1,11 @@
+{
+  "name": "web-2026",
+  "private": true,
+  "scripts": {
+    "build:scss": "sass --no-source-map --style=expanded fuze.scss:fuze.css",
+    "watch:scss": "sass --watch --no-source-map --style=expanded fuze.scss:fuze.css"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

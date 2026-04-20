@@ -1,0 +1,24 @@
+.c-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--units-spacing-lg);
+  padding: var(--units-spacing-lg);
+
+  &--centered {
+    text-align: center;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: var(--font-size-md);
+    font-weight: 800;
+    color: var(--text-primary);
+    text-transform: lowercase;
+  }
+
+  &__text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+  }
+}

@@ -1,0 +1,76 @@
+/* ==================== FUZE HERO ==================== */
+.fuze-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  &__container {
+    flex: 1;
+    max-width: 1440px;
+    position: relative;
+    z-index: 1;
+    padding: var(--units-spacing-xl);
+  }
+
+  &__hero-content {
+    display: grid;
+    gap: var(--units-spacing-xl);
+
+    > h2 {
+      max-width: 50vw;
+    }
+  }
+
+  &__media {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 1440px;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    picture {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  /* Desktop: full-height image, auto width to preserve aspect ratio */
+  &__image {
+    display: block;
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    object-position: bottom right;
+  }
+}
+
+@media (max-width: 1000px) {
+  .fuze-hero {
+    &__hero-content {
+      gap: var(--units-spacing-2xl);
+
+      > h2 {
+        max-width: 70vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .fuze-hero {
+    &__hero-content {
+      gap: var(--units-spacing-3xl);
+
+      > h2 {
+        max-width: 100%;
+      }
+    }
+  }
+}
