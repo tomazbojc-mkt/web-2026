@@ -1,0 +1,67 @@
+.faq {
+  padding: var(--units-spacing-4xl) var(--units-spacing-2xl);
+  background: var(--color-gray-white);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--units-spacing-2xl);
+    max-width: var(--media-size);
+    margin: 0 auto;
+  }
+
+  &__header {
+    padding-top: var(--units-spacing-lg);
+  }
+
+  &__heading {
+    margin-top: var(--units-spacing-md);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-strong);
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: var(--units-spacing-sm);
+    margin-top: var(--units-spacing-lg);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+
+    svg {
+      flex-shrink: 0;
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--text-strong);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__container {
+      grid-template-columns: 1fr;
+      gap: var(--units-spacing-xl);
+    }
+
+    &__header {
+      padding-top: 0;
+    }
+
+    &__heading {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--units-spacing-3xl) var(--units-spacing-lg);
+  }
+}

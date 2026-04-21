@@ -1,0 +1,41 @@
+
+
+.generic-wrapper-class-name {
+  
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--units-spacing-4xl) 0;
+}
+
+.c-cta-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--units-spacing-xl);
+  padding: var(--units-spacing-3xl, 64px);
+  border: solid var(--units-border-md) var(--card-container-border);
+  border-radius: var(--units-radius-lg);
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: var(--units-spacing-2xl, 48px);
+  }
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  &__text {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+
+    & > p {
+      color: var(--text-secondary);
+      font-size: var(--font-size-md);
+    }
+  }
+}

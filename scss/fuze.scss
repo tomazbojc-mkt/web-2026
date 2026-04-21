@@ -1,0 +1,58 @@
+/* ============================================================
+   fuze.css — component index
+   Import order matters: hero → big-idea → presentation
+                         → phone → card
+   ============================================================ */
+
+@use 'fuze/tokens';
+@use 'fuze/hero';
+@use 'fuze/feature-label';
+@use 'fuze/feature-label--animated';
+@use 'fuze/big-idea';
+@use 'fuze/btn';
+@use 'fuze/c-eyebrow';
+@use 'fuze/presentation';
+@use 'fuze/phone';
+@use 'fuze/c-icon';
+@use 'fuze/card';
+@use 'components/c-card';
+@use 'fuze/cta-banner';
+@use 'components/accordion';
+@use 'fuze/faq';
+
+
+.fuze-benefits {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: var(--units-spacing-2xl);
+   padding: var(--units-size-xxl) var(--units-spacing-2xl);
+   background-color: var(--color-off-white-100);
+   > h3 {
+   color: var(--text-strong, #0F0F0F);
+   text-align: center;
+   font-size: var(--font-size-3xl, 48px);
+   font-style: normal;
+   font-weight: 700;
+   line-height: var(--font-line-height-5xl, 64px);
+   text-transform: lowercase;
+  }
+  &__cards {
+    display: flex;
+    gap: var(--units-spacing-2xl);
+    max-width: var(--media-size);
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .fuze-benefits {
+    padding: var(--units-size-xl) var(--units-spacing-lg);
+
+    &__cards {
+      flex-direction: column;
+    }
+  }
+
+}
