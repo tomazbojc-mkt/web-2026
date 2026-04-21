@@ -15,7 +15,9 @@
 
 // ── Fade-ups & heading clip-mask wipe ────────
 const clipWipeSelectors = 'h2.fade-up, .content-hero h1.fade-up';
-const clipWipeEls = new Set(gsap.utils.toArray(clipWipeSelectors));
+const clipWipeEls = typeof SplitText !== 'undefined'
+  ? new Set(gsap.utils.toArray(clipWipeSelectors))
+  : new Set();
 
 // Hide non-heading fade-up elements immediately (before scroll fires)
 gsap.utils.toArray('.fade-up').forEach(el => {
