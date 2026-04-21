@@ -46,7 +46,7 @@
   background-color: #000;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: var(--text-inverted-strong);
 
   @media (max-width: 1700px) {
     overflow-x: hidden;
@@ -87,12 +87,12 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    &--clouds {
+    &--layer-2 {
       z-index: 1;
       background-image: url('../wsg/img/layer-1-clouds.png');
     }
 
-    &--mountains {
+    &--layer-1 {
       z-index: 2;
       background-image: url('../wsg/img/layer-2-mountains.png');
       display: flex;
@@ -168,7 +168,7 @@
   &__content {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0;
+    padding: var(--units-spacing-xl);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -182,9 +182,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-    margin-bottom: 128px;
-    padding: 32px;
+    gap: var(--units-spacing-xl);
+    margin-bottom: var(--units-spacing-3xl);
+    padding: var(--units-spacing-xl);
     position: relative;
   }
 
@@ -240,27 +240,8 @@
   }
 
   &__section{
-    margin-bottom: 64px;
+    margin-bottom: var(--units-spacing-2xl);
+    padding: var(--units-spacing-2xl) 0;
   }
 
-  &__panel {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  &__panel-title {
-    font-size: 24px;
-    line-height: 1.2;
-    font-weight: 600;
-    margin: 0 0 32px;
-  }
-
-  &__copy {
-    max-width: 800px;
-    width: 100%;
-    padding: 0 32px 32px;
-    text-align: center;
-  }
 }

@@ -19,6 +19,12 @@ h1,
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.5;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--units-spacing-lg);
+}
+
+.centered {
+  text-align: center;
 }
