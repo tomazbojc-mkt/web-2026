@@ -34,8 +34,8 @@
 
   &--wsg-theme {
     --body-bg: #160727;
-    --blog-bg: #211D8666;
-    --card-contained-bg: #270506;
+    --blob-bg: #211D8666;
+    --card-contained-bg: #240637;
     --card-contained-border: transparent;
     .c-accordion {
       --accordion-border-color: #8624A7;
@@ -155,7 +155,7 @@
   }
 
   &__blob {
-    background: var(--blog-bg);
+    background: var(--blob-bg);
     width: 800px;
     height: 800px;
     position: absolute;

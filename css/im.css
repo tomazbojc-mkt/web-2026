@@ -150,8 +150,8 @@
 }
 .studio-page--wsg-theme {
   --body-bg: #160727;
-  --blog-bg: #211D8666;
-  --card-contained-bg: #270506;
+  --blob-bg: #211D8666;
+  --card-contained-bg: #240637;
   --card-contained-border: transparent;
 }
 .studio-page--wsg-theme .c-accordion {
@@ -255,7 +255,7 @@
   object-fit: contain;
 }
 .studio-page__blob {
-  background: var(--blog-bg);
+  background: var(--blob-bg);
   width: 800px;
   height: 800px;
   position: absolute;
