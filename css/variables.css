@@ -308,6 +308,7 @@
   --status-warning: var(--color-yellow-500);
   --status-error: var(--color-red-500);
   --accent: var(--brand-primary);
+  --white: var(--color-gray-white);
 }
 
 /* Components Variables */

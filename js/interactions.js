@@ -7,12 +7,42 @@
 // ─────────────────────────────────────────────
 
 
-// ── Smooth scroll for anchor links ───────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// ── Smooth scroll for marked anchor links ────
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function getScrollTarget(hash) {
+  if (!hash || hash === '#') return null;
+
+  const targetId = decodeURIComponent(hash.slice(1));
+  if (!targetId) return null;
+
+  return document.getElementById(targetId);
+}
+
+function getScrollTop(target) {
+  const nav = document.getElementById('nav');
+  const navOffset = nav ? nav.getBoundingClientRect().height : 0;
+
+  return Math.max(0, window.scrollY + target.getBoundingClientRect().top - navOffset);
+}
+
+document.querySelectorAll('[data-js-scroll-to][href^="#"]:not([href="#"])').forEach(link => {
+  link.addEventListener('click', event => {
+    const hash = link.getAttribute('href');
+    const target = getScrollTarget(hash);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    window.scrollTo({
+      top: getScrollTop(target),
+      behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+    });
+
+    if (window.history && typeof window.history.pushState === 'function') {
+      window.history.pushState(null, '', hash);
+    }
   });
 });
 

@@ -418,7 +418,8 @@
   color: var(--white);
 }
 .btn--primary.btn--accent:hover {
-  background: var(--black);
+  background: var(--white);
+  color: var(--accent);
 }
 .btn--primary.btn--accent .btn-flair::before {
   background-color: var(--black);

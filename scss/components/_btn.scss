@@ -43,7 +43,8 @@
       color: var(--white);
 
       &:hover {
-        background: var(--black);
+        background: var(--white);
+        color: var(--accent);
       }
 
       .btn-flair::before {
