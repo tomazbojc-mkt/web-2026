@@ -1,0 +1,32 @@
+.studio-page--asl-theme {
+  --body-bg: #000949;
+  --blob-bg: rgba(33, 29, 134, 0.40);
+  --card-contained-bg: #130032;
+  --card-contained-border: transparent;
+}
+
+.studio-page--asl-theme .c-accordion {
+  --accordion-border-color: #581E9F;
+  --accordion-title-color: var(--text-inverted-strong);
+  --accordion-description-color: #CFD9E5;
+  --accordion-icon-color: #581E9F;
+}
+
+.studio-page--asl-theme {
+  .studio-page__layer {
+    &--layer-1 {
+      z-index: 0;
+      background-image: url('../../asl/img/layer-0.png');
+      background-position: bottom center;
+      background-size: contain;
+    }
+
+    &--layer-2 {
+      z-index: 1;
+      background-image: url('../../asl/img/layer-1.png');
+      background-position: bottom center;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
