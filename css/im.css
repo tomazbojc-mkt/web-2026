@@ -149,16 +149,16 @@
   }
 }
 .studio-page--wsg-theme {
-  --body-bg: #000;
-  --blog-bg: #ff220030;
+  --body-bg: #160727;
+  --blog-bg: #211D8666;
   --card-contained-bg: #270506;
   --card-contained-border: transparent;
 }
 .studio-page--wsg-theme .c-accordion {
-  --accordion-border-color: #460102;
+  --accordion-border-color: #8624A7;
   --accordion-title-color: var(--text-inverted-strong);
   --accordion-description-color: #CFD9E5;
-  --accordion-icon-color: #FF0000;
+  --accordion-icon-color: #8624A7;
 }
 .studio-page {
   background-color: var(--body-bg);
@@ -203,13 +203,21 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.studio-page__layer--layer-1 {
+  z-index: 0;
+  background-image: url("../im/img/clouds-layer-0.png");
+  background-position: top center;
+  background-size: contain;
+}
 .studio-page__layer--layer-2 {
   z-index: 1;
-  background-image: url("../wsg/img/layer-1-clouds.png");
+  background-image: url("../im/img/house-tree.png");
+  display: flex;
+  align-items: flex-end;
 }
-.studio-page__layer--layer-1 {
+.studio-page__layer--layer-3 {
   z-index: 2;
-  background-image: url("../wsg/img/layer-2-mountains.png");
+  background-image: url("../im/img/tree-layer-2.png");
   display: flex;
   align-items: flex-end;
 }
