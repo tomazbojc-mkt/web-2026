@@ -112,11 +112,18 @@
     }
   }
 
-  &__image,
-  &__brand {
+  &__image {
     display: block;
     max-width: 100%;
     width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__brand {
+    display: block;
+    width: 100%;
+    max-width: clamp(180px, 32vw, 420px);
     height: auto;
     object-fit: contain;
   }

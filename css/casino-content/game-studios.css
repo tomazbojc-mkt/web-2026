@@ -1055,10 +1055,17 @@ h2 {
     transform: translateX(80px);
   }
 }
-.studio-page__image, .studio-page__brand {
+.studio-page__image {
   display: block;
   max-width: 100%;
   width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.studio-page__brand {
+  display: block;
+  width: 100%;
+  max-width: clamp(180px, 32vw, 420px);
   height: auto;
   object-fit: contain;
 }
