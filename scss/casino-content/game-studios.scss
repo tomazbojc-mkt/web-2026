@@ -1,7 +1,7 @@
-@use 'components/accordion';
-@use 'components/c-card';
-@import 'variables.css';
-@import 'shared/typography.css';
+@use '../components/accordion';
+@use '../components/c-card';
+@import '../variables.css';
+@import '../shared/typography.css';
 
 @keyframes studio-page-drift {
   0% {
@@ -31,20 +31,6 @@
 }
 
 .studio-page {
-
-  &--wsg-theme {
-    --body-bg: #000;
-    --blob-bg: #ff220030;
-    --card-contained-bg: #270506;
-    --card-contained-border: transparent;
-    .c-accordion {
-      --accordion-border-color: #460102;
-      --accordion-title-color: var(--text-inverted-strong);
-      --accordion-description-color: #CFD9E5;
-      --accordion-icon-color: #FF0000;
-      }
-  }
-
   background-color: var(--body-bg);
   margin: 0;
   padding: 0;
@@ -88,18 +74,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    &--layer-2 {
-      z-index: 1;
-      background-image: url('../wsg/img/layer-1-clouds.png');
-    }
-
-    &--layer-1 {
-      z-index: 2;
-      background-image: url('../wsg/img/layer-2-mountains.png');
-      display: flex;
-      align-items: flex-end;
-    }
   }
 
   &__scene {
@@ -224,9 +198,8 @@
     }
   }
 
-  &__section{
+  &__section {
     margin-bottom: var(--units-spacing-2xl);
     padding: var(--units-spacing-2xl) 0;
   }
-
 }

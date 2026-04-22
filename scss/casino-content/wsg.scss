@@ -1,0 +1,29 @@
+.studio-page--wsg-theme {
+  --body-bg: #000;
+  --blob-bg: #ff220030;
+  --card-contained-bg: #270506;
+  --card-contained-border: transparent;
+}
+
+.studio-page--wsg-theme .c-accordion {
+  --accordion-border-color: #460102;
+  --accordion-title-color: var(--text-inverted-strong);
+  --accordion-description-color: #CFD9E5;
+  --accordion-icon-color: #FF0000;
+}
+
+.studio-page--wsg-theme {
+  .studio-page__layer {
+    &--layer-2 {
+      z-index: 1;
+      background-image: url('../../wsg/img/layer-1-clouds.png');
+    }
+
+    &--layer-1 {
+      z-index: 2;
+      background-image: url('../../wsg/img/layer-2-mountains.png');
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}

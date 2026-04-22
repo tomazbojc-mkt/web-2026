@@ -14,19 +14,19 @@
 
 .studio-page--im-theme .studio-page__layer--layer-1 {
   z-index: 0;
-  background-image: url("../im/img/clouds-layer-0.png");
+  background-image: url("../../im/img/clouds-layer-0.png");
   background-position: top center;
   background-size: contain;
 }
 .studio-page--im-theme .studio-page__layer--layer-2 {
   z-index: 1;
-  background-image: url("../im/img/house-tree.png");
+  background-image: url("../../im/img/house-tree.png");
   display: flex;
   align-items: flex-end;
 }
 .studio-page--im-theme .studio-page__layer--layer-3 {
   z-index: 2;
-  background-image: url("../im/img/tree-layer-2.png");
+  background-image: url("../../im/img/tree-layer-2.png");
   display: flex;
   align-items: flex-end;
 }

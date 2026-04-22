@@ -10,18 +10,24 @@ web-2026/
 ├── scss/               ← All authored SCSS source files
 │   ├── styles.scss     ← Shared site stylesheet entrypoint
 │   ├── fuze.scss       ← Fuze stylesheet entrypoint
-│   ├── wsg.scss        ← Wild Streak stylesheet entrypoint
 │   ├── navigation.scss ← Shared navigation source
 │   ├── variables.scss  ← Global tokens and font-face source
+│   ├── casino-content/ ← Studio page stylesheet entrypoints
+│   │   ├── game-studios.scss ← Shared studio page base styles
+│   │   ├── im.scss     ← Indigo Magic theme entrypoint
+│   │   └── wsg.scss    ← Wild Streak theme entrypoint
 │   ├── shared/         ← Shared compiled-entry SCSS (grid, typography)
 │   ├── components/     ← Reusable shared component partials
 │   └── fuze/           ← Fuze-specific partials
 ├── css/                ← Compiled CSS outputs
 │   ├── styles.css      ← Shared site CSS
 │   ├── fuze.css        ← Compiled Fuze CSS
-│   ├── wsg.css         ← Compiled Wild Streak CSS
 │   ├── navigation.css  ← Compiled navigation CSS
 │   ├── variables.css   ← Compiled tokens and font-face CSS
+│   ├── casino-content/ ← Compiled studio page CSS
+│   │   ├── game-studios.css ← Shared studio page CSS
+│   │   ├── im.css      ← Compiled Indigo Magic CSS
+│   │   └── wsg.css     ← Compiled Wild Streak CSS
 │   └── shared/         ← Compiled shared grid / typography CSS
 ├── web-components/     ← Starter page + standalone web component source
 │   ├── home.html       ← Component-based prototype page
@@ -85,7 +91,9 @@ Main outputs:
 
 - `scss/styles.scss` → `css/styles.css`
 - `scss/fuze.scss` → `css/fuze.css`
-- `scss/wsg.scss` → `css/wsg.css`
+- `scss/casino-content/game-studios.scss` → `css/casino-content/game-studios.css`
+- `scss/casino-content/im.scss` → `css/casino-content/im.css`
+- `scss/casino-content/wsg.scss` → `css/casino-content/wsg.css`
 - `scss/shared/typography.scss` → `css/shared/typography.css`
 - `scss/shared/grid.scss` → `css/shared/grid.css`
 
