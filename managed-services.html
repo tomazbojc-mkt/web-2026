@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managed Services — Bragg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/managed-services.css">
+</head>
+<body class="page-ms">
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <span class="nav-logo"><img src="assets/logo-new.svg" alt="Bragg Logo" /></span>
+    <ul class="nav-links">
+      <li><a href="index.html">What we do <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="index.html#why">About us <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="#">Careers <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="#">Investors <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta" data-js-scroll-to>Talk to sales</a>
+    </div>
+    <div class="nav-hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="ms-hero">
+  <div class="container">
+    <div class="eyebrow fade-up">Managed Services</div>
+    <h1 class="fade-up stagger-1">
+      Better player experiences.<br>
+      <span class="ms-accent">Stronger business performance.</span>
+    </h1>
+    <p class="ms-hero-body fade-up stagger-2">
+      Running a successful iGaming operation today requires more than just a platform — it demands seamless operations, regulatory compliance, and continuous player growth, all working in perfect sync.
+    </p>
+
+    <!-- Stats -->
+    <div class="ms-stats">
+      <div class="ms-stat fade-up stagger-1">
+        <div class="ms-stat-num">+25%</div>
+        <div class="ms-stat-label">Unique Players</div>
+      </div>
+      <div class="ms-stat fade-up stagger-2">
+        <div class="ms-stat-num">+50%</div>
+        <div class="ms-stat-label">Conversion Rate</div>
+        <div class="ms-stat-note">on regulated markets</div>
+      </div>
+      <div class="ms-stat fade-up stagger-3">
+        <div class="ms-stat-num">+33%</div>
+        <div class="ms-stat-label">Retention Rate</div>
+        <div class="ms-stat-note">avg. for new &amp; active players</div>
+      </div>
+      <div class="ms-stat fade-up stagger-4">
+        <div class="ms-stat-num">+37%</div>
+        <div class="ms-stat-label">Actual Income</div>
+      </div>
+    </div>
+
+    <!-- Service intro cards -->
+    <p class="ms-hero-intro fade-up">Bragg Managed Services combine:</p>
+    <div class="ms-service-cards">
+      <div class="ms-service-card fade-up stagger-1">
+        <h3>iGaming Operational Services</h3>
+        <p>Ensuring a smooth, secure, and compliant player experience.</p>
+        <button class="ms-link" onclick="scrollToTab('ops')">Learn more ↓</button>
+      </div>
+      <div class="ms-service-card fade-up stagger-2">
+        <h3>iGaming Marketing Services</h3>
+        <p>Driving acquisition, engagement, retention, and long-term player value.</p>
+        <button class="ms-link" onclick="scrollToTab('mkt')">Learn more ↓</button>
+      </div>
+    </div>
+
+    <div class="fade-up stagger-3">
+      <a href="#contact" class="btn btn--primary" data-js-scroll-to>Book a Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TAB BAR ==================== -->
+<div class="ms-tab-bar" id="ms-tab-bar">
+  <button class="ms-tab active" id="tab-ops" onclick="switchTab('ops', this)">Operational Services</button>
+  <button class="ms-tab" id="tab-mkt" onclick="switchTab('mkt', this)">Marketing Services</button>
+</div>
+
+<!-- ==================== OPERATIONAL TAB ==================== -->
+<div class="ms-tab-panel active" id="ops">
+
+  <div class="ms-tab-intro">
+    <div class="container">
+      <div class="eyebrow fade-up">Operational Services</div>
+      <h2 class="fade-up stagger-1">Seamless <span class="ms-accent">player experience</span></h2>
+      <p class="fade-up stagger-2">We optimize the full player journey — registration, login, deposits, and cashouts — ensuring fast, intuitive interactions supported by compliant, automated back-end processes.</p>
+    </div>
+  </div>
+
+  <div class="ms-cards-section">
+    <div class="container">
+      <div class="ms-card-grid">
+
+        <div class="ms-card fade-up stagger-1">
+          <div class="ms-icon-box">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="6" r="3"/><path d="M2 13c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          </div>
+          <h3>Customer Support</h3>
+          <p>24/7 multilingual, multichannel support that improves player satisfaction, builds trust, and strengthens long-term retention.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-2">
+          <div class="ms-icon-box">
+            <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 3V2a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M5 8h6M5 10.5h4"/></svg>
+          </div>
+          <h3>KYC &amp; Compliance</h3>
+          <p>Automated KYC processes streamline onboarding while ensuring full regulatory compliance across jurisdictions.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-3">
+          <div class="ms-icon-box">
+            <svg viewBox="0 0 16 16"><path d="M8 1.5L2 4.5v4c0 3 2.5 5.8 6 6.5 3.5-.7 6-3.5 6-6.5v-4L8 1.5z"/></svg>
+          </div>
+          <h3>AML Compliance</h3>
+          <p>Structured AML framework ensuring transparent, fully documented processes with continuous regulatory adherence.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-4">
+          <div class="ms-icon-box">
+            <svg viewBox="0 0 16 16"><rect x="1.5" y="4" width="13" height="9" rx="1.5"/><path d="M4.5 4V2.5A1.5 1.5 0 016 1h4a1.5 1.5 0 011.5 1.5V4"/><circle cx="8" cy="8.5" r="1.5"/><path d="M8 10v1.5"/></svg>
+          </div>
+          <h3>Payments, Risk &amp; Fraud</h3>
+          <p>Secure payment flows with verification systems, automated fraud prevention, and real-time risk monitoring.</p>
+        </div>
+
+      </div>
+
+      <div class="fade-up">
+        <a href="#contact" class="btn btn--primary" style="background:#fff;color:var(--black);" data-js-scroll-to>Book a Demo</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== MARKETING TAB ==================== -->
+<div class="ms-tab-panel" id="mkt">
+
+  <div class="ms-tab-intro">
+    <div class="container">
+      <div class="eyebrow fade-up">Marketing Services</div>
+      <h2 class="fade-up stagger-1">Optimize the <span class="ms-accent">player journey</span></h2>
+      <div class="ms-badges fade-up stagger-2">
+        <span class="ms-badge">Convert registrations → depositing players</span>
+        <span class="ms-badge">Retain players through targeted engagement</span>
+        <span class="ms-badge">Reactivate lapsed users with personalized campaigns</span>
+      </div>
+      <p class="fade-up stagger-3">Driving higher engagement, stronger loyalty, and increased lifetime value.</p>
+    </div>
+  </div>
+
+  <div class="ms-cards-section">
+    <div class="container">
+      <div class="ms-card-grid">
+
+        <div class="ms-card fade-up stagger-1">
+          <h3>CRM &amp; Player Retention</h3>
+          <p>Powered by advanced Fuze™ engagement ecosystems and CRM capabilities, driving deeper engagement and higher spend over time.</p>
+          <a href="fuze.html" class="ms-card-link">Learn more →</a>
+        </div>
+
+        <div class="ms-card fade-up stagger-2">
+          <h3>Data-Driven Strategy</h3>
+          <p>Advanced analytics to segment players, optimize campaigns, and continuously improve performance across acquisition, retention, and revenue KPIs.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-3">
+          <h3>Smart Communication</h3>
+          <p>Personalized, channel-specific messaging ensuring relevance at every touchpoint, improving engagement and reducing churn.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-4">
+          <h3>VIP Management</h3>
+          <p>Tailored engagement strategies for high-value players that strengthen relationships, increase loyalty, and maximize long-term revenue.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-1">
+          <h3>Affiliate Marketing</h3>
+          <p>Managed affiliate partnerships by market, focusing on quality traffic, higher conversion rates, and sustainable acquisition growth.</p>
+        </div>
+
+        <div class="ms-card fade-up stagger-2">
+          <h3>Casino Content &amp; Game Management</h3>
+          <p>Continuous game portfolio optimization using player behavior and performance data.</p>
+        </div>
+
+      </div>
+
+      <div class="fade-up">
+        <a href="#contact" class="btn btn--primary" style="background:#fff;color:var(--black);" data-js-scroll-to>Book a Demo</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== FAQ ==================== -->
+<section class="ms-faq" id="faq">
+  <div class="container">
+    <div class="eyebrow fade-up">FAQ</div>
+    <h2 class="fade-up stagger-1">iGaming marketing and<br>operational services</h2>
+
+    <div class="ms-faq-list fade-up stagger-2">
+
+      <div class="ms-faq-item ms-faq-item--open">
+        <div class="ms-faq-q">
+          What is iGaming marketing and why is it important?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          iGaming marketing drives acquisition, engagement, and retention. Effective marketing reduces CPA, increases conversion, and improves LTV through targeted segmentation, CRM automation, and personalized campaigns.
+        </div>
+      </div>
+
+      <div class="ms-faq-item">
+        <div class="ms-faq-q">
+          What are the most effective casino player retention tools?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          The most effective retention tools include loyalty programs, personalized bonus offers, gamification elements like missions and tournaments, and proactive CRM communication triggered by player behavior signals.
+        </div>
+      </div>
+
+      <div class="ms-faq-item">
+        <div class="ms-faq-q">
+          How do you manage VIP programs for online casinos?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          Our VIP management service provides dedicated account management, tailored reward structures, exclusive event invitations, and continuous behavioral monitoring to maximize long-term value from high-worth players.
+        </div>
+      </div>
+
+      <div class="ms-faq-item">
+        <div class="ms-faq-q">
+          How do you ensure compliance across multiple jurisdictions?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          We maintain dedicated compliance teams for each regulated market, with automated KYC/AML workflows, continuous monitoring, and proactive adaptation to regulatory changes across 30+ jurisdictions.
+        </div>
+      </div>
+
+      <div class="ms-faq-item">
+        <div class="ms-faq-q">
+          How does your operational setup impact player conversion rates?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          Streamlined registration, fast KYC verification, and frictionless payment processing reduce drop-off at every funnel stage. Our clients see up to +50% improvement in conversion rates on regulated markets.
+        </div>
+      </div>
+
+      <div class="ms-faq-item">
+        <div class="ms-faq-q">
+          How do you balance fraud prevention with a smooth player experience?
+          <span class="ms-faq-icon">+</span>
+        </div>
+        <div class="ms-faq-a">
+          We use risk-scoring engines that apply friction selectively — only triggering additional verification for suspicious patterns. This keeps the experience seamless for legitimate players while catching bad actors in real time.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA BAND ==================== -->
+<section class="ms-cta" id="contact">
+  <div class="container">
+    <h2 class="fade-up">Scale with confidence</h2>
+    <p class="fade-up stagger-1">Ready to transform your platform strategy?</p>
+    <div class="fade-up stagger-2">
+      <a href="mailto:sales@bragg.group" class="btn btn--outline">Book a Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="footer-hero">
+      <div class="footer-hero-row">
+        <p class="footer-hero-text">bragg</p>
+        <div class="footer-offices">
+          <h4>offices</h4>
+          <div class="footer-offices-list">
+            <span>Toronto</span>
+            <span>London</span>
+            <span>Ljubljana</span>
+            <span>Sliema</span>
+            <span>Reno</span>
+            <span>Las Vegas</span>
+            <span>São Paulo</span>
+            <span>Chennai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>what we do</h4>
+        <ul>
+          <li><a href="#">player account management</a></li>
+          <li><a href="#">casino content</a></li>
+          <li><a href="#">player gamification</a></li>
+          <li><a href="#">game aggregation</a></li>
+          <li><a href="#">turnkey solution</a></li>
+          <li><a href="#">modular solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>about us</h4>
+        <ul>
+          <li><a href="#">meet bragg</a></li>
+          <li><a href="#">news</a></li>
+          <li><a href="#">investors</a></li>
+          <li><a href="#">sustainability</a></li>
+          <li><a href="#">press releases</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>careers</h4>
+        <ul>
+          <li><a href="#">working at bragg</a></li>
+          <li><a href="#">job openings</a></li>
+          <li><a href="#">values</a></li>
+          <li><a href="#">benefits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>legal</h4>
+        <ul>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">terms &amp; conditions</a></li>
+          <li><a href="#">responsible gaming</a></li>
+          <li><a href="#">cookie settings</a></li>
+          <li><a href="#">whistleblower</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>resources</h4>
+        <ul>
+          <li><a href="#">investor relations</a></li>
+          <li><a href="#">client area</a></li>
+          <li><a href="#">game demo</a></li>
+          <li><a href="#">contact us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-contact-row">
+      <div class="footer-contact-left">
+        <span class="footer-contact-label">contact us</span>
+        <a href="mailto:sales@bragg.group" class="footer-contact-email">sales@bragg.group</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/bragg-gaming-group/" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://twitter.com/BraggGaming" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/bragggaming/" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCBraggGaming" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>© 2026 Bragg Gaming Group. All rights reserved.</span>
+        <span class="footer-badge-item">NASDAQ: BRAG</span>
+        <span class="footer-badge-item">TSX: BRAG</span>
+        <span class="footer-badge-item">18+</span>
+      </div>
+      <div class="footer-legal-links">
+        <a href="#">privacy policy</a>
+        <a href="#">cookie settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="js/gsap-setup.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/interactions.js"></script>
+
+<script>
+  function switchTab(id, el) {
+    document.querySelectorAll('.ms-tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.ms-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function scrollToTab(id) {
+    const tabBar = document.getElementById('ms-tab-bar');
+    const tabEl = document.getElementById('tab-' + id);
+    switchTab(id, tabEl);
+    tabBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.querySelectorAll('.ms-faq-item').forEach(item => {
+    item.querySelector('.ms-faq-q').addEventListener('click', () => {
+      item.classList.toggle('ms-faq-item--open');
+    });
+  });
+</script>
+
+</body>
+</html>

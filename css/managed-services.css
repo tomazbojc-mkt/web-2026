@@ -1,0 +1,490 @@
+/* ==================== MANAGED SERVICES PAGE ==================== */
+
+/* ---- Base overrides for this page ---- */
+.page-ms {
+  background: var(--background);
+  color: var(--black);
+  font-family: var(--font);
+}
+
+.page-ms .eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  margin-bottom: 16px;
+}
+
+/* ---- Shared button styles ---- */
+.page-ms .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+  border: none;
+}
+
+.page-ms .btn--primary {
+  background: var(--black);
+  color: #fff;
+}
+
+.page-ms .btn--primary:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.page-ms .btn--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff;
+}
+
+.page-ms .btn--outline:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ---- Shared accent span ---- */
+.ms-accent {
+  color: var(--brand-blue);
+}
+
+/* ==================== HERO ==================== */
+.ms-hero {
+  padding: 120px 0 80px;
+  background: var(--background);
+}
+
+.ms-hero .container {
+  max-width: 900px;
+}
+
+.ms-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.ms-hero-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+/* Stats */
+.ms-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.ms-stat {
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--units-radius-lg);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.ms-stat-num {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--brand-blue);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.ms-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.ms-stat-note {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* Service cards */
+.ms-hero-intro {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.ms-service-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ms-service-card {
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-left: 3px solid var(--brand-blue);
+  border-radius: var(--units-radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ms-service-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0;
+}
+
+.ms-service-card p {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.ms-service-card .ms-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  text-decoration: none;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: gap 0.2s;
+}
+
+.ms-service-card .ms-link:hover {
+  gap: 8px;
+}
+
+/* ==================== TAB BAR ==================== */
+.ms-tab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--background);
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+}
+
+.ms-tab {
+  padding: 18px 28px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.ms-tab:hover {
+  color: var(--black);
+}
+
+.ms-tab.active {
+  color: var(--brand-blue);
+  border-bottom-color: var(--brand-blue);
+  font-weight: 600;
+}
+
+/* ==================== TAB PANELS ==================== */
+.ms-tab-panel {
+  display: none;
+}
+
+.ms-tab-panel.active {
+  display: block;
+}
+
+/* ==================== TAB INTRO SECTIONS ==================== */
+.ms-tab-intro {
+  padding: 80px 0 64px;
+  background: var(--background);
+}
+
+.ms-tab-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.ms-tab-intro p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+  max-width: 560px;
+}
+
+/* Marketing badges */
+.ms-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 16px;
+}
+
+.ms-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--units-radius-pill);
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  color: var(--black);
+}
+
+/* ==================== CARDS DARK SECTION ==================== */
+.ms-cards-section {
+  background: var(--black);
+  padding: 80px 0;
+}
+
+.ms-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ms-card {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--units-radius-lg);
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.ms-card:hover {
+  border-color: rgba(255,255,255,0.15);
+}
+
+.ms-icon-box {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ms-icon-box svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255,255,255,0.6);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ms-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ms-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+.ms-card .ms-card-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ms-card .ms-card-link:hover {
+  opacity: 0.8;
+}
+
+/* ==================== FAQ ==================== */
+.ms-faq {
+  padding: 80px 0;
+  background: var(--background);
+}
+
+.ms-faq h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.ms-faq-subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin-bottom: 40px;
+}
+
+.ms-faq-item {
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.ms-faq-item:last-child {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.ms-faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--black);
+  gap: 16px;
+  user-select: none;
+}
+
+.ms-faq-q:hover {
+  color: var(--brand-blue);
+}
+
+.ms-faq-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.25s;
+}
+
+.ms-faq-item--open .ms-faq-icon {
+  transform: rotate(45deg);
+  color: var(--brand-blue);
+}
+
+.ms-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+
+.ms-faq-item--open .ms-faq-a {
+  max-height: 400px;
+  padding-bottom: 24px;
+}
+
+/* ==================== CTA BAND ==================== */
+.ms-cta {
+  background: var(--black);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.ms-cta h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.ms-cta p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 40px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .ms-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ms-hero {
+    padding: 100px 0 60px;
+  }
+
+  .ms-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .ms-service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-tab-intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .ms-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-tab {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .ms-cta {
+    padding: 72px 0;
+  }
+
+  .ms-faq h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ms-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ms-hero h1 {
+    font-size: 2rem;
+  }
+}

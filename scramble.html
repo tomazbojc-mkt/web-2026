@@ -165,10 +165,11 @@
 
   /* ── Cycle ── */
   function cycle() {
-    const word = words[current];
-    current = (current + 1) % words.length;
-    effects[activeEffect](word, () => {
-      timer = gsap.delayedCall(holdDuration, cycle);
+    // Hold current word for holdDuration, then animate to next
+    timer = gsap.delayedCall(holdDuration, () => {
+      const word = words[current];
+      current = (current + 1) % words.length;
+      effects[activeEffect](word, cycle);
     });
   }
 
@@ -185,6 +186,8 @@
     });
   });
 
+  // Start: show first word immediately, then begin cycling
+  current = 1;
   cycle();
 })();
 </script>
