@@ -65,10 +65,17 @@
       height: var(--h);
       bottom: 0;
       left: calc(100% - var(--w) / 2 + 1vw);
-      background: url('assets/img/home-background.png') center / cover no-repeat;
-      background-attachment: fixed;
       z-index: 2;
       clip-path: url(#spade-clip);
+      overflow: hidden;
+    }
+
+    .spade-window::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url('assets/img/home-background.png') center / cover no-repeat;
+      pointer-events: none;
     }
   </style>
 </head>
