@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="css/styles.css">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -62,7 +63,7 @@
       --h: calc(var(--w) * 1115 / 1144);
       width: var(--w);
       height: var(--h);
-      bottom: 0;
+      bottom: 5vh;
       left: calc(100% - var(--w) / 2 + 1vw);
       z-index: 2;
       clip-path: url(#spade-clip);
@@ -87,12 +88,21 @@
     </defs>
   </svg>
 
-  <section class="hero" data-parallax-section>
+  <section class="hero content-hero  ">
     <div class="bg"></div>
     <div class="white-overlay"></div>
     <div class="spade-window">
-      <div class="sphere-container" data-parallax-speed="20">
+      <div class="sphere-container">
         <img class="sphere" src="assets/img/home-sphere.png" alt="" />
+      </div>
+    </div>
+    <div class="container" style="z-index:3;">
+      <div class="">
+        <h1 class="fade-up stagger-1"><span class="muted">engineering<br>the experiences</span><br>players demand</h1>
+        <h2 class="fade-up stagger-2">From the games players love to the technology operators rely on, Bragg is the battle-tested iGaming partner with the expertise and tools to grow your business at scale.</h2>
+        <div class="hero-buttons fade-up stagger-3">
+          <a href="#contact" class="btn btn--primary" data-js-btn-flair>talk to us</a>
+        </div>
       </div>
     </div>
   </section>
@@ -101,9 +111,5 @@
     <!-- rest of page content -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="js/gsap-setup.js"></script>
-  <script src="js/parallax.js"></script>
 </body>
 </html>

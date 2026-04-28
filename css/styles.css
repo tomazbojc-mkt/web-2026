@@ -255,6 +255,10 @@ h2 {
   color: var(--black);
 }
 
+.hero h2 {
+  font-weight: 400;
+}
+
 /* Scramble flip effect — per-character mask containers */
 .hero-char-mask {
   display: inline-flex;
