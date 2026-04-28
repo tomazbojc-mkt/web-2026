@@ -124,65 +124,6 @@
   line-height: 1.4;
 }
 
-/* Service cards */
-.ms-hero-intro {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--black);
-  margin-bottom: 16px;
-}
-
-.ms-service-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 40px;
-}
-
-.ms-service-card {
-  background: #fff;
-  border: 1px solid var(--color-gray-200);
-  border-left: 3px solid var(--brand-blue);
-  border-radius: var(--units-radius-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.ms-service-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--black);
-  margin: 0;
-}
-
-.ms-service-card p {
-  font-size: 0.875rem;
-  color: var(--gray-500);
-  line-height: 1.6;
-  flex: 1;
-}
-
-.ms-service-card .ms-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--brand-blue);
-  text-decoration: none;
-  margin-top: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  transition: gap 0.2s;
-}
-
-.ms-service-card .ms-link:hover {
-  gap: 8px;
-}
 
 /* ==================== TAB BAR ==================== */
 .ms-tab-bar {
@@ -247,6 +188,13 @@
   line-height: 1.7;
   color: var(--gray-500);
   max-width: 560px;
+}
+
+.ms-tab-tagline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--black) !important;
+  margin-bottom: 12px;
 }
 
 /* Marketing badges */
