@@ -1,0 +1,97 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: white;
+}
+
+h1 {
+  font-weight: 780;;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 300vh;
+  overflow-x: clip;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.spade {
+  position: absolute;
+  z-index: 0;
+  --w: calc(min(70vw, 80vh) * 2);
+  --h: calc(var(--w) * 1126 / 1271);
+  width: var(--w);
+  height: var(--h);
+  bottom: 5vh;
+  left: calc(100% - var(--w) / 2);
+  z-index: 2;
+  overflow: hidden;
+
+  &__background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('../assets/img/home-background.png') center / auto no-repeat;
+      pointer-events: none;
+      background-attachment: fixed;
+    }
+  }
+
+  &__sphere {
+    width: 85vmin;
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+    bottom: -18vmin;
+    right: 57%;
+    animation: spin 50s linear infinite;
+    filter: drop-shadow(0 0 30px #40afff88) drop-shadow(0 0 21px #9FEEF6) drop-shadow(0 0 19px #277ADF);
+  }
+
+  &__mask {
+    position: absolute;
+    inset: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (max-width: 1000px) {
+    bottom: unset;
+    left: calc(100% - var(--w) / 2 - 5vw);
+    top: -50vh
+  }
+
+  @media (max-width: 768px) {
+    bottom:0 ;
+  }
+
+  @media (max-width: 480px) {
+    bottom: 0;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

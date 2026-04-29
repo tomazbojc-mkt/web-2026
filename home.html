@@ -4,105 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      background: white;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-    }
-
-    .wrapper {
-      position: relative;
-      min-height: 300vh;
-      overflow-x: clip;
-    }
-
-
-
-    .white-overlay {
-      position: absolute;
-      inset: 0;
-      background: white;
-      z-index: 1;
-    }
-
-    .sphere-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .sphere-container::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('assets/img/home-background.png') center / contain no-repeat;
-      pointer-events: none;
-    }
-    .sphere {
-      width: 85vmin;
-      border-radius: 50%;
-      pointer-events: none;
-      position: absolute;
-      bottom: -28vmin;
-      right: 57%;
-      animation: spin 40s linear infinite;
-      filter: drop-shadow(0 0 30px #40afff88) drop-shadow(0 0 21px #9FEEF6) drop-shadow(0 0 19px #277ADF);
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .spade-window {
-      position: absolute;
-      --w: calc(min(55vw, 65vh) * 2);
-      --h: calc(var(--w) * 1126 / 1271);
-      width: var(--w);
-      height: var(--h);
-      bottom: 5vh;
-      left: calc(100% - var(--w) / 2 + 1vw);
-      z-index: 2;
-      overflow: hidden;
-    }
-
-    .spade-mask {
-      position: absolute;
-      inset: -2px; /* fix for sub pixel rounding - when you resize browser calculates --w and --h from viewport units and produces fractional values */
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      object-fit: contain;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-  <section class="hero content-hero">
-    <div class="bg"></div>
-    <div class="white-overlay"></div>
-    <div class="spade-window">
-      <div class="sphere-container">
-        <img class="sphere" src="assets/img/home-sphere.png" alt="" />
+  <section class="hero">
+    <div class="spade">
+      <div class="spade__background">
+        <img class="spade__sphere" src="assets/img/home-sphere.png" alt="" />
       </div>
-      <img class="spade-mask" src="assets/img/mask-2.png" alt="" />
+      <img class="spade__mask" src="assets/img/mask-2.png" alt="" />
     </div>
-    <div class="container" style="z-index:3;">
+    <div class="container">
       <div class="">
-        <h1 class="fade-up stagger-1"><span class="muted">engineering<br>the experiences</span><br>players demand</h1>
-        <h2 class="fade-up stagger-2">From the games players love to the technology operators rely on, Bragg is the battle-tested iGaming partner with the expertise and tools to grow your business at scale.</h2>
+        <h1 class=""><span class="muted">engineering<br>the experiences</span><br>players demand</h1>
+        <h2 class="">From the games players love to the technology operators rely on, Bragg is the battle-tested iGaming partner with the expertise and tools to grow your business at scale.</h2>
         <div class="hero-buttons fade-up stagger-3">
           <a href="#contact" class="btn btn--primary" data-js-btn-flair>talk to us</a>
         </div>
