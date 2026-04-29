@@ -49,3 +49,4 @@ out/
 # Logs
 logs/
 *.log
+assets/.DS_Store
