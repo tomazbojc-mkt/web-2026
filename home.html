@@ -41,6 +41,13 @@
       width: 100%;
       height: 100%;
     }
+    .sphere-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/img/home-background.png') center / contain no-repeat;
+      pointer-events: none;
+    }
     .sphere {
       width: 70vmin;
       border-radius: 50%;
@@ -66,35 +73,31 @@
       bottom: 5vh;
       left: calc(100% - var(--w) / 2 + 1vw);
       z-index: 2;
-      clip-path: url(#spade-clip);
       overflow: hidden;
     }
 
-    .spade-window::before {
-      content: '';
-      position: fixed;
+    .spade-mask {
+      position: absolute;
       inset: 0;
-      background: url('assets/img/home-background.png') center / cover no-repeat;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       pointer-events: none;
+      z-index: 1;
     }
+
+
   </style>
 </head>
 <body>
-  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
-    <defs>
-      <clipPath id="spade-clip" clipPathUnits="objectBoundingBox">
-        <path transform="scale(0.000874126,0.000896861)" d="M571.886 0L980.179 407.175L1059.4 486.197C1113.91 540.575 1144 612.907 1144 689.813C1144 766.72 1113.97 839.052 1059.4 893.43C1003.12 949.58 929.214 977.598 855.254 977.598C781.295 977.598 707.392 949.523 651.108 893.43L571.828 814.407L492.549 893.43C438.038 947.807 365.565 977.769 288.402 977.769C211.24 977.769 138.824 947.807 84.2556 893.43C28.1424 837.336 0 763.575 0 689.813C0 616.052 28.1424 542.347 84.37 486.197L163.592 407.175L571.886 0ZM284.97 528.224L205.748 607.246L204.776 608.218C183.383 630.061 171.6 658.994 171.6 689.813C171.6 720.633 183.726 750.424 205.748 772.381C228.171 794.738 256.771 806.574 288.517 806.574C320.263 806.574 348.863 794.738 371.285 772.381L450.564 693.301L571.886 572.309L693.207 693.301L772.486 772.323C794.508 794.28 823.909 806.402 855.254 806.402C886.6 806.402 916.001 794.28 938.08 772.323C960.502 749.966 972.4 721.376 972.4 689.756C972.4 658.136 960.56 629.546 938.08 607.189L858.858 528.167L571.943 241.984L285.028 528.167L284.97 528.224ZM675.589 1115H468.411C432.718 1115 415.501 1071.66 441.527 1047.47L572 926.308L702.473 1047.47C728.499 1071.66 711.282 1115 675.589 1115Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-  <section class="hero content-hero  ">
+  <section class="hero content-hero">
     <div class="bg"></div>
     <div class="white-overlay"></div>
     <div class="spade-window">
       <div class="sphere-container">
         <img class="sphere" src="assets/img/home-sphere.png" alt="" />
       </div>
+      <img class="spade-mask" src="assets/img/mask.png" alt="" />
     </div>
     <div class="container" style="z-index:3;">
       <div class="">

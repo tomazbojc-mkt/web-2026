@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  background: white;
+  height: 200vh;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+.home-hero {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.spade-window {
+    height: 120vh;
+    width: auto;
+    position: relative;
+    left: 50%;
+    background-image: url('../assets/img/home-background.png');
+    background-size: auto;
+    background-position: top right;
+    background-attachment: fixed;
+
+    &__mask {
+      height: 100%;
+      width: auto;
+      max-width: none;
+    }
+}
