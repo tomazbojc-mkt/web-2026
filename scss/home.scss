@@ -47,7 +47,7 @@ h1 {
 .spade {
   position: absolute;
   z-index: 2;
-  --vw-factor: 70vw;
+  --vw-factor: 90vw;
   --vh-factor: 80vh;
   --w: calc(min(var(--vw-factor), var(--vh-factor)) * 2);
   --h: calc(var(--w) * 1126 / 1271);
@@ -57,22 +57,25 @@ h1 {
   top: -20vh;
   left: calc(100% - var(--w) / 2 - 5vw);
 
-  /* Width modifiers (--vw-factor) */
-  &--vw-tight   { --vw-factor: 90vw; }
-  &--vw-narrow  { --vw-factor: 60vw; }
-  &--vw-wide    { --vw-factor: 80vw; }
-
-  /* Height modifiers (--vh-factor) */
-  &--vh-tight   { --vh-factor: 60vh; }
-  &--vh-narrow  { --vh-factor: 70vh; }
-  &--vh-wide    { --vh-factor: 90vh; }
-
-  @media (min-width: 481px) {
-    &--vw-tight { --vw-factor: 50vw; }
+  /* Size tuning per device/orientation */
+  @media (max-width: 480px) and (max-height: 700px) {
+    --vw-factor: 65vw;
+    --vh-factor: 65vh;
   }
 
-  @media (min-width: 769px) {
-    top: -30vh;
+  @media (min-width: 481px) {
+    --vw-factor: 70vw;
+    --vh-factor: 75vh;
+  }
+
+  @media (min-width: 821px) and (orientation: portrait) {
+    --vw-factor: 70vw;
+    top: 0;
+  }
+
+  @media (min-width: 769px) and (orientation: landscape) {
+    --vw-factor: 50vw;
+    --vh-factor: 70vh;
   }
 
   @media (min-width: 1001px) {
@@ -80,6 +83,13 @@ h1 {
     bottom: 5vh;
     left: calc(100% - var(--w) / 2);
   }
+
+  @media (min-width: 1001px) and (orientation: portrait) {
+    --vw-factor: 60vw;
+    --vh-factor: 80vh;
+    top: -20vh;
+  }
+
 
   &__background {
     position: relative;
