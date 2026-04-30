@@ -15,11 +15,20 @@ h1 {
 .hero {
   position: relative;
   height: 100vh;
+  align-items: flex-end;
+  padding-bottom: 0;
 }
-@media (max-width: 1000px) {
+.hero h2 {
+  max-width: 100%;
+  font-size: 1rem;
+}
+@media (min-width: 1001px) {
   .hero {
-    align-items: flex-end;
-    padding-bottom: 64px;
+    align-items: initial;
+    padding-bottom: 0;
+  }
+  .hero h2 {
+    max-width: 590px;
   }
 }
 
@@ -36,17 +45,20 @@ h1 {
 
 .spade {
   position: absolute;
-  z-index: 0;
+  z-index: 2;
   --vw-factor: 70vw;
   --vh-factor: 80vh;
   --w: calc(min(var(--vw-factor), var(--vh-factor)) * 2);
   --h: calc(var(--w) * 1126 / 1271);
   width: var(--w);
   height: var(--h);
+  overflow: hidden;
+  top: -20vh;
+  left: calc(100% - var(--w) / 2 - 5vw);
   /* playing with resizing of image, tight seems to be a good fit */
 }
 .spade--tight {
-  --vw-factor: 50vw;
+  --vw-factor: 90vw;
 }
 .spade--narrow {
   --vw-factor: 60vw;
@@ -54,11 +66,22 @@ h1 {
 .spade--wide {
   --vw-factor: 80vw;
 }
-.spade {
-  bottom: 5vh;
-  left: calc(100% - var(--w) / 2);
-  z-index: 2;
-  overflow: hidden;
+@media (min-width: 481px) {
+  .spade--tight {
+    --vw-factor: 50vw;
+  }
+}
+@media (min-width: 769px) {
+  .spade {
+    top: -30vh;
+  }
+}
+@media (min-width: 1001px) {
+  .spade {
+    top: unset;
+    bottom: 5vh;
+    left: calc(100% - var(--w) / 2);
+  }
 }
 .spade__background {
   position: relative;
@@ -91,28 +114,6 @@ h1 {
   object-fit: contain;
   pointer-events: none;
   z-index: 1;
-}
-@media (max-width: 1000px) {
-  .spade {
-    bottom: unset;
-    left: calc(100% - var(--w) / 2 - 5vw);
-    top: -30vh;
-  }
-}
-@media (max-width: 768px) {
-  .spade {
-    bottom: unset;
-    top: -20vh;
-  }
-}
-@media (max-width: 480px) {
-  .spade {
-    bottom: unset;
-    top: -20vh;
-  }
-  .spade--tight {
-    --vw-factor: 80vw;
-  }
 }
 
 @keyframes spin {
