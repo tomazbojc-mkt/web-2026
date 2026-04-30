@@ -15,6 +15,11 @@ h1 {
 .hero {
   position: relative;
   height: 100vh;
+  @media (max-width: 1000px) {
+    align-items: flex-end;
+    padding-bottom: 64px;
+  }
+
 }
 
 .wrapper {
@@ -31,10 +36,17 @@ h1 {
 .spade {
   position: absolute;
   z-index: 0;
-  --w: calc(min(70vw, 80vh) * 2);
+  --vw-factor: 70vw;
+  --vh-factor: 80vh;
+  --w: calc(min(var(--vw-factor), var(--vh-factor)) * 2);
   --h: calc(var(--w) * 1126 / 1271);
   width: var(--w);
   height: var(--h);
+
+  /* playing with resizing of image, tight seems to be a good fit */
+  &--tight    { --vw-factor: 50vw;}
+  &--narrow   { --vw-factor: 60vw;}
+  &--wide     { --vw-factor: 80vw;}
   bottom: 5vh;
   left: calc(100% - var(--w) / 2);
   z-index: 2;
@@ -79,15 +91,20 @@ h1 {
   @media (max-width: 1000px) {
     bottom: unset;
     left: calc(100% - var(--w) / 2 - 5vw);
-    top: -50vh
+    top: -30vh
   }
 
   @media (max-width: 768px) {
-    bottom:0 ;
+    bottom: unset;
+    top: -20vh;
   }
 
   @media (max-width: 480px) {
-    bottom: 0;
+    bottom: unset;
+    top: -20vh;
+    &--tight { 
+      --vw-factor: 80vw;
+    }
   }
 }
 
