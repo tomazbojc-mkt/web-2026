@@ -72,7 +72,7 @@ h1 {
 @media (min-width: 821px) and (orientation: portrait) {
   .spade {
     --vw-factor: 70vw;
-    top: 0;
+    top: -15vh;
   }
 }
 @media (min-width: 769px) and (orientation: landscape) {
@@ -106,7 +106,11 @@ h1 {
   inset: 0;
   background: url("../assets/img/home-background.png") center/auto no-repeat;
   pointer-events: none;
-  background-attachment: fixed;
+}
+@media (min-width: 1001px) {
+  .spade__background::before {
+    background-attachment: fixed;
+  }
 }
 .spade__sphere {
   width: 85vmin;
