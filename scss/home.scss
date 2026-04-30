@@ -57,13 +57,18 @@ h1 {
   top: -20vh;
   left: calc(100% - var(--w) / 2 - 5vw);
 
-  /* playing with resizing of image, tight seems to be a good fit */
-  &--tight    { --vw-factor: 90vw; }
-  &--narrow   { --vw-factor: 60vw; }
-  &--wide     { --vw-factor: 80vw; }
+  /* Width modifiers (--vw-factor) */
+  &--vw-tight   { --vw-factor: 90vw; }
+  &--vw-narrow  { --vw-factor: 60vw; }
+  &--vw-wide    { --vw-factor: 80vw; }
+
+  /* Height modifiers (--vh-factor) */
+  &--vh-tight   { --vh-factor: 60vh; }
+  &--vh-narrow  { --vh-factor: 70vh; }
+  &--vh-wide    { --vh-factor: 90vh; }
 
   @media (min-width: 481px) {
-    &--tight { --vw-factor: 50vw; }
+    &--vw-tight { --vw-factor: 50vw; }
   }
 
   @media (min-width: 769px) {

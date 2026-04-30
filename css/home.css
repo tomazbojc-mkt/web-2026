@@ -55,19 +55,31 @@ h1 {
   overflow: hidden;
   top: -20vh;
   left: calc(100% - var(--w) / 2 - 5vw);
-  /* playing with resizing of image, tight seems to be a good fit */
+  /* Width modifiers (--vw-factor) */
 }
-.spade--tight {
+.spade--vw-tight {
   --vw-factor: 90vw;
 }
-.spade--narrow {
+.spade--vw-narrow {
   --vw-factor: 60vw;
 }
-.spade--wide {
+.spade--vw-wide {
   --vw-factor: 80vw;
 }
+.spade {
+  /* Height modifiers (--vh-factor) */
+}
+.spade--vh-tight {
+  --vh-factor: 60vh;
+}
+.spade--vh-narrow {
+  --vh-factor: 70vh;
+}
+.spade--vh-wide {
+  --vh-factor: 90vh;
+}
 @media (min-width: 481px) {
-  .spade--tight {
+  .spade--vw-tight {
     --vw-factor: 50vw;
   }
 }
