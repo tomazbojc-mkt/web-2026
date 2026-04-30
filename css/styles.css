@@ -2206,7 +2206,7 @@ footer {
 }
 @media (max-width: 640px) {
   .hero h1 {
-    font-size: 10vw;
+    font-size: 8vw;
   }
   .big-idea .large-text {
     font-size: 2rem;
