@@ -17,6 +17,35 @@
       <div class="spade__background">
         <img class="spade__sphere" src="assets/img/home-sphere.png" alt="" />
       </div>
+
+      <div class="feature-label feature-label--animated tag tag--1" aria-label="Jackpot">
+          <div class="feature-label__icon" aria-hidden="true">💎</div>
+          <div class="feature-label__text">
+            <span class="feature-label__title">jackpot triggered</span>
+            <span class="feature-label__value">€ 12,480</span>
+          </div>
+      </div>
+      <div class="feature-label feature-label--animated tag tag--2" aria-label="Session time">
+        <div class="feature-label__icon" aria-hidden="true">⬆️</div>
+        <div class="feature-label__text">
+          <span class="feature-label__title">session time</span>
+          <span class="feature-label__value">+32% with Fuze™</span>
+        </div>
+      </div>
+      <div class="feature-label feature-label--animated tag tag--3" aria-label="Reward unlocked">
+        <div class="feature-label__icon" aria-hidden="true">🎯</div>
+        <div class="feature-label__text">
+          <span class="feature-label__title">reward unlocked</span>
+          <span class="feature-label__value">claim now!</span>
+        </div>
+      </div>
+      <div class="feature-label feature-label--animated tag tag--4" aria-label="Live Tournament">
+        <div class="feature-label__icon" aria-hidden="true">🏆</div>
+        <div class="feature-label__text">
+          <span class="feature-label__title">Live Tournament</span>
+          <span class="feature-label__value">1,247 players</span>
+        </div>
+      </div>
       <img class="spade__mask" src="assets/img/mask-2.png" alt="" />
     </div>
     <div class="container">
@@ -24,16 +53,25 @@
         <h1 class=""><span class="muted">engineering<br>the experiences</span><br>players demand</h1>
         <h2 class="">From the games players love to the technology operators rely on, <strong>bragg</strong> is the battle-tested iGaming partner with the expertise and tools to grow your business at scale.</h2>
         <div class="hero-buttons">
-          <a href="#contact" class="btn btn--primary">talk to us</a>
-          <a href="#contact" class="btn btn--secondary">explore</a>
+          <a href="#" class="btn btn--primary" data-js-btn-flair>talk to us</a>
+          <a href="#container-id" class="btn btn--secondary" data-js-scroll-to>explore</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="wrapper">
-    <!-- rest of page content -->
+  <div class="wrapper" id="container-id">
+    <h1>some stuf here...</h1>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+<!-- Site scripts — load in this order -->
+<script src="js/gsap-setup.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/interactions.js"></script>
 
 </body>
 </html>

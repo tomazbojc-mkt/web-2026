@@ -33,6 +33,12 @@ h1 {
   }
 }
 
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+
 .wrapper {
   position: relative;
   min-height: 300vh;
@@ -42,6 +48,28 @@ h1 {
 .container {
   position: relative;
   z-index: 2;
+}
+
+.tag {
+  position: absolute;
+  z-index: 10;
+  transform: scale(0.6);
+}
+.tag--1 {
+  bottom: 20%;
+  left: 0%;
+}
+.tag--2 {
+  bottom: 39%;
+  left: -3%;
+}
+.tag--3 {
+  bottom: 30%;
+  left: 10%;
+}
+.tag--4 {
+  bottom: 19%;
+  left: 20%;
 }
 
 .spade {
@@ -81,11 +109,32 @@ h1 {
     --vh-factor: 70vh;
   }
 }
-@media (min-width: 1001px) {
+@media (min-width: 1400px) and (orientation: landscape) {
   .spade {
+    --vw-factor: 50vw;
+    --vh-factor: 90vh;
     top: unset;
-    bottom: 5vh;
-    left: calc(100% - var(--w) / 2);
+    bottom: 0;
+    left: calc(100% - var(--w) / 1.9);
+  }
+  .spade .tag {
+    transform: scale(0.8);
+  }
+  .spade .tag--1 {
+    bottom: 20%;
+    left: 0%;
+  }
+  .spade .tag--2 {
+    bottom: 39%;
+    left: -1%;
+  }
+  .spade .tag--3 {
+    bottom: 30%;
+    left: 10%;
+  }
+  .spade .tag--4 {
+    bottom: 19%;
+    left: 20%;
   }
 }
 @media (min-width: 1001px) and (orientation: portrait) {

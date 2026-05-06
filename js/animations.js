@@ -68,6 +68,7 @@ gsap.utils.toArray('.fade-up').forEach(el => {
 
 
 // ── Hero scramble-flip (home / index page only) ──
+/* TEMPORARILY DISABLED
 document.fonts.ready.then(() => {
   if (document.querySelector('.content-hero')) return; // skip on content/fuze pages
   const mutedSpan = document.querySelector('.hero h1 .muted');
@@ -99,6 +100,7 @@ document.fonts.ready.then(() => {
       .to(dup,  { y: '0%',    duration: 0.45, ease: 'power2.inOut' }, order * 0.04);
   });
 });
+TEMPORARILY DISABLED */
 
 
 // ── Content-hero colour reveal (content / fuze pages) ──
@@ -201,6 +203,26 @@ document.querySelectorAll('.trust-number[data-count]').forEach(el => {
     })
   });
 });
+
+
+// ── Feature-label pop-in (generic) ────────────
+// Staggered reveal for any .feature-label--animated not already
+// handled by a page-specific script (e.g. fuze.js)
+(() => {
+  const labels = gsap.utils.toArray('.feature-label--animated:not(.is-visible)');
+  if (!labels.length) return;
+
+  ScrollTrigger.create({
+    trigger: labels[0].closest('section, .hero, .wrapper') || labels[0],
+    start: 'top 75%',
+    once: true,
+    onEnter: () => {
+      labels.forEach((label, i) => {
+        setTimeout(() => label.classList.add('is-visible'), i * 180);
+      });
+    }
+  });
+})();
 
 
 // ── Video scale-in ────────────────────────────

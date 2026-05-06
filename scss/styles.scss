@@ -1,4 +1,6 @@
 @use 'components/c-card';
+@use 'fuze/feature-label';
+@use 'fuze/feature-label--animated';
 
 @import url(variables.css);
 @import url(shared/typography.css);
@@ -193,7 +195,6 @@
   .hero-buttons {
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
   }
 
   .hero-visual {
