@@ -155,3 +155,33 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   window.addEventListener('scroll', () => { if (activeMenu) closeMenu(); }, { passive: true });
 })();
+
+
+// ── 3. Mobile navigation ─────────────────────
+(() => {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+
+  const hamburger = nav.querySelector('.nav-hamburger');
+  const mobileNav = nav.querySelector('.nav-mobile');
+  if (!hamburger || !mobileNav) return;
+
+  const tabs   = Array.from(mobileNav.querySelectorAll('.nav-mobile__tab'));
+  const panels = Array.from(mobileNav.querySelectorAll('.nav-mobile__panel'));
+
+  // Toggle mobile menu open/close
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav--mobile-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('no-scroll', isOpen);
+  });
+
+  // Tab switching
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.mobileTab;
+      tabs.forEach(t => t.classList.toggle('nav-mobile__tab--active', t === tab));
+      panels.forEach(p => p.classList.toggle('nav-mobile__panel--active', p.dataset.mobilePanel === target));
+    });
+  });
+})();
