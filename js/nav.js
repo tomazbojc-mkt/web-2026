@@ -67,8 +67,8 @@
   if (!nav) return;
 
   const megaWrap = nav.querySelector('#navMega');
-  const triggers = Array.from(nav.querySelectorAll('.nav-link-trigger[data-menu]'));
-  const panels   = Array.from(nav.querySelectorAll('.nav-mega-panel[data-menu]'));
+  const triggers = Array.from(nav.querySelectorAll('.mega-menu__trigger[data-menu]'));
+  const panels   = Array.from(nav.querySelectorAll('.mega-menu__panel[data-menu]'));
 
   if (!megaWrap || !triggers.length || !panels.length) return;
 
@@ -78,7 +78,7 @@
   gsap.set(megaWrap, { autoAlpha: 0, y: -10, pointerEvents: 'none' });
 
   function getPanel(menu) {
-    return nav.querySelector(`.nav-mega-panel[data-menu="${menu}"]`);
+    return nav.querySelector(`.mega-menu__panel[data-menu="${menu}"]`);
   }
 
   function setTriggerState(menu, expanded) {
