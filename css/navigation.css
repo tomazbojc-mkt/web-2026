@@ -170,11 +170,12 @@ nav.nav--menu-open {
   /* Horizontal scrollable tab bar */
   .nav-mobile__tabs {
     display: flex;
+    flex-shrink: 0;
     gap: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--color-off-white-400, #e0e8ef);
     padding: 0 16px;
   }
   .nav-mobile__tabs::-webkit-scrollbar {
@@ -216,7 +217,7 @@ nav.nav--menu-open {
     display: block;
   }
   .nav-mobile__section {
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--color-off-white-400, #e0e8ef);
   }
   .nav-mobile__section-title {
     display: block;
