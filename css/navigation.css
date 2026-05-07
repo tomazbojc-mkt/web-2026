@@ -1,4 +1,52 @@
 @charset "UTF-8";
+/* ==================== NAV THEME ==================== */
+nav {
+  --nav-bg: var(--color-white-transparent-08);
+  --nav-bg-solid: var(--color-gray-white);
+  --nav-text: var(--color-gray-700);
+  --nav-text-strong: var(--color-gray-900);
+  --nav-text-muted: var(--color-gray-500);
+  --nav-hover-bg: var(--color-gray-50);
+  --nav-cta-bg: var(--color-gray-900);
+  --nav-cta-text: var(--color-gray-white);
+  --nav-border: var(--color-off-white-400);
+  --nav-shadow: 0 0 16px 0 rgba(0, 40, 71, 0.04), 0 16px 25px 0 rgba(0, 40, 71, 0.06);
+  --nav-hamburger: var(--color-gray-900);
+  --nav-overlay-bg: rgba(71, 71, 71, 0.05);
+  --nav-strip-bg: var(--color-gray-100);
+  --nav-strip-border: var(--color-gray-200);
+  --nav-strip-divider: var(--color-gray-300);
+  --nav-link-hover-bg: var(--color-gray-white);
+  --nav-banner-bg: var(--surface-layer-1);
+  --nav-banner-border: var(--color-gray-200);
+  --nav-plans-bg: var(--color-gray-100);
+  --nav-plans-hover-bg: var(--color-gray-200);
+}
+
+.dark-theme nav,
+nav.dark-theme {
+  --nav-bg: rgba(15, 15, 15, 0.85);
+  --nav-bg-solid: var(--color-gray-900);
+  --nav-text: var(--color-gray-400);
+  --nav-text-strong: var(--color-gray-white);
+  --nav-text-muted: var(--color-gray-500);
+  --nav-hover-bg: var(--color-white-transparent-01);
+  --nav-cta-bg: var(--color-gray-white);
+  --nav-cta-text: var(--color-gray-900);
+  --nav-border: var(--color-white-transparent-01);
+  --nav-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2), 0 16px 25px 0 rgba(0, 0, 0, 0.3);
+  --nav-hamburger: var(--color-gray-white);
+  --nav-overlay-bg: rgba(0, 0, 0, 0.4);
+  --nav-strip-bg: var(--color-white-transparent-01);
+  --nav-strip-border: var(--color-white-transparent-01);
+  --nav-strip-divider: var(--color-white-transparent-02);
+  --nav-link-hover-bg: var(--color-white-transparent-01);
+  --nav-banner-bg: var(--color-white-transparent-01);
+  --nav-banner-border: var(--color-white-transparent-01);
+  --nav-plans-bg: var(--color-white-transparent-01);
+  --nav-plans-hover-bg: var(--color-white-transparent-02);
+}
+
 /* ==================== NAV ==================== */
 nav {
   position: fixed;
@@ -6,7 +54,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--nav-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
@@ -21,7 +69,7 @@ nav.nav--hidden {
 }
 
 nav.nav--scrolled {
-  box-shadow: 0 0 16px 0 rgba(0, 40, 71, 0.04), 0 16px 25px 0 rgba(0, 40, 71, 0.06);
+  box-shadow: var(--nav-shadow);
 }
 
 .nav-inner {
@@ -49,7 +97,7 @@ nav.nav--scrolled {
 
 .nav-links a {
   font-weight: 500;
-  color: var(--color-gray-700, #4b4b4d);
+  color: var(--nav-text);
   text-decoration: none;
   transition: color 0.2s, background 0.2s;
   display: inline-flex;
@@ -61,13 +109,13 @@ nav.nav--scrolled {
 }
 
 .nav-links a:hover {
-  color: var(--black);
-  background: var(--gray-50);
+  color: var(--nav-text-strong);
+  background: var(--nav-hover-bg);
 }
 
 .nav-links a[aria-expanded=true] {
-  background: var(--gray-50);
-  color: var(--black);
+  background: var(--nav-hover-bg);
+  color: var(--nav-text-strong);
 }
 
 .nav-links a[aria-expanded=true] .nav-chevron {
@@ -90,8 +138,8 @@ nav.nav--scrolled {
 }
 
 .nav-cta {
-  background: var(--black) !important;
-  color: var(--white) !important;
+  background: var(--nav-cta-bg) !important;
+  color: var(--nav-cta-text) !important;
   padding: 10px 24px !important;
   border-radius: 24px;
   font-weight: 600 !important;
@@ -103,12 +151,12 @@ nav.nav--scrolled {
 
 .nav-cta:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  background: var(--black) !important;
+  background: var(--nav-cta-bg) !important;
 }
 
 nav.nav--menu-open {
   backdrop-filter: blur(50px);
-  box-shadow: 0 0 16px 0 rgba(0, 40, 71, 0.04), 0 16px 25px 0 rgba(0, 40, 71, 0.06);
+  box-shadow: var(--nav-shadow);
 }
 
 @media (max-width: 1024px) {
@@ -132,7 +180,7 @@ nav.nav--menu-open {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--black);
+  background: var(--nav-hamburger);
   border-radius: 2px;
 }
 
@@ -164,7 +212,7 @@ nav.nav--menu-open {
     display: flex;
   }
   nav.nav--mobile-open {
-    background: #fff;
+    background: var(--nav-bg-solid);
     backdrop-filter: none;
   }
   /* Horizontal scrollable tab bar */
@@ -175,7 +223,7 @@ nav.nav--menu-open {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    border-bottom: 1px solid var(--color-off-white-400, #e0e8ef);
+    border-bottom: 1px solid var(--nav-border);
     padding: 0 16px;
   }
   .nav-mobile__tabs::-webkit-scrollbar {
@@ -187,7 +235,7 @@ nav.nav--menu-open {
     margin-right: 24px;
     font-size: 15px;
     font-weight: 550;
-    color: var(--color-gray-500, #737373);
+    color: var(--nav-text-muted);
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
@@ -200,8 +248,8 @@ nav.nav--menu-open {
     appearance: none;
   }
   .nav-mobile__tab--active {
-    color: var(--black, #000);
-    border-bottom-color: var(--black, #000);
+    color: var(--nav-text-strong);
+    border-bottom-color: var(--nav-text-strong);
   }
   .nav-mobile__tab:last-child {
     margin-right: 0;
@@ -217,7 +265,7 @@ nav.nav--menu-open {
     display: block;
   }
   .nav-mobile__section {
-    border-bottom: 1px solid var(--color-off-white-400, #e0e8ef);
+    border-bottom: 1px solid var(--nav-border);
   }
   .nav-mobile__section-title {
     display: block;
@@ -225,7 +273,7 @@ nav.nav--menu-open {
     padding: 18px 0;
     font-size: 16px;
     font-weight: 600;
-    color: var(--black, #000);
+    color: var(--nav-text-strong);
     background: none;
     border: none;
     appearance: none;
@@ -241,11 +289,11 @@ nav.nav--menu-open {
     padding: 10px 0;
     font-size: 14px;
     font-weight: 450;
-    color: var(--color-gray-700, #4b4b4d);
+    color: var(--nav-text);
     text-decoration: none;
   }
   .nav-mobile__section-links a:hover {
-    color: var(--black);
+    color: var(--nav-text-strong);
   }
   /* Hamburger animation to X */
   .nav-hamburger span {
