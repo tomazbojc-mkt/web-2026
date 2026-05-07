@@ -66,9 +66,10 @@
   const nav = document.getElementById('nav');
   if (!nav) return;
 
-  const megaWrap = nav.querySelector('#navMega');
-  const triggers = Array.from(nav.querySelectorAll('.mega-menu__trigger[data-menu]'));
-  const panels   = Array.from(nav.querySelectorAll('.mega-menu__panel[data-menu]'));
+  const megaWrap  = nav.querySelector('#navMega');
+  const overlay   = document.getElementById('navOverlay');
+  const triggers  = Array.from(nav.querySelectorAll('.mega-menu__trigger[data-menu]'));
+  const panels    = Array.from(nav.querySelectorAll('.mega-menu__panel[data-menu]'));
 
   if (!megaWrap || !triggers.length || !panels.length) return;
 
@@ -94,16 +95,20 @@
 
   function hideWrap() {
     if (wrapTween) wrapTween.kill();
-    wrapTween = gsap.to(megaWrap, { autoAlpha: 0, y: -10, pointerEvents: 'none', duration: 0.2, ease: 'power2.in' });
+    wrapTween = gsap.to(megaWrap, { autoAlpha: 0, y: -10, pointerEvents: 'none', duration: 0.14, ease: 'power2.in' });
   }
 
   function showPanel(panel) {
-    gsap.set(panel, { display: 'grid' });
+    gsap.set(panel, { display: 'grid', position: 'relative' });
     gsap.fromTo(panel, { autoAlpha: 0, y: -8 }, { autoAlpha: 1, y: 0, duration: 0.24, ease: 'power2.out' });
   }
 
-  function hidePanel(panel) {
-    gsap.to(panel, { autoAlpha: 0, y: -8, duration: 0.16, ease: 'power2.in', onComplete: () => gsap.set(panel, { display: 'none' }) });
+  function hidePanel(panel, immediate) {
+    if (immediate) {
+      gsap.set(panel, { display: 'none', autoAlpha: 0, y: -8, position: 'absolute' });
+      return;
+    }
+    gsap.to(panel, { autoAlpha: 0, y: -8, duration: 0.12, ease: 'power2.in', onComplete: () => gsap.set(panel, { display: 'none', position: 'absolute' }) });
   }
 
   function openMenu(menu) {
@@ -111,7 +116,7 @@
     const nextPanel    = getPanel(menu);
     if (!nextPanel) return;
     const currentPanel = activeMenu ? getPanel(activeMenu) : null;
-    if (currentPanel) hidePanel(currentPanel);
+    if (currentPanel) hidePanel(currentPanel, true);
     showPanel(nextPanel);
     showWrap();
     activeMenu = menu;
@@ -119,16 +124,20 @@
     megaWrap.setAttribute('aria-hidden', 'false');
     nav.classList.add('nav--menu-open');
     nav.classList.remove('nav--hidden');
+    if (overlay) overlay.classList.add('nav-overlay--active');
+    document.body.classList.add('no-scroll');
   }
 
   function closeMenu() {
     if (!activeMenu) return;
     const currentPanel = getPanel(activeMenu);
-    if (currentPanel) hidePanel(currentPanel);
+    if (currentPanel) hidePanel(currentPanel, false);
     hideWrap();
     setTriggerState(activeMenu, false);
     megaWrap.setAttribute('aria-hidden', 'true');
     nav.classList.remove('nav--menu-open');
+    if (overlay) overlay.classList.remove('nav-overlay--active');
+    document.body.classList.remove('no-scroll');
     activeMenu = null;
   }
 
@@ -142,6 +151,7 @@
   });
 
   document.addEventListener('click', e => { if (!activeMenu || nav.contains(e.target)) return; closeMenu(); });
+  if (overlay) overlay.addEventListener('click', closeMenu);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   window.addEventListener('scroll', () => { if (activeMenu) closeMenu(); }, { passive: true });
 })();

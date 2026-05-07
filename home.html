@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+  <div class="nav-overlay" id="navOverlay"></div>
   <nav id="nav">
     <div class="nav-inner">
       <img src="assets/logo-new.svg" alt="Bragg Logo" class="nav-logo-img" />
@@ -32,11 +33,11 @@
       <div class="nav-actions">
         <a href="#contact" class="nav-cta" data-js-scroll-to>Talk to sales</a>
       </div>
-      <div class="nav-hamburger" aria-hidden="true">
+      <button class="nav-hamburger" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
 
     <div class="mega-menu" id="navMega" aria-hidden="true">
@@ -62,31 +63,25 @@
           <a href="#">Responsible gaming</a>
         </div>
         <div class="mega-menu__banner">Image / banner placeholder</div>
-
-        <div class="mega-menu__utility-strip">
-          <a href="#">Playground</a>
-          <a href="#">Client area</a>
-        </div>
       </section>
 
       <!-- CAREERS -->
-      <section class="mega-menu__panel mega-menu__panel--2col" id="mega-careers" data-menu="careers" role="region" aria-label="Careers">
+      <section class="mega-menu__panel mega-menu__panel--5col" id="mega-careers" data-menu="careers" role="region" aria-label="Careers">
         <div class="mega-menu__col">
-          <span class="mega-menu__kicker">Careers at Bragg</span>
+          <span class="mega-menu__kicker">Careers</span>
           <a href="#">Working at Bragg</a>
           <a href="#">Bragg values</a>
           <a href="#">Bragg cares</a>
         </div>
-        <div class="mega-menu__banner">Image / banner placeholder</div>
-
-        <div class="mega-menu__utility-strip">
-          <a href="#">Playground</a>
-          <a href="#">Client area</a>
+        <div class="mega-menu__col">
+          <span class="mega-menu__kicker">Job openings</span>
+          <a href="#">Open positions</a>
         </div>
+        <div class="mega-menu__banner">Image / banner placeholder</div>
       </section>
 
       <!-- ABOUT US -->
-      <section class="mega-menu__panel" id="mega-about-us" data-menu="about-us" role="region" aria-label="About us">
+      <section class="mega-menu__panel mega-menu__panel--5col" id="mega-about-us" data-menu="about-us" role="region" aria-label="About us">
         <div class="mega-menu__col">
           <span class="mega-menu__kicker">Company</span>
           <a href="#">Meet Bragg</a>
@@ -98,12 +93,14 @@
           <a href="#">New partnership in regulated markets</a>
         </div>
         <div class="mega-menu__banner">Image / banner placeholder</div>
-
-        <div class="mega-menu__utility-strip">
-          <a href="#">Playground</a>
-          <a href="#">Client area</a>
-        </div>
       </section>
+    </div>
+
+    <div class="mega-menu__utility-strip">
+      <div class="mega-menu__utility-strip-inner">
+        <a href="#">playground <span class="mega-menu__utility-desc">games, tournaments, live promotions</span></a>
+        <a href="#">client area <span class="mega-menu__utility-desc">integration tools, and partner support</span></a>
+      </div>
     </div>
   </nav>
 
