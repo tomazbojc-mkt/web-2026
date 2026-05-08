@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* ==================== NAV THEME ==================== */
 nav {
-  --nav-bg: var(--color-white-transparent-08);
+  --nav-bg: var(--color-white-transparent-09);
   --nav-bg-solid: var(--color-gray-white);
   --nav-text: var(--color-gray-700);
   --nav-text-strong: var(--color-gray-900);

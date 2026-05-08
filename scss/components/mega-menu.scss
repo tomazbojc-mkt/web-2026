@@ -16,7 +16,7 @@
 		display: none;
 		grid-template-columns: 1fr 1fr 1.3fr;
 		gap: 28px;
-		padding: 32px 56px;
+		padding: 32px 56px 8px 56px;
 		margin-top: 2px;
 		background: inherit;
 		backdrop-filter: inherit;
@@ -95,15 +95,29 @@
 
 	&__banner {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: flex-end;
 		min-height: 200px;
 		border-radius: 16px;
 		background: var(--nav-banner-bg);
-		border: 1px dashed var(--nav-banner-border);
+		border: 1px solid var(--nav-banner-border);
+		padding: 24px;
+	}
+
+	&__banner-title {
+		font-size: 16px;
+		font-weight: 700;
+		color: var(--nav-text-strong);
+		margin: 0 0 6px;
+		line-height: 1.3;
+	}
+
+	&__banner-text {
+		font-size: 13px;
+		font-weight: 450;
 		color: var(--nav-text-muted);
-		font-size: 0.9rem;
-		font-weight: 500;
+		margin: 0;
+		line-height: 1.5;
 	}
 
 	&__plans {
@@ -166,6 +180,9 @@ nav.nav--menu-open .mega-menu__utility-strip {
 	gap: 28px;
 
 	a {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 		font-size: 16px;
 		font-weight: 600;
 		color: var(--nav-text);
@@ -200,6 +217,18 @@ nav.nav--menu-open .mega-menu__utility-strip {
 	color: var(--nav-text-muted);
 	font-weight: 400;
 	display: block;
+}
+
+.mega-menu__utility-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 8px;
+	background: var(--accent);
+	color: var(--color-gray-white);
+	flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
@@ -241,8 +270,8 @@ nav.nav--menu-open .mega-menu__utility-strip {
 	inset: 0;
 	z-index: 99;
 	background: var(--nav-overlay-bg);
-	backdrop-filter: blur(2.5px);
-	-webkit-backdrop-filter: blur(2.5px);
+	backdrop-filter: blur(24px);
+	-webkit-backdrop-filter: blur(24px);
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.3s ease;
