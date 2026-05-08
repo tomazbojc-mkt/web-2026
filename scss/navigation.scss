@@ -21,6 +21,7 @@ nav {
 	--nav-plans-bg: var(--color-gray-100);
 	--nav-plans-hover-bg: var(--color-gray-200);
 	--nav-kicker: var(--accent);
+	--nav-logo: var(--color-gray-900);
 }
 
 .dark-theme nav,
@@ -46,6 +47,7 @@ nav.dark-theme {
 	--nav-plans-bg: var(--color-white-transparent-01);
 	--nav-plans-hover-bg: var(--color-white-transparent-02);
 	--nav-kicker: var(--color-blue-300);
+	--nav-logo: var(--color-gray-white);
 }
 
 /* ==================== NAV ==================== */
@@ -86,6 +88,7 @@ nav.nav--scrolled {
 .nav-logo-img {
 	display: block;
 	width: auto;
+	color: var(--nav-logo);
 }
 
 .nav-links {
