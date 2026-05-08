@@ -100,10 +100,10 @@ nav.nav--scrolled {
 }
 
 .nav-links a {
-  font-weight: 500;
+  font-weight: 450;
   color: var(--nav-text);
   text-decoration: none;
-  transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s, opacity 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -159,6 +159,13 @@ nav.nav--scrolled {
 nav.nav--menu-open {
   backdrop-filter: blur(50px);
   box-shadow: var(--nav-shadow);
+}
+nav.nav--menu-open .nav-links a {
+  opacity: 0.4;
+  transition: color 0.2s, background 0.2s, opacity 0.2s;
+}
+nav.nav--menu-open .nav-links a[aria-expanded=true] {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {
