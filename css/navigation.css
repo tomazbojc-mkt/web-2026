@@ -13,8 +13,8 @@ nav {
   --nav-shadow: 0 0 16px 0 rgba(0, 40, 71, 0.04), 0 16px 25px 0 rgba(0, 40, 71, 0.06);
   --nav-hamburger: var(--color-gray-900);
   --nav-overlay-bg: rgba(71, 71, 71, 0.05);
-  --nav-strip-bg: var(--color-gray-100);
-  --nav-strip-border: var(--color-gray-200);
+  --nav-strip-bg: var(--color-gray-white);
+  --nav-strip-border: var(--border-subtle);
   --nav-strip-divider: var(--color-gray-300);
   --nav-link-hover-bg: var(--color-gray-white);
   --nav-banner-bg: var(--surface-layer-1);
@@ -38,7 +38,7 @@ nav.dark-theme {
   --nav-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2), 0 16px 25px 0 rgba(0, 0, 0, 0.3);
   --nav-hamburger: var(--color-gray-white);
   --nav-overlay-bg: rgba(0, 0, 0, 0.4);
-  --nav-strip-bg: var(--color-white-transparent-01);
+  --nav-strip-bg: var(--color-gray-black);
   --nav-strip-border: var(--color-white-transparent-01);
   --nav-strip-divider: var(--color-white-transparent-02);
   --nav-link-hover-bg: var(--color-white-transparent-01);
@@ -86,7 +86,6 @@ nav.nav--scrolled {
 
 .nav-logo-img {
   display: block;
-  height: 20px;
   width: auto;
 }
 

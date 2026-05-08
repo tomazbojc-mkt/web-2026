@@ -90,8 +90,6 @@
     --media-size: 768px;
     --font-line-height-4xl: 48px;
     --font-line-height-5xl: 56px;
-    --border-subtle: #ffffffff;
-    --border-distinct: #ffffffff;
     --units-radius-none: 0px;
     --units-border-sm: 1px;
     --units-size-xs: 8px;
@@ -152,8 +150,6 @@
     --media-size: 375px;
     --font-line-height-4xl: 48px;
     --font-line-height-5xl: 32px;
-    --border-subtle: #ffffffff;
-    --border-distinct: #ffffffff;
     --units-radius-none: 0px;
     --units-border-sm: 1px;
     --units-size-xs: 8px;
