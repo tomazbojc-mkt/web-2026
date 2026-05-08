@@ -14,10 +14,9 @@
 
 	&__panel {
 		display: none;
-		grid-template-columns: 1fr 1fr 1.3fr;
+		grid-template-columns: 1fr 1fr 2fr;
 		gap: 28px;
-		padding: 32px 56px 8px 56px;
-		margin-top: 2px;
+		padding: 32px 56px 16px 56px;
 		background: inherit;
 		backdrop-filter: inherit;
 		-webkit-backdrop-filter: inherit;
@@ -28,11 +27,11 @@
 		text-transform: lowercase;
 
 		&--2col {
-			grid-template-columns: 1fr 1.3fr;
+			grid-template-columns: 1fr 2fr;
 		}
 
 		&--5col {
-			grid-template-columns: 1fr 1fr 1.3fr;
+			grid-template-columns: 1fr 1fr 2fr;
 			grid-template-rows: auto auto auto;
 			gap: 32px;
 			padding-left: 0;
@@ -52,7 +51,7 @@
 		a {
 			position: relative;
 			display: block;
-			padding: 16px 0;
+			padding: 8px 0;
 			text-decoration: none;
 			color: var(--nav-text-strong);
 			font-weight: 500;
