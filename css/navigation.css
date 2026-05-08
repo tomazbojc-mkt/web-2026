@@ -114,11 +114,9 @@ nav.nav--scrolled {
 
 .nav-links a:hover {
   color: var(--nav-text-strong);
-  background: var(--nav-hover-bg);
 }
 
 .nav-links a[aria-expanded=true] {
-  background: var(--nav-hover-bg);
   color: var(--nav-text-strong);
 }
 
