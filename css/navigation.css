@@ -251,7 +251,7 @@ nav.nav--menu-open {
   }
   .nav-mobile__tab--active {
     color: var(--nav-text-strong);
-    border-bottom-color: var(--nav-text-strong);
+    border-bottom-color: var(--accent);
   }
   .nav-mobile__tab:last-child {
     margin-right: 0;
@@ -273,9 +273,10 @@ nav.nav--menu-open {
     display: block;
     width: 100%;
     padding: 18px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--nav-text-strong);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--nav-kicker);
+    letter-spacing: 0.04em;
     background: none;
     border: none;
     appearance: none;
@@ -289,9 +290,9 @@ nav.nav--menu-open {
   .nav-mobile__section-links a {
     display: block;
     padding: 10px 0;
-    font-size: 14px;
-    font-weight: 450;
-    color: var(--nav-text);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--nav-text-strong);
     text-decoration: none;
   }
   .nav-mobile__section-links a:hover {
