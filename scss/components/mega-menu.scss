@@ -17,7 +17,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 24px 32px;
 		padding: 32px 0;
-		max-width: 430px;
+		max-width: 420px;
 		margin: 0 auto;
 		background: inherit;
 		backdrop-filter: inherit;
@@ -36,7 +36,7 @@
 		a {
 			position: relative;
 			display: block;
-			padding: 4px 0;
+			padding: 8px 0;
 			text-decoration: none;
 			color: var(--nav-text-strong);
 			font-weight: 500;
@@ -69,12 +69,21 @@
 		}
 	}
 
-	&__kicker {
+	&__desc {
 		font-size: 12px;
+		color: var(--nav-text-muted);
 		font-weight: 400;
+		display: block;
+		margin-top: 2px;
+	}
+
+	&__kicker {
+		font-size: 10px;
+		font-weight: 700;
 		color: var(--nav-kicker);
-		padding-bottom: 12px;
+		padding-bottom: 14px;
 		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
 
 	&__banner {
