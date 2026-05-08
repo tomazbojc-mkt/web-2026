@@ -20,6 +20,7 @@ nav {
 	--nav-banner-border: var(--color-gray-200);
 	--nav-plans-bg: var(--color-gray-100);
 	--nav-plans-hover-bg: var(--color-gray-200);
+	--nav-kicker: var(--accent);
 }
 
 .dark-theme nav,
@@ -44,6 +45,7 @@ nav.dark-theme {
 	--nav-banner-border: var(--color-white-transparent-01);
 	--nav-plans-bg: var(--color-white-transparent-01);
 	--nav-plans-hover-bg: var(--color-white-transparent-02);
+	--nav-kicker: var(--color-blue-300);
 }
 
 /* ==================== NAV ==================== */

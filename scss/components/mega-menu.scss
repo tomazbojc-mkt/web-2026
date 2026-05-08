@@ -54,9 +54,9 @@
 			display: block;
 			padding: 16px 0;
 			text-decoration: none;
-			color: var(--nav-text);
-			font-weight: 450;
-			font-size: 14px;
+			color: var(--nav-text-strong);
+			font-weight: 500;
+			font-size: 16px;
 			transition: color 0.2s ease;
 
 
@@ -86,10 +86,11 @@
 	}
 
 	&__kicker {
-		font-size: 16px;
+		font-size: 13px;
 		font-weight: 700;
-		color: var(--nav-text-strong);
+		color: var(--nav-kicker);
 		padding-bottom: 8px;
+		letter-spacing: 0.04em;
 	}
 
 	&__banner {
