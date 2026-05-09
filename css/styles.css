@@ -84,7 +84,8 @@
 }
 .mega-menu__col a {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 8px 0;
   text-decoration: none;
   color: var(--nav-text-strong);
@@ -92,25 +93,20 @@
   font-size: 16px;
   transition: color 0.2s ease;
 }
-.mega-menu__col a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -14px;
-  right: 0;
-  background: var(--nav-link-hover-bg);
-  border-radius: 24px;
+.mega-menu__col a .mega-menu__arrow {
+  margin-left: 8px;
   opacity: 0;
-  transition: opacity 0.2s ease;
-  z-index: -1;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
 }
 .mega-menu__col a:hover {
-  color: var(--nav-text-strong);
   color: var(--accent);
 }
-.mega-menu__col a:hover::before {
+.mega-menu__col a:hover .mega-menu__arrow {
   opacity: 1;
+  transform: translateX(0);
+  color: var(--accent);
 }
 .mega-menu__desc {
   font-size: 12px;
