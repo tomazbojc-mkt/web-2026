@@ -14,7 +14,8 @@ nav {
   --nav-overlay-bg: rgba(71, 71, 71, 0.05);
   --nav-strip-bg: var(--color-gray-white);
   --nav-strip-border: var(--border-subtle);
-  --nav-kicker: var(--accent);
+  --nav-accent: var(--accent);
+  --nav-kicker: var(--nav-accent);
   --nav-logo: var(--color-gray-900);
 }
 
@@ -33,7 +34,8 @@ nav.dark-theme {
   --nav-overlay-bg: rgba(0, 0, 0, 0.4);
   --nav-strip-bg: var(--color-gray-black);
   --nav-strip-border: var(--color-white-transparent-01);
-  --nav-kicker: var(--color-blue-300);
+  --nav-accent: var(--color-blue-300);
+  --nav-kicker: var(--nav-accent);
   --nav-logo: var(--color-gray-white);
 }
 
@@ -104,7 +106,7 @@ nav.nav--scrolled {
 
 .nav-links a:hover .nav-chevron {
   opacity: 1;
-  color: var(--accent);
+  color: var(--nav-accent);
   animation: chevron-bounce 0.35s ease;
 }
 
@@ -268,7 +270,7 @@ nav.nav--menu-open .nav-links a[aria-expanded=true] {
   }
   .nav-mobile__tab--active {
     color: var(--nav-text-strong);
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--nav-accent);
   }
   .nav-mobile__tab:last-child {
     margin-right: 0;

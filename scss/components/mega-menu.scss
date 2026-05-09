@@ -53,13 +53,13 @@
 			}
 
 			&:hover {
-				color: var(--accent);
+				color: var(--nav-accent);
 			}
 
 			&:hover .mega-menu__arrow {
 				opacity: 1;
 				transform: translateX(0);
-				color: var(--accent);
+				color: var(--nav-accent);
 			}
 		}
 	}
@@ -125,7 +125,7 @@ nav.nav--menu-open .mega-menu__utility-strip {
 	width: 28px;
 	height: 28px;
 	border-radius: 8px;
-	background: var(--accent);
+	background: var(--nav-accent);
 	color: var(--color-gray-white);
 	flex-shrink: 0;
 }
