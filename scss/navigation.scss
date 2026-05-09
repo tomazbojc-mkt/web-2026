@@ -162,6 +162,10 @@ nav.nav--menu-open {
 	.nav-links a {
 		opacity: 0.3;
 		transition: color 0.2s, background 0.2s, opacity 0.2s;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 
 	.nav-links a[aria-expanded="true"] {
