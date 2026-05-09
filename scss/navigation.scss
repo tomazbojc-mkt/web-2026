@@ -5,7 +5,6 @@ nav {
 	--nav-text: var(--color-gray-700);
 	--nav-text-strong: var(--color-gray-900);
 	--nav-text-muted: var(--color-gray-500);
-	--nav-hover-bg: var(--color-gray-50);
 	--nav-cta-bg: var(--color-gray-900);
 	--nav-cta-text: var(--color-gray-white);
 	--nav-border: var(--color-off-white-400);
@@ -14,12 +13,6 @@ nav {
 	--nav-overlay-bg: rgba(71, 71, 71, 0.05);
 	--nav-strip-bg: var(--color-gray-white);
 	--nav-strip-border: var(--border-subtle);
-	--nav-strip-divider: var(--color-gray-300);
-	--nav-link-hover-bg: var(--color-gray-white);
-	--nav-banner-bg: var(--surface-layer-1);
-	--nav-banner-border: var(--color-gray-200);
-	--nav-plans-bg: var(--color-gray-100);
-	--nav-plans-hover-bg: var(--color-gray-200);
 	--nav-kicker: var(--accent);
 	--nav-logo: var(--color-gray-900);
 }
@@ -31,7 +24,6 @@ nav.dark-theme {
 	--nav-text: var(--color-gray-400);
 	--nav-text-strong: var(--color-gray-white);
 	--nav-text-muted: var(--color-gray-500);
-	--nav-hover-bg: var(--color-white-transparent-01);
 	--nav-cta-bg: var(--color-gray-white);
 	--nav-cta-text: var(--color-gray-900);
 	--nav-border: var(--color-white-transparent-01);
@@ -40,12 +32,6 @@ nav.dark-theme {
 	--nav-overlay-bg: rgba(0, 0, 0, 0.4);
 	--nav-strip-bg: var(--color-gray-black);
 	--nav-strip-border: var(--color-white-transparent-01);
-	--nav-strip-divider: var(--color-white-transparent-02);
-	--nav-link-hover-bg: var(--color-white-transparent-01);
-	--nav-banner-bg: var(--color-white-transparent-01);
-	--nav-banner-border: var(--color-white-transparent-01);
-	--nav-plans-bg: var(--color-white-transparent-01);
-	--nav-plans-hover-bg: var(--color-white-transparent-02);
 	--nav-kicker: var(--color-blue-300);
 	--nav-logo: var(--color-gray-white);
 }
