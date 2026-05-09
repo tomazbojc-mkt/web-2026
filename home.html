@@ -20,13 +20,13 @@
       </svg>
       <ul class="nav-links">
         <li>
-          <a href="#" class="mega-menu__trigger" data-menu="what-we-do" aria-expanded="false" aria-controls="mega-what-we-do">What we do <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__trigger" data-js-menu-trigger="what-we-do" aria-expanded="false" aria-controls="mega-what-we-do">What we do <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </li>
         <li>
-          <a href="#" class="mega-menu__trigger" data-menu="careers" aria-expanded="false" aria-controls="mega-careers">Careers <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__trigger" data-js-menu-trigger="careers" aria-expanded="false" aria-controls="mega-careers">Careers <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </li>
         <li>
-          <a href="#" class="mega-menu__trigger" data-menu="about-us" aria-expanded="false" aria-controls="mega-about-us">About us <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__trigger" data-js-menu-trigger="about-us" aria-expanded="false" aria-controls="mega-about-us">About us <svg class="nav-chevron" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </li>
         <li>
           <a href="#investors">Investors <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
@@ -35,7 +35,7 @@
       <div class="nav-actions">
         <a href="#contact" class="nav-cta" data-js-scroll-to>Talk to sales</a>
       </div>
-      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <button class="nav-hamburger" data-js-hamburger aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -43,16 +43,16 @@
     </div>
 
     <!-- Mobile navigation -->
-    <div class="nav-mobile">
+    <div class="nav-mobile" data-js-mobile-nav>
       <div class="nav-mobile__tabs">
-        <button class="nav-mobile__tab nav-mobile__tab--active" data-mobile-tab="what-we-do">what we do</button>
-        <button class="nav-mobile__tab" data-mobile-tab="careers">careers</button>
-        <button class="nav-mobile__tab" data-mobile-tab="about-us">about us</button>
-        <button class="nav-mobile__tab" data-mobile-tab="investors">investors</button>
+        <button class="nav-mobile__tab nav-mobile__tab--active" data-js-mobile-tab="what-we-do">what we do</button>
+        <button class="nav-mobile__tab" data-js-mobile-tab="careers">careers</button>
+        <button class="nav-mobile__tab" data-js-mobile-tab="about-us">about us</button>
+        <button class="nav-mobile__tab" data-js-mobile-tab="investors">investors</button>
       </div>
       <div class="nav-mobile__content">
         <!-- What we do -->
-        <div class="nav-mobile__panel nav-mobile__panel--active" data-mobile-panel="what-we-do">
+        <div class="nav-mobile__panel nav-mobile__panel--active" data-js-mobile-panel="what-we-do">
           <div class="nav-mobile__section">
             <span class="nav-mobile__section-title">casino content</span>
             <div class="nav-mobile__section-links">
@@ -80,7 +80,7 @@
           </div>
         </div>
         <!-- Careers -->
-        <div class="nav-mobile__panel" data-mobile-panel="careers">
+        <div class="nav-mobile__panel" data-js-mobile-panel="careers">
           <div class="nav-mobile__section">
             <span class="nav-mobile__section-title">careers</span>
             <div class="nav-mobile__section-links">
@@ -95,7 +95,7 @@
           </div>
         </div>
         <!-- About us -->
-        <div class="nav-mobile__panel" data-mobile-panel="about-us">
+        <div class="nav-mobile__panel" data-js-mobile-panel="about-us">
           <div class="nav-mobile__section">
             <span class="nav-mobile__section-title">company</span>
             <div class="nav-mobile__section-links">
@@ -112,7 +112,7 @@
           </div>
         </div>
         <!-- Investors -->
-        <div class="nav-mobile__panel" data-mobile-panel="investors">
+        <div class="nav-mobile__panel" data-js-mobile-panel="investors">
           <div class="nav-mobile__section">
             <a href="#investors" class="nav-mobile__section-title">investors</a>
           </div>
@@ -122,7 +122,7 @@
 
     <div class="mega-menu" id="navMega" aria-hidden="true">
       <!-- WHAT WE DO -->
-      <section class="mega-menu__panel" id="mega-what-we-do" data-menu="what-we-do" role="region" aria-label="What we do">
+      <section class="mega-menu__panel" id="mega-what-we-do" data-js-menu-panel="what-we-do" role="region" aria-label="What we do">
         <div class="mega-menu__col">
           <span class="mega-menu__kicker">Casino content</span>
           <a href="#">Casino games <svg class="mega-menu__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -143,7 +143,7 @@
       </section>
 
       <!-- CAREERS -->
-      <section class="mega-menu__panel" id="mega-careers" data-menu="careers" role="region" aria-label="Careers">
+      <section class="mega-menu__panel" id="mega-careers" data-js-menu-panel="careers" role="region" aria-label="Careers">
         <div class="mega-menu__col">
           <span class="mega-menu__kicker">Careers</span>
           <a href="#">Working at Bragg <svg class="mega-menu__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -155,7 +155,7 @@
       </section>
 
       <!-- ABOUT US -->
-      <section class="mega-menu__panel" id="mega-about-us" data-menu="about-us" role="region" aria-label="About us">
+      <section class="mega-menu__panel" id="mega-about-us" data-js-menu-panel="about-us" role="region" aria-label="About us">
         <div class="mega-menu__col">
           <span class="mega-menu__kicker">Company</span>
           <a href="#">Meet Bragg <svg class="mega-menu__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>

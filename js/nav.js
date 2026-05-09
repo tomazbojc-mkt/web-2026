@@ -68,8 +68,8 @@
 
   const megaWrap  = nav.querySelector('#navMega');
   const overlay   = document.getElementById('navOverlay');
-  const triggers  = Array.from(nav.querySelectorAll('.mega-menu__trigger[data-menu]'));
-  const panels    = Array.from(nav.querySelectorAll('.mega-menu__panel[data-menu]'));
+  const triggers  = Array.from(nav.querySelectorAll('[data-js-menu-trigger]'));
+  const panels    = Array.from(nav.querySelectorAll('[data-js-menu-panel]'));
 
   if (!megaWrap || !triggers.length || !panels.length) return;
 
@@ -79,12 +79,12 @@
   gsap.set(megaWrap, { autoAlpha: 0, y: -10, pointerEvents: 'none' });
 
   function getPanel(menu) {
-    return nav.querySelector(`.mega-menu__panel[data-menu="${menu}"]`);
+    return nav.querySelector(`[data-js-menu-panel="${menu}"]`);
   }
 
   function setTriggerState(menu, expanded) {
     triggers.forEach(t => {
-      t.setAttribute('aria-expanded', t.dataset.menu === menu && expanded ? 'true' : 'false');
+      t.setAttribute('aria-expanded', t.dataset.jsMenuTrigger === menu && expanded ? 'true' : 'false');
     });
   }
 
@@ -144,7 +144,7 @@
   triggers.forEach(trigger => {
     trigger.addEventListener('click', e => {
       e.preventDefault();
-      const menu = trigger.dataset.menu;
+      const menu = trigger.dataset.jsMenuTrigger;
       if (!menu) return;
       activeMenu === menu ? closeMenu() : openMenu(menu);
     });
@@ -162,12 +162,12 @@
   const nav = document.getElementById('nav');
   if (!nav) return;
 
-  const hamburger = nav.querySelector('.nav-hamburger');
-  const mobileNav = nav.querySelector('.nav-mobile');
+  const hamburger = nav.querySelector('[data-js-hamburger]');
+  const mobileNav = nav.querySelector('[data-js-mobile-nav]');
   if (!hamburger || !mobileNav) return;
 
-  const tabs   = Array.from(mobileNav.querySelectorAll('.nav-mobile__tab'));
-  const panels = Array.from(mobileNav.querySelectorAll('.nav-mobile__panel'));
+  const tabs   = Array.from(mobileNav.querySelectorAll('[data-js-mobile-tab]'));
+  const panels = Array.from(mobileNav.querySelectorAll('[data-js-mobile-panel]'));
 
   // Toggle mobile menu open/close
   hamburger.addEventListener('click', () => {
@@ -179,9 +179,9 @@
   // Tab switching
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const target = tab.dataset.mobileTab;
+      const target = tab.dataset.jsMobileTab;
       tabs.forEach(t => t.classList.toggle('nav-mobile__tab--active', t === tab));
-      panels.forEach(p => p.classList.toggle('nav-mobile__panel--active', p.dataset.mobilePanel === target));
+      panels.forEach(p => p.classList.toggle('nav-mobile__panel--active', p.dataset.jsMobilePanel === target));
     });
   });
 })();
