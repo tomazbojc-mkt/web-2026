@@ -66,8 +66,8 @@
   const nav = document.getElementById('nav');
   if (!nav) return;
 
-  const megaWrap  = nav.querySelector('#navMega');
-  const overlay   = document.getElementById('navOverlay');
+  const megaWrap  = nav.querySelector('[data-js-mega-menu]');
+  const overlay   = document.querySelector('[data-js-nav-overlay]');
   const triggers  = Array.from(nav.querySelectorAll('[data-js-menu-trigger]'));
   const panels    = Array.from(nav.querySelectorAll('[data-js-menu-panel]'));
 
