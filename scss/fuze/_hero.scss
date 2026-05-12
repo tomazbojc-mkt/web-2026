@@ -2,9 +2,30 @@
 .fuze-hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin: 0 auto;
   max-width: 1440px;
+  overflow-x: clip;
+  overflow-y: hidden;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+    to right,
+    transparent,
+    #E1E5F3,
+    transparent
+  ) 1;
+
+  h1 {
+    font-weight: 780;
+    font-size: clamp(2.2rem, 6vw, 5rem);
+  }
+  h2 {
+    font-size: clamp(1rem, 0.91rem + 0.38vw, 1.25rem);
+  }
+
+  @media (min-width: 640px) {
+    align-items: center;
+  }
 
   &__container {
     flex: 1;
@@ -16,16 +37,37 @@
 
   &__hero-content {
     display: grid;
-    gap: var(--units-spacing-xl);
+    gap: var(--units-spacing-3xl);
 
     > h2 {
-      max-width: 50vw;
+      max-width: 100%;
+      font-weight: 400;
+    }
+
+    @media (min-width: 601px) {
+      gap: var(--units-spacing-2xl);
+
+      > h2 {
+        max-width: 70vw;
+      }
+    }
+
+    @media (min-width: 1001px) {
+      gap: 32px;
+
+      > h2 {
+        max-width: 50vw;
+      }
+    }
+
+    .hero-buttons {
+      flex-direction: row;
     }
   }
 
   &__media {
     position: absolute;
-    bottom: 0;
+    bottom: -130px;
     right: 0;
     left: 0;
     max-width: 1440px;
@@ -48,29 +90,5 @@
     width: auto;
     object-fit: cover;
     object-position: bottom right;
-  }
-}
-
-@media (max-width: 1000px) {
-  .fuze-hero {
-    &__hero-content {
-      gap: var(--units-spacing-2xl);
-
-      > h2 {
-        max-width: 70vw;
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .fuze-hero {
-    &__hero-content {
-      gap: var(--units-spacing-3xl);
-
-      > h2 {
-        max-width: 100%;
-      }
-    }
   }
 }

@@ -30,9 +30,25 @@
 .fuze-hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin: 0 auto;
   max-width: 1440px;
+  overflow-x: clip;
+  overflow-y: hidden;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, transparent, #E1E5F3, transparent) 1;
+}
+.fuze-hero h1 {
+  font-weight: 780;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+}
+.fuze-hero h2 {
+  font-size: clamp(1rem, 0.91rem + 0.38vw, 1.25rem);
+}
+@media (min-width: 640px) {
+  .fuze-hero {
+    align-items: center;
+  }
 }
 .fuze-hero__container {
   flex: 1;
@@ -43,14 +59,34 @@
 }
 .fuze-hero__hero-content {
   display: grid;
-  gap: var(--units-spacing-xl);
+  gap: var(--units-spacing-3xl);
 }
 .fuze-hero__hero-content > h2 {
-  max-width: 50vw;
+  max-width: 100%;
+  font-weight: 400;
+}
+@media (min-width: 601px) {
+  .fuze-hero__hero-content {
+    gap: var(--units-spacing-2xl);
+  }
+  .fuze-hero__hero-content > h2 {
+    max-width: 70vw;
+  }
+}
+@media (min-width: 1001px) {
+  .fuze-hero__hero-content {
+    gap: 32px;
+  }
+  .fuze-hero__hero-content > h2 {
+    max-width: 50vw;
+  }
+}
+.fuze-hero__hero-content .hero-buttons {
+  flex-direction: row;
 }
 .fuze-hero__media {
   position: absolute;
-  bottom: 0;
+  bottom: -130px;
   right: 0;
   left: 0;
   max-width: 1440px;
@@ -75,22 +111,6 @@
   object-position: bottom right;
 }
 
-@media (max-width: 1000px) {
-  .fuze-hero__hero-content {
-    gap: var(--units-spacing-2xl);
-  }
-  .fuze-hero__hero-content > h2 {
-    max-width: 70vw;
-  }
-}
-@media (max-width: 600px) {
-  .fuze-hero__hero-content {
-    gap: var(--units-spacing-3xl);
-  }
-  .fuze-hero__hero-content > h2 {
-    max-width: 100%;
-  }
-}
 /* ==================== FEATURE LABEL ==================== */
 /*
   Visual-only component — no position, z-index, inset or transform.
@@ -448,6 +468,8 @@
 .btn--secondary {
   border: 1.5px solid var(--black);
   background: transparent;
+  backdrop-filter: blur(12px);
+  background: var(--color-white-transparent-06);
   color: var(--black);
 }
 .btn--secondary:hover {
@@ -480,17 +502,16 @@
 /* ==================== FUZE PRESENTATION ==================== */
 .fuze-presentation {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: start;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--units-spacing-2xl);
+  padding: 0 var(--units-spacing-lg);
 }
 .fuze-presentation__article {
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 80px 0;
+  padding: 60px 0;
 }
 .fuze-presentation__article[hidden] {
   display: none;
@@ -513,35 +534,34 @@
   margin-bottom: 28px;
 }
 .fuze-presentation__media {
-  display: none;
+  display: block;
+  width: fit-content;
+  height: 60vh;
+  margin: 0 auto var(--units-spacing-xl);
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--phone-screen-bg);
 }
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
+.fuze-presentation__media-asset {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 901px) {
   .fuze-presentation {
-    grid-template-columns: 1fr;
-    padding: 0 var(--units-spacing-lg);
+    grid-template-columns: 1fr 1fr;
+    padding: 0 var(--units-spacing-2xl);
   }
   .fuze-presentation__article {
-    min-height: auto;
-    padding: 60px 0;
+    min-height: 100vh;
+    padding: 80px 0;
   }
   .fuze-presentation__media {
-    display: block;
-    width: fit-content;
-    height: 60vh;
-    margin: 0 auto var(--units-spacing-xl);
-    border-radius: 32px;
-    overflow: hidden;
-    background: var(--phone-screen-bg);
-  }
-  .fuze-presentation__media-asset {
-    display: block;
-    width: auto;
-    height: 100%;
-    object-fit: cover;
+    display: none;
   }
 }
+
 /* ==================== PHONE ==================== */
 /* ── Outer sticky wrapper ── */
 .phone {
@@ -658,7 +678,7 @@
 /* ==================== CARD GRID ==================== */
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-auto-rows: 215px;
   gap: var(--units-spacing-lg);
   margin-bottom: var(--units-spacing-xl);

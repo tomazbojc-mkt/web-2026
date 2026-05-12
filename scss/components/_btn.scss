@@ -79,6 +79,8 @@
   &--secondary {
     border: 1.5px solid var(--black);
     background: transparent;
+    backdrop-filter: blur(12px);
+    background: var(--color-white-transparent-06);
     color: var(--black);
 
     &:hover {
