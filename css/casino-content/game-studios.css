@@ -1080,18 +1080,16 @@ html.studios {
   height: 800px;
   position: absolute;
   filter: blur(280px);
+  display: none;
 }
 .studio-page__blob--top {
   right: 0;
   top: 0;
   z-index: 2;
-  animation: studio-page-drift 25s ease-in-out infinite reverse;
 }
 .studio-page__blob--bottom {
   left: 0;
   top: 400px;
-  animation: studio-page-drift 30s ease-in-out infinite;
-  animation-delay: -10s;
 }
 .studio-page__content {
   max-width: 1440px;

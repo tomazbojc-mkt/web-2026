@@ -143,19 +143,20 @@ html.studios {
     height: 800px;
     position: absolute;
     filter: blur(280px);
+    display: none;
 
     &--top {
       right: 0;
       top: 0;
       z-index: 2;
-      animation: studio-page-drift 25s ease-in-out infinite reverse;
+      // animation: studio-page-drift 25s ease-in-out infinite reverse;
     }
 
     &--bottom {
       left: 0;
       top: 400px;
-      animation: studio-page-drift 30s ease-in-out infinite;
-      animation-delay: -10s;
+      // animation: studio-page-drift 30s ease-in-out infinite;
+      // animation-delay: -10s;
     }
   }
 
