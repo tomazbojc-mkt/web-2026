@@ -40,12 +40,19 @@
 
   &__media {
     display: block;
+    position: relative;
     width: fit-content;
     height: 60vh;
     margin: 0 auto var(--units-spacing-xl);
-    border-radius: 32px;
-    overflow: hidden;
-    background: var(--phone-screen-bg);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      background: url('../assets/img/phone-mask.png') center / 100% 100% no-repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
   }
 
   &__media-asset {
@@ -53,6 +60,7 @@
     width: auto;
     height: 100%;
     object-fit: cover;
+    border-radius: 42px;
   }
 
   @media (min-width: 901px) {

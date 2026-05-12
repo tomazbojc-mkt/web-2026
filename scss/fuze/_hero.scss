@@ -81,13 +81,17 @@
       display: block;
       height: 100%;
     }
+
+    @media (min-width: 601px) {
+      bottom: 0;
+    }
   }
 
   /* Desktop: full-height image, auto width to preserve aspect ratio */
   &__image {
     display: block;
+    width: 100%;
     height: auto;
-    width: auto;
     object-fit: cover;
     object-position: bottom right;
   }

@@ -100,13 +100,18 @@
   display: block;
   height: 100%;
 }
+@media (min-width: 601px) {
+  .fuze-hero__media {
+    bottom: 0;
+  }
+}
 .fuze-hero {
   /* Desktop: full-height image, auto width to preserve aspect ratio */
 }
 .fuze-hero__image {
   display: block;
+  width: 100%;
   height: auto;
-  width: auto;
   object-fit: cover;
   object-position: bottom right;
 }
@@ -280,7 +285,7 @@
 }
 /* ==================== BIG IDEA ==================== */
 .big-idea {
-  padding: 0;
+  padding: 160px 0;
   background: var(--white);
   text-align: center;
 }
@@ -535,18 +540,25 @@
 }
 .fuze-presentation__media {
   display: block;
+  position: relative;
   width: fit-content;
   height: 60vh;
   margin: 0 auto var(--units-spacing-xl);
-  border-radius: 32px;
-  overflow: hidden;
-  background: var(--phone-screen-bg);
+}
+.fuze-presentation__media::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  background: url("../assets/img/phone-mask.png") center/100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 1;
 }
 .fuze-presentation__media-asset {
   display: block;
   width: auto;
   height: 100%;
   object-fit: cover;
+  border-radius: 42px;
 }
 @media (min-width: 901px) {
   .fuze-presentation {
@@ -682,7 +694,13 @@
   grid-auto-rows: 215px;
   gap: var(--units-spacing-lg);
   margin-bottom: var(--units-spacing-xl);
+  padding-top: 1rem;
   --selected-card-shadow: 0 0 14.5px 6px rgba(0, 22, 235, 0.10);
+}
+@media (min-width: 601px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {

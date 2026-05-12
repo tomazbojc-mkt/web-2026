@@ -6,8 +6,13 @@
   grid-auto-rows: 215px;
   gap: var(--units-spacing-lg);
   margin-bottom: var(--units-spacing-xl);
+  padding-top: 1rem;
 
   --selected-card-shadow: 0 0 14.5px 6px rgba(0, 22, 235, 0.10);
+
+  @media (min-width: 601px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {
