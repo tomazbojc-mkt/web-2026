@@ -16,8 +16,7 @@
   .studio-page__layer {
     &--layer-1 {
       z-index: 0;
-      background-image: url('../../im/img/clouds-layer-0.png');
-      background-position: top center;
+      background-image: url('../../im/img/clouds-layer-0-new.png');
       background-size: contain;
     }
 
@@ -26,6 +25,11 @@
       background-image: url('../../im/img/house-tree.png');
       display: flex;
       align-items: flex-end;
+      background-size: contain;
+
+      @media (min-width: 768px) {
+        background-size: contain;
+      }
     }
   }
 }
