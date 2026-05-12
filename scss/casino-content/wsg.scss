@@ -17,6 +17,11 @@
     &--layer-2 {
       z-index: 1;
       background-image: url('../../wsg/img/layer-1-clouds.png');
+      background-size: cover;
+
+      @media (min-width: 768px) {
+        background-size: contain;
+      }
     }
 
     &--layer-1 {
@@ -24,6 +29,11 @@
       background-image: url('../../wsg/img/layer-2-mountains.png');
       display: flex;
       align-items: flex-end;
+      background-size: cover;
+
+      @media (min-width: 768px) {
+        background-size: contain;
+      }
     }
   }
 }
