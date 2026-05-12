@@ -4,6 +4,11 @@
 @use '../components/btn';
 @use '../components/c-card';
 
+
+html.studios {
+  overflow-x: clip !important;
+}
+
 @keyframes studio-page-drift {
   0% {
     transform: translate(0, 0) scale(1);
@@ -36,6 +41,10 @@
   margin: 0;
   padding: 0;
   color: var(--text-inverted-strong);
+
+  h1, h2, h3, h4 {
+    text-transform: lowercase ;
+  }
 
   @media (max-width: 1700px) {
     overflow-x: hidden;
@@ -123,7 +132,7 @@
   &__brand {
     display: block;
     width: 100%;
-    max-width: clamp(180px, 32vw, 420px);
+    max-width: clamp(300px, 40vw, 420px);
     height: auto;
     object-fit: contain;
   }

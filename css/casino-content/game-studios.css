@@ -961,6 +961,10 @@ h2 {
   color: var(--text-inverted, #fff);
 }
 
+html.studios {
+  overflow-x: clip !important;
+}
+
 @keyframes studio-page-drift {
   0% {
     transform: translate(0, 0) scale(1);
@@ -988,6 +992,9 @@ h2 {
   margin: 0;
   padding: 0;
   color: var(--text-inverted-strong);
+}
+.studio-page h1, .studio-page h2, .studio-page h3, .studio-page h4 {
+  text-transform: lowercase;
 }
 @media (max-width: 1700px) {
   .studio-page {
@@ -1063,7 +1070,7 @@ h2 {
 .studio-page__brand {
   display: block;
   width: 100%;
-  max-width: clamp(180px, 32vw, 420px);
+  max-width: clamp(300px, 40vw, 420px);
   height: auto;
   object-fit: contain;
 }
