@@ -9,19 +9,20 @@
 
 .c-cta-banner {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: var(--units-spacing-xl);
-  padding: var(--units-spacing-3xl, 64px);
+  gap: var(--units-spacing-2xl);
+  padding: var(--units-spacing-2xl);
   border: solid var(--units-border-md) var(--card-container-border);
   border-radius: var(--units-radius-lg);
+  text-align: center;
 
   &__heading {
     display: flex;
+    flex-direction: column;
     align-items: center;
     flex: 1;
-    gap: var(--units-spacing-2xl, 48px);
+    gap: var(--units-spacing-lg);
   }
 
   &__icon {
@@ -36,6 +37,19 @@
     & > p {
       color: var(--text-secondary);
       font-size: var(--font-size-md);
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--units-spacing-xl);
+    padding: var(--units-spacing-3xl, 64px);
+    text-align: left;
+
+    &__heading {
+      flex-direction: row;
+      gap: var(--units-spacing-2xl, 48px);
     }
   }
 }
