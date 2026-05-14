@@ -15,7 +15,6 @@ body {
   flex-direction: column;
   height: 100svh;
   position: relative;
-  padding: 1rem;
   overflow: hidden;
 
   &__bg {
@@ -174,7 +173,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 2rem 1rem 0;
-    max-width: 900px;
+    max-width: 590px;
     margin: 0 auto;
     text-align: center;
 
